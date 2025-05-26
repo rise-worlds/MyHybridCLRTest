@@ -1,0 +1,11 @@
+Build/
+Logs/
+HybridCLRData/
+Library/
+Temp/
+UserSettings/
+Assets/StreamingAssets/
+*.csproj.user
+*.suo
+*.csproj
+*.sln
