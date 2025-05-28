@@ -4,8 +4,14 @@ HybridCLRData/
 Library/
 Temp/
 UserSettings/
+Assets/HybridCLRBuildCache/
 Assets/StreamingAssets/
+Release-Win64/
 *.csproj.user
 *.suo
 *.csproj
 *.sln
+/.vs
+/obj/Debug
+/.vsconfig
+/Assets/AssetBundles
