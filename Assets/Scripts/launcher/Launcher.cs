@@ -43,21 +43,21 @@ namespace RiseClient
         void Start()
         {
 #if !UNITY_EDITOR
-        LoadMetadataForAOTAssemblies();
-        downloadText.gameObject.SetActive(false);
-        downloadProgressBar.gameObject.SetActive(false);
-        StartCoroutine(CheckAndUpdate());
+            LoadMetadataForAOTAssemblies();
+            downloadText.gameObject.SetActive(false);
+            downloadProgressBar.gameObject.SetActive(false);
+            StartCoroutine(CheckAndUpdate());
 #else
-        // 在编辑器中直接加载main场景
-        string mainScene = "Assets/Scenes/main.unity"; // 替换为你的main场景路径
-        if (File.Exists(mainScene))
-        {
-           SceneManager.LoadScene(Path.GetFileNameWithoutExtension(mainScene));
-        }
-        else
-        {
-           Debug.LogError("未找到main场景");
-        }
+            // 在编辑器中直接加载main场景
+            string mainScene = "Assets/Scenes/main.unity"; // 替换为你的main场景路径
+            if (File.Exists(mainScene))
+            {
+            SceneManager.LoadScene(Path.GetFileNameWithoutExtension(mainScene));
+            }
+            else
+            {
+            Debug.LogError("未找到main场景");
+            }
 #endif
         }
 
