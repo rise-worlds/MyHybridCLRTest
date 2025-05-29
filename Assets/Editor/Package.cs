@@ -1,9 +1,10 @@
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using HybridCLR.Editor;
 using HybridCLR.Editor.Commands;
 using HybridCLR.Editor.Installer;
+using HybridCLR.Editor.Settings;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -77,22 +78,22 @@ namespace RiseClient.Editor
             }
 
             List<AssetBundleBuild> buildList = new List<AssetBundleBuild>();
-            DirectoryInfo directory = new DirectoryInfo(Application.streamingAssetsPath);
-            FileInfo[] files = directory.GetFiles("*.dll.bytes", SearchOption.TopDirectoryOnly);
-            foreach (FileInfo file in files)
+            foreach (var dll in SettingsUtil.HotUpdateAssemblyFilesExcludePreserved)
             {
-                string path = "Assets" + file.FullName.Replace('\\', '/').Replace(Application.dataPath, "");
-                path = $"{assetBundleDirectory}/{file.Name}";
-                Debug.Log(path);
-                File.Copy(file.FullName, path, true);
-                File.Delete(file.FullName);
+                string name = $"{dll}.bytes";
+                Debug.Log(name);
+                string srcPath = Path.Combine(Application.streamingAssetsPath, name);
+                string dstPath = Path.Combine(assetBundleDirectory, name);
+                File.Copy(srcPath, dstPath, true);
+                File.Delete(srcPath);
 
                 AssetBundleBuild resBuild = new AssetBundleBuild();
-                resBuild.assetBundleName = $"{file.Name}{ResMgr.AB_EXT}";
-                resBuild.assetNames = new string[] { path };
+                resBuild.assetBundleName = $"{name}{ResMgr.AB_EXT}";
+                resBuild.assetNames = new string[] { dstPath };
 
                 buildList.Add(resBuild);
             }
+
             AssetDatabase.Refresh();
             AssetBundleManifest result = BuildPipeline.BuildAssetBundles(Application.streamingAssetsPath, buildList.ToArray(), BuildAssetBundleOptions.None, EditorUserBuildSettings.activeBuildTarget);
             Directory.Delete(assetBundleDirectory, true);

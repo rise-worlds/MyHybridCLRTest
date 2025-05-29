@@ -9,13 +9,7 @@ namespace RiseClient
         public Text text;
         private void Start()
         {
-            Run();
-            text.text = "Hello, my worlds!";
+            text.text = TestHotUpdate.Run();
         }
-
-        public static void Run()
-        {
-            Debug.Log("Hello, my worlds!");
-        }
-    }
+   }
 }
