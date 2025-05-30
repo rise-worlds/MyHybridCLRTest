@@ -7,6 +7,8 @@ UserSettings/
 Assets/HybridCLRBuildCache/
 Assets/StreamingAssets/
 Release-Win64/
+Release-Android/
+Release-iOS/
 *.csproj.user
 *.suo
 *.csproj

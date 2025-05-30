@@ -46,33 +46,33 @@ namespace RiseClient
 #if UNITY_STANDALONE_WIN
             true;
 #else
-        false;
+            false;
 #endif
 
         public static bool isOSX =>
 #if UNITY_STANDALONE_OSX
-        true;
+            true;
 #else
             false;
 #endif
 
         public static bool isLinux =>
 #if UNITY_STANDALONE_LINUX
-        true;
+            true;
 #else
             false;
 #endif
 
         public static bool isIphone =>
 #if UNITY_IOS
-        true;
+            true;
 #else
             false;
 #endif
 
         public static bool isAndroid =>
 #if UNITY_ANDROID
-        true;
+            true;
 #else
             false;
 #endif

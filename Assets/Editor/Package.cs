@@ -23,18 +23,26 @@ namespace RiseClient.Editor
 
         public static string AssetBundleSourceDataTempDir => $"{HybridCLRBuildCacheDir}/AssetBundleSourceData";
 
-        [MenuItem("Build/编译", false, 0)]
+        [MenuItem("Build/编译打包", false, 0)]
         public static void BuildPlayer()
         {
-            BuildTarget target = BuildTarget.StandaloneWindows64;
-            BuildTarget activeTarget = EditorUserBuildSettings.activeBuildTarget;
-            if (activeTarget != BuildTarget.StandaloneWindows64 && activeTarget != BuildTarget.StandaloneWindows)
-            {
-                Debug.LogError("请先切到Win平台再打包");
-                return;
-            }
             // Get filename.
+#if UNITY_STANDALONE_WIN
+            BuildTarget target = BuildTarget.StandaloneWindows64;
+            BuildTargetGroup group = BuildTargetGroup.Standalone;
             string outputPath = $"{SettingsUtil.ProjectDir}/Release-Win64";
+            string location = $"{outputPath}/HybridCLRTrial.exe";
+#elif UNITY_ANDROID
+            BuildTarget target = BuildTarget.Android;
+            BuildTargetGroup group = BuildTargetGroup.Android;
+            string outputPath = $"{SettingsUtil.ProjectDir}/Release-Android";
+            string location = $"{outputPath}/HybridCLRTrial.apk";
+#elif UNITY_IOS
+            BuildTarget target = BuildTarget.iOS;
+            BuildTargetGroup group = BuildTargetGroup.iOS;
+            string outputPath = $"{SettingsUtil.ProjectDir}/Release-iOS";
+            string location = $"{outputPath}/HybridCLRTrial.app";
+#endif
             if (!Directory.Exists(outputPath))
             {
                 Directory.CreateDirectory(outputPath);
@@ -42,7 +50,6 @@ namespace RiseClient.Editor
 
             var buildOptions = BuildOptions.CompressWithLz4;
 
-            string location = $"{outputPath}/HybridCLRTrial.exe";
 
             BuildCodeAssetBundle();
             BuildResAssetBundle();
@@ -53,7 +60,7 @@ namespace RiseClient.Editor
                 locationPathName = location,
                 options = buildOptions,
                 target = target,
-                targetGroup = BuildTargetGroup.Standalone,
+                targetGroup = group,
             };
 
             var report = BuildPipeline.BuildPlayer(buildPlayerOptions);
