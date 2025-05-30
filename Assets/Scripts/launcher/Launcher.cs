@@ -207,12 +207,10 @@ namespace RiseClient
                 }
 
 #if UNITY_STANDALONE_WIN
-                localVersionPath = $"{Application.streamingAssetsPath}/version.txt";
                 abLocalPath = $"{Application.streamingAssetsPath}/main.dll.bytes.ab";
 #elif UNITY_ANDROID
                 abLocalPath = $"{Application.persistentDataPath}/main.dll.bytes.ab";
 #elif UNITY_IOS
-                localVersionPath = $"{Application.streamingAssetsPath}/version.txt";
                 abLocalPath = $"{Application.streamingAssetsPath}/main.dll.bytes.ab";
 #endif
                 File.WriteAllBytes(abLocalPath, abReq.downloadHandler.data);
