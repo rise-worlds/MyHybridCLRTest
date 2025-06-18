@@ -7,6 +7,8 @@ using System.Reflection;
 using System.Security.Cryptography;
 using System.Security.Policy;
 using System.Threading;
+using System.Threading.Tasks;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
@@ -32,6 +34,9 @@ namespace RiseClient
         public Text downloadText;
         public Slider totalProgressBar;
         public Slider downloadProgressBar;
+
+        private List<UpdateFileInfo> updateFiles;
+        private DownloadProgress downloadProgress = new DownloadProgress();
 
         private static string GetAssetPath(string assetName)
         {
@@ -138,11 +143,57 @@ namespace RiseClient
             }
         }
 
+        private async Task<bool> DownloadFileWithRetry(UpdateFileInfo fileInfo, int maxRetries = 3)
+        {
+            for (int i = 0; i < maxRetries; i++)
+            {
+                try
+                {
+                    downloadProgress.CurrentFileName = fileInfo.LocalPath;
+                    
+                    var downloadTask = DownloadQueue.Instance.EnqueueDownloadWithTask(
+                        fileInfo,
+                        (progress) =>
+                        {
+                            downloadProgress.CurrentFileProgress = progress;
+                            UpdateDownloadUI();
+                        });
+
+                    bool success = await downloadTask;
+
+                    if (success)
+                    {
+                        fileInfo.IsDownloaded = true;
+                        downloadProgress.CompletedFiles++;
+                        downloadProgress.CurrentFileProgress = 0;
+                        return true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogError($"Download attempt {i + 1} failed for {fileInfo.LocalPath}: {ex.Message}");
+                    await Task.Delay(1000 * (i + 1)); // 指数退避
+                }
+            }
+            return false;
+        }
+
+        private void UpdateDownloadUI()
+        {
+            if (downloadProgress.TotalFiles > 0)
+            {
+                downloadProgressBar.value = downloadProgress.TotalProgress;
+                string fileName = Path.GetFileName(downloadProgress.CurrentFileName);
+                int remainingFiles = downloadProgress.TotalFiles - downloadProgress.CompletedFiles;
+                downloadText.text = $"正在下载: {fileName} ({downloadProgress.CompletedFiles}/{downloadProgress.TotalFiles})\n队列中: {remainingFiles} 个文件";
+            }
+        }
+
         IEnumerator CheckAndUpdate()
         {
             yield return StartCoroutine(LoadMetadataForAOTAssemblies());
 
-            float totalSteps = 3f; // 1.获取版本 2.下载AB 3.加载AB
+            float totalSteps = 3f;
             float currentStep = 0f;
 
             // 1. 读取本地版本号
@@ -155,90 +206,110 @@ namespace RiseClient
             }
             else
             {
-                localVersion = File.ReadAllText(localVersionPath).Trim();
+                localVersion = File.ReadAllText(localVersionPath).Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries)[0].Trim();
             }
 
-            // 2. 获取服务器版本号
+            // 2. 获取服务器版本信息
             statusText.text = "正在获取服务器版本...";
             UnityWebRequest versionReq = UnityWebRequest.Get($"{versionUrl}?t={DateTime.Now.Ticks}");
             yield return versionReq.SendWebRequest();
             currentStep++;
             totalProgressBar.value = currentStep / totalSteps;
+            
             if (versionReq.result != UnityWebRequest.Result.Success)
             {
                 statusText.text = "获取服务器版本失败";
                 Debug.LogError("获取服务器版本失败");
                 yield break;
             }
-            string remoteVersion = versionReq.downloadHandler.text.Trim();
-            string abLocalPath = GetAssetPath("main.dll.bytes.ab");
+            
+            string versionContent = versionReq.downloadHandler.text;
+            string remoteVersion = UpdateFileInfo.GetVersionNumber(versionContent);
+            updateFiles = UpdateFileInfo.ParseVersionFile(versionContent);
 
             // 3. 比较版本号
             Debug.Log($"本地版本: {localVersion}, 远程版本: {remoteVersion}");
             if (localVersion != remoteVersion)
             {
-                // 4. 下载AB包
+                // 初始化下载状态管理器
+                DownloadStateManager.Instance.InitializeForVersion(remoteVersion);
+
+                // 获取待下载的文件列表
+                var pendingFiles = DownloadStateManager.Instance.FilterPendingDownloads(updateFiles);
+                
+                // 4. 下载所有更新文件
                 statusText.text = "正在下载资源...";
-                UnityWebRequest abReq = UnityWebRequest.Get($"{abUrl}?t={DateTime.Now.Ticks}");
-                abReq.SendWebRequest();
                 downloadText.gameObject.SetActive(true);
                 downloadProgressBar.gameObject.SetActive(true);
-                while (!abReq.isDone)
-                {
-                    downloadProgressBar.value = abReq.downloadProgress;
-                    ulong downloaded = abReq.downloadedBytes;
-                    ulong total = 0;
-                    if (abReq.GetResponseHeaders() != null && abReq.GetResponseHeaders().ContainsKey("Content-Length"))
-                    {
-                        ulong.TryParse(abReq.GetResponseHeaders()["Content-Length"], out total);
-                    }
-                    downloadText.text = $"已下载: {FormatBytes(downloaded)} / {FormatBytes(total)}";
-                    yield return null;
-                }
-                downloadProgressBar.value = 1f;
-                currentStep++;
-                totalProgressBar.value = currentStep / totalSteps;
 
-                if (abReq.result != UnityWebRequest.Result.Success)
+                downloadProgress.TotalFiles = pendingFiles.Count;
+                downloadProgress.CompletedFiles = updateFiles.Count - pendingFiles.Count;
+                downloadProgress.CurrentFileProgress = 0;
+
+                // 准备所有文件的下载目录
+                foreach (var fileInfo in pendingFiles)
                 {
-                    statusText.text = "下载AB包失败";
-                    Debug.LogError("下载AB包失败");
+                    string directory = Path.GetDirectoryName(fileInfo.GetFullLocalPath());
+                    if (!Directory.Exists(directory))
+                    {
+                        Directory.CreateDirectory(directory);
+                    }
+                }
+
+                // 依次添加到下载队列
+                bool allSuccess = true;
+                foreach (var fileInfo in pendingFiles)
+                {
+                    var downloadTask = DownloadFileWithRetry(fileInfo);
+                    while (!downloadTask.IsCompleted)
+                    {
+                        yield return null;
+                    }
+
+                    if (!downloadTask.Result)
+                    {
+                        allSuccess = false;
+                        DownloadQueue.Instance.ClearQueue(); // 清空剩余队列
+                        break;
+                    }
+                    else
+                    {
+                        // 标记文件下载完成
+                        DownloadStateManager.Instance.MarkFileAsDownloaded(fileInfo.LocalPath);
+                    }
+                }
+
+                if (!allSuccess)
+                {
+                    statusText.text = "下载更新文件失败";
+                    Debug.LogError("下载更新文件失败");
                     yield break;
                 }
 
-#if UNITY_STANDALONE_WIN
-                abLocalPath = $"{Application.streamingAssetsPath}/main.dll.bytes.ab";
-#elif UNITY_ANDROID
-                abLocalPath = $"{Application.persistentDataPath}/main.dll.bytes.ab";
-#elif UNITY_IOS
-                abLocalPath = $"{Application.streamingAssetsPath}/main.dll.bytes.ab";
-#endif
-                File.WriteAllBytes(abLocalPath, abReq.downloadHandler.data);
-                File.WriteAllText(localVersionPath, remoteVersion);
-                Debug.Log($"AB包下载并保存成功到: {abLocalPath}");
-                Debug.Log($"版本更新成功，已保存新版本号: {remoteVersion}, {localVersionPath}");
+                // 所有文件下载成功，更新本地版本文件，并清除下载状态
+                File.WriteAllText(localVersionPath, versionContent);
+                DownloadStateManager.Instance.ClearState();
+                Debug.Log($"版本更新成功，已保存新版本号: {remoteVersion}");
             }
             else
             {
-                // 如果不需要下载，直接跳过下载进度
+                // 如果版本相同，清除可能存在的未完成下载状态
+                DownloadStateManager.Instance.ClearState();
                 downloadProgressBar.value = 1f;
                 currentStep++;
                 totalProgressBar.value = currentStep / totalSteps;
             }
 
-            // 5. 加载AB包并切换到main场景
+            // 5. 加载热更新DLL
+            var mainDllInfo = updateFiles?.FirstOrDefault(f => f.LocalPath.EndsWith("main.dll.bytes.ab"));
+            string mainDllPath = mainDllInfo?.GetFullLocalPath() ?? GetAssetPath("main.dll.bytes.ab");
+
             statusText.text = "正在加载资源...";
-            AssetBundle ab = AssetBundle.LoadFromFile(abLocalPath);
-            //var abLoad = AssetBundle.LoadFromFileAsync(abLocalPath);
-            //while (!abLoad.isDone)
-            //{
-            //    totalProgressBar.value = (currentStep + abLoad.progress) / totalSteps;
-            //}
-            //AssetBundle ab = abLoad.assetBundle;
+            AssetBundle ab = AssetBundle.LoadFromFile(mainDllPath);
             if (ab == null)
             {
                 statusText.text = "加载AB包失败";
-                Debug.LogError($"从 {abLocalPath} 加载AB包失败");
+                Debug.LogError($"从 {mainDllPath} 加载AB包失败");
                 yield break;
             }
             totalProgressBar.value = 1f;
@@ -246,12 +317,11 @@ namespace RiseClient
             TextAsset _hotUpdateAssData = ab.LoadAsset<TextAsset>("main.dll.bytes");
             Assembly _hotUpdateAss = Assembly.Load(_hotUpdateAssData.bytes);
 
-            // Type _testHotUpdate = _hotUpdateAss.GetType("RiseClient.TestHotUpdate");
-            // MethodInfo _runMethod = _testHotUpdate.GetMethod("Run");
-            // _runMethod.Invoke(null, null);
+            // 6. 加载场景
+            var sceneInfo = updateFiles?.FirstOrDefault(f => f.LocalPath.EndsWith("main.ab"));
+            string scenePath = sceneInfo?.GetFullLocalPath() ?? GetAssetPath("main.ab");
 
-            string sceneabLocalPath = GetAssetPath("main.ab");
-            AssetBundle sceneab = AssetBundle.LoadFromFile(sceneabLocalPath);
+            AssetBundle sceneab = AssetBundle.LoadFromFile(scenePath);
             string[] scenes = sceneab.GetAllScenePaths();
             string mainScene = Array.Find(scenes, s => s.Contains("main"));
             if (!string.IsNullOrEmpty(mainScene))
@@ -262,7 +332,7 @@ namespace RiseClient
             else
             {
                 statusText.text = "未找到main场景";
-                Debug.LogError($"未从 {sceneabLocalPath} 找到main场景");
+                Debug.LogError($"未从 {scenePath} 找到main场景");
             }
         }
 

@@ -14,7 +14,7 @@
       "dependencies": {
         "com.unity.modules.ai": "1.0.0"
       },
-      "url": "https://packages.unity.cn"
+      "url": "https://packages.tuanjie.cn"
     },
     "com.unity.assetbundlebrowser": {
       "version": "https://github.com/Unity-Technologies/AssetBundles-Browser.git",
@@ -28,14 +28,14 @@
       "depth": 0,
       "source": "registry",
       "dependencies": {},
-      "url": "https://packages.unity.cn"
+      "url": "https://packages.tuanjie.cn"
     },
     "com.unity.ext.nunit": {
       "version": "1.0.6",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
-      "url": "https://packages.unity.cn"
+      "url": "https://packages.tuanjie.cn"
     },
     "com.unity.ide.rider": {
       "version": "3.0.36",
@@ -44,7 +44,7 @@
       "dependencies": {
         "com.unity.ext.nunit": "1.0.6"
       },
-      "url": "https://packages.unity.cn"
+      "url": "https://packages.tuanjie.cn"
     },
     "com.unity.ide.visualstudio": {
       "version": "2.0.23",
@@ -53,14 +53,14 @@
       "dependencies": {
         "com.unity.test-framework": "1.1.9"
       },
-      "url": "https://packages.unity.cn"
+      "url": "https://packages.tuanjie.cn"
     },
     "com.unity.ide.vscode": {
       "version": "1.2.5",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
-      "url": "https://packages.unity.cn"
+      "url": "https://packages.tuanjie.cn"
     },
     "com.unity.test-framework": {
       "version": "1.1.33",
@@ -71,7 +71,7 @@
         "com.unity.modules.imgui": "1.0.0",
         "com.unity.modules.jsonserialize": "1.0.0"
       },
-      "url": "https://packages.unity.cn"
+      "url": "https://packages.tuanjie.cn"
     },
     "com.unity.textmeshpro": {
       "version": "3.0.9",
@@ -80,7 +80,7 @@
       "dependencies": {
         "com.unity.ugui": "1.0.0"
       },
-      "url": "https://packages.unity.cn"
+      "url": "https://packages.tuanjie.cn"
     },
     "com.unity.timeline": {
       "version": "1.7.7",
@@ -92,7 +92,7 @@
         "com.unity.modules.animation": "1.0.0",
         "com.unity.modules.particlesystem": "1.0.0"
       },
-      "url": "https://packages.unity.cn"
+      "url": "https://packages.tuanjie.cn"
     },
     "com.unity.ugui": {
       "version": "1.0.0",
@@ -125,7 +125,10 @@
       "version": "1.0.0",
       "depth": 0,
       "source": "builtin",
-      "dependencies": {}
+      "dependencies": {
+        "com.unity.modules.audio": "1.0.0",
+        "com.unity.modules.animation": "1.0.0"
+      }
     },
     "com.unity.modules.audio": {
       "version": "1.0.0",
