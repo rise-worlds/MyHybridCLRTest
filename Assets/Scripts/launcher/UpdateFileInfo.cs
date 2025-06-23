@@ -10,7 +10,7 @@ namespace RiseClient
     {
         public string LocalPath { get; set; }
         public string RemoteUrl { get; set; }
-        public ulong FileSize { get; set; }
+        public long FileSize { get; set; }
         public string MD5 { get; set; }
         public bool IsDownloaded { get; set; }
 
@@ -19,28 +19,26 @@ namespace RiseClient
             return Path.Combine(Application.persistentDataPath, LocalPath);
         }
 
-        public static List<UpdateFileInfo> ParseVersionFile(string content)
+        public static List<UpdateFileInfo> ParseVersionFile(string baseUrl, string[] lines)
         {
             var result = new List<UpdateFileInfo>();
-            var lines = content.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
             
-            if (lines.Length <= 1)
+            if (lines.Length <= 2)
             {
                 return result;
             }
 
-            // 跳过第一行（版本号）
-            for (int i = 1; i < lines.Length; i++)
+            for (int i = 2; i < lines.Length; i++)
             {
                 var parts = lines[i].Split(',');
-                if (parts.Length == 4)
+                if (parts.Length == 3)
                 {
                     result.Add(new UpdateFileInfo
                     {
                         LocalPath = parts[0].Trim(),
-                        RemoteUrl = parts[1].Trim(),
-                        FileSize = ulong.Parse(parts[2].Trim()),
-                        MD5 = parts[3].Trim(),
+                        RemoteUrl = Path.Combine(baseUrl, parts[0].Trim()),
+                        FileSize = long.Parse(parts[1].Trim()),
+                        MD5 = parts[2].Trim().ToLower(),
                         IsDownloaded = false
                     });
                 }

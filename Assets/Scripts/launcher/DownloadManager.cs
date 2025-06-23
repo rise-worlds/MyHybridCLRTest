@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Net.Http;
 using System.Security.Cryptography;
 using System.Threading;
-using UnityEngine;
-using UnityEngine.Networking;
 using System.Threading.Tasks;
-using System.Linq;
+using UnityEngine;
 
 namespace RiseClient
 {
@@ -39,7 +39,7 @@ namespace RiseClient
         public bool IsCompleted { get; set; }
         public List<DownloadSegment> Segments { get; set; }
         public string TempFolder => Path.Combine(Path.GetDirectoryName(SavePath), ".temp");
-        public string SegmentInfoPath => Path.Combine(TempFolder, "segments.json");
+        public string SegmentInfoPath => Path.Combine(TempFolder, $"{Path.GetFileName(SavePath)}.json");
 
         public void SaveSegmentsInfo()
         {
@@ -173,7 +173,7 @@ namespace RiseClient
                             {
                                 Directory.Delete(task.TempFolder, true);
                             }
-                            continue; // 重试下载
+                            return false;
                         }
                     }
 
@@ -207,11 +207,12 @@ namespace RiseClient
 
             for (int i = 0; i < segmentCount; i++)
             {
+                var filename = Path.GetFileName(task.SavePath);
                 var segment = new DownloadSegment
                 {
                     StartPosition = i * SEGMENT_SIZE,
                     EndPosition = Math.Min((i + 1) * SEGMENT_SIZE - 1, task.FileSize - 1),
-                    TempFile = Path.Combine(task.TempFolder, $"segment_{i}"),
+                    TempFile = Path.Combine(task.TempFolder, $"{filename}_{i}"),
                     CurrentPosition = i * SEGMENT_SIZE
                 };
                 task.Segments.Add(segment);
@@ -232,8 +233,9 @@ namespace RiseClient
             // 验证每个分段文件是否存在且大小正确
             foreach (var segmentInfo in savedSegments)
             {
+                var filename = Path.GetFileName(task.SavePath);
                 string segmentPath = Path.Combine(task.TempFolder, 
-                    $"segment_{segmentInfo.StartPosition / SEGMENT_SIZE}");
+                    $"{filename}_{segmentInfo.StartPosition / SEGMENT_SIZE}");
 
                 if (!File.Exists(segmentPath)) return false;
 
@@ -252,12 +254,13 @@ namespace RiseClient
 
             foreach (var segmentInfo in savedSegments)
             {
+                var filename = Path.GetFileName(task.SavePath);
                 var segment = new DownloadSegment
                 {
                     StartPosition = segmentInfo.StartPosition,
                     EndPosition = segmentInfo.EndPosition,
                     TempFile = Path.Combine(task.TempFolder, 
-                        $"segment_{segmentInfo.StartPosition / SEGMENT_SIZE}"),
+                        $"{filename}_{segmentInfo.StartPosition / SEGMENT_SIZE}"),
                 };
 
                 if (segmentInfo.IsCompleted)
@@ -286,12 +289,10 @@ namespace RiseClient
 
         private async Task<bool> CheckResumeSupport(string url)
         {
-            using (var request = UnityWebRequest.Head(url))
-            {
-                request.SetRequestHeader("Range", "bytes=0-0");
-                await request.SendWebRequest();
-                return request.GetResponseHeader("Accept-Ranges") == "bytes";
-            }
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Range", "bytes=0-0");
+            using HttpResponseMessage response = await client.GetAsync(url);
+            return response.Headers.AcceptRanges.Contains("bytes");
         }
 
         private async Task DownloadSegmentAsync(DownloadTask task, DownloadSegment segment)
@@ -302,20 +303,20 @@ namespace RiseClient
             {
                 while (!segment.IsCompleted && !task.IsPaused)
                 {
-                    using (var request = new UnityWebRequest(task.Url))
+                    using (var request = new HttpClient())
                     {
-                        request.downloadHandler = new DownloadHandlerFile(segment.TempFile, true);
-                        request.SetRequestHeader("Range", $"bytes={segment.CurrentPosition}-{segment.EndPosition}");
-
-                        await request.SendWebRequest();
-
-                        if (request.result != UnityWebRequest.Result.Success)
+                        request.DefaultRequestHeaders.Add("Range", $"bytes={segment.CurrentPosition}-{segment.EndPosition}");
+                        using var response = await request.GetAsync(task.Url, HttpCompletionOption.ResponseHeadersRead);
+                        if (!response.IsSuccessStatusCode)
                         {
-                            Debug.LogError($"Segment download failed: {request.error}");
+                            Debug.LogError($"Segment download failed: {response.ReasonPhrase}");
                             continue;
                         }
+                        using var stream = await response.Content.ReadAsStreamAsync();
+                        using var fileStream = new FileStream(segment.TempFile, FileMode.Create, FileAccess.Write, FileShare.None);
+                        await stream.CopyToAsync(fileStream);
 
-                        segment.CurrentPosition = segment.EndPosition + 1;
+                        segment.CurrentPosition = segment.EndPosition;
                     }
 
                     // 更新总进度

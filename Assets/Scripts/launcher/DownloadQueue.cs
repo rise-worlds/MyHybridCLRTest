@@ -75,6 +75,7 @@ namespace RiseClient
                     bool success = await DownloadManager.Instance.DownloadFileAsync(
                         currentItem.FileInfo.RemoteUrl,
                         currentItem.FileInfo.GetFullLocalPath(),
+                        currentItem.FileInfo.FileSize,
                         currentItem.FileInfo.MD5,
                         currentItem.OnProgress
                     );
