@@ -1,3 +1,4 @@
+using FMODUnity;
 using HybridCLR;
 using System;
 using System.Collections;
@@ -9,11 +10,11 @@ using System.Security.Cryptography;
 using System.Security.Policy;
 using System.Threading;
 using System.Threading.Tasks;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.XR;
 
 namespace RiseClient
 {
@@ -29,7 +30,7 @@ namespace RiseClient
         private string abUrl => $"{remoteBaseUrl}main.dll.bytes.ab";
         private string versionUrl => $"{remoteBaseUrl}version.txt";
         private static string localVersionPath => Path.Combine(Application.persistentDataPath, "version.txt");
-        private static string localVersion = "1.0";
+        private static string localVersion = "1.2";
 
         public Text statusText;
         public Text downloadText;
@@ -66,6 +67,12 @@ namespace RiseClient
 
         void Start()
         {
+            FMODUnity.RuntimeManager.CoreSystem.getNumDrivers(out int num);
+            Debug.Log($"FMOD Drivers: {num}");
+#if UNITY_EDITOR
+            EditorUtility.audioMasterMute = false;
+#endif
+
             Debug.Log($"StreamingAssets: {Application.streamingAssetsPath}");
             Debug.Log($"PersistentData:  {Application.persistentDataPath}");
 
@@ -84,7 +91,7 @@ namespace RiseClient
 
             downloadText.gameObject.SetActive(false);
             downloadProgressBar.gameObject.SetActive(false);
-            StartCoroutine(CheckAndUpdate());
+            //StartCoroutine(CheckAndUpdate());
 #if !UNITY_EDITOR
             // 在编辑器中直接加载main场景
             string mainScene = "Assets/Scenes/main.unity"; // 替换为你的main场景路径
@@ -98,6 +105,7 @@ namespace RiseClient
             }
 #else
 #endif
+            initSound();
         }
 
         private IEnumerator CheckAndUpdate()
@@ -134,10 +142,10 @@ namespace RiseClient
             if (localVersion != remoteVersion)
             {
                 // 初始化下载状态管理器
-                DownloadStateManager.Instance.InitializeForVersion(remoteVersion);
+                DownloadManager.Instance.InitializeForVersion(remoteVersion);
 
                 // 获取待下载的文件列表
-                var pendingFiles = DownloadStateManager.Instance.FilterPendingDownloads(updateFiles);
+                var pendingFiles = DownloadManager.Instance.FilterPendingDownloads(updateFiles);
                 
                 // 4. 下载所有更新文件
                 statusText.text = "正在下载资源...";
@@ -201,7 +209,7 @@ namespace RiseClient
                             downloadProgress.CompletedFiles++;
                             downloadProgress.CurrentFileProgress = 0;
                             // 标记文件下载完成
-                            DownloadStateManager.Instance.MarkFileAsDownloaded(pendingFiles[i].LocalPath);
+                            DownloadManager.Instance.MarkFileAsDownloaded(pendingFiles[i].LocalPath);
                         }
                         else
                         {
@@ -221,13 +229,13 @@ namespace RiseClient
 
                 // 所有文件下载成功，更新本地版本文件，并清除下载状态
                 File.WriteAllText(localVersionPath, versionContent);
-                DownloadStateManager.Instance.ClearState();
+                DownloadManager.Instance.ClearState();
                 Debug.Log($"版本更新成功，已保存新版本号: {remoteVersion}");
             }
             else
             {
                 // 如果版本相同，清除可能存在的未完成下载状态
-                DownloadStateManager.Instance.ClearState();
+                DownloadManager.Instance.ClearState();
                 downloadProgressBar.value = 1f;
                 currentStep++;
                 totalProgressBar.value = currentStep / totalSteps;
@@ -380,6 +388,48 @@ namespace RiseClient
             if (bytes >= 1024)
                 return $"{(bytes / 1024f):F2} KB";
             return $"{bytes} B";
+        }
+
+        public StudioListener studioListener = null;
+        private void initSound()
+        {
+            //var go = new GameObject("StudioListener");
+            //studioListener = go.AddComponent<StudioListener>();
+            //studioListener.transform.position = Vector3.zero;
+            //studioListener.transform.rotation = Quaternion.identity;
+            //DontDestroyOnLoad(go);
+            FMODUnity.RuntimeManager.MuteAllEvents(false);
+            var bus = FMODUnity.RuntimeManager.GetBus("bus:/");
+            bus.setMute(false);
+            bus.setVolume(1.0f);
+            bus.getMute(out bool IsMute);
+            bus.getVolume(out float volume);
+            Debug.Log($"Mute: {IsMute}, Volume: {volume}");
+
+            RuntimeManager.LoadBank("Master Bank", true);
+            RuntimeManager.LoadBank("Master Bank.strings", true);
+            RuntimeManager.LoadBank("Music", true);
+            RuntimeManager.LoadBank("Skill", true);
+            RuntimeManager.LoadBank("UI", true);
+            RuntimeManager.LoadBank("Ambience", true);
+            RuntimeManager.LoadBank("Hero", true);
+
+            if (!FMODUnity.RuntimeManager.HasBankLoaded("Music"))
+            {
+                Debug.LogError("[FMOD] Music.bank 未成功加载！");
+            }
+
+            var _musicNode = new GameObject("FlapGame_MusicNode");
+            _musicNode.transform.parent = this.transform;
+            var _musicEmitter = _musicNode.AddComponent<StudioEventEmitter>();
+            //_musicEmitter.PlayEvent = EmitterGameEvent.ObjectStart;
+            _musicEmitter.EventReference = FMODUnity.RuntimeManager.PathToEventReference($"event:/Music/Login");
+            _musicEmitter.SetParameter("volume", 1.0f);
+            _musicEmitter.Play();
+
+            //var instance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Login");
+            //instance.start();
+            //instance.release();
         }
     }
 }
