@@ -1,5 +1,5 @@
 %YAML 1.1
-%TAG !u! tag:yousandi.cn,2023:
+%TAG !u! tag:unity3d.com,2011:
 --- !u!1045 &1
 EditorBuildSettings:
   m_ObjectHideFlags: 0
@@ -11,16 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/main.unity
     guid: b6c0ec859b86fef4ca80f42b8cd7f9b1
-  m_BuildProfiles: []
   m_configObjects:
-    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 24f0499cd0700484892a902506c8ff0d, type: 2}
+    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 2e7ff831f90842547bd14bc6bf1e9920, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 97457d3efa4e7054db0b8a355077b906, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: a4170f9aa0ad4ed4f882eb397c2df3a2, type: 2}
-  m_SlimFeaturesWeixinMiniGame:
-    AllocateOverhead: 1
-    DecompressASTC: 0
-    DecompressDXT: 1
-    DecompressETC: 1
-    FreeTypeSfntPng: 1
-    LightProbe: 2
-    UseStringInternPool: 2
