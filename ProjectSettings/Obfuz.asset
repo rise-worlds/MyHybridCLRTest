@@ -21,6 +21,8 @@ MonoBehaviour:
   assemblySettings:
     assembliesToObfuscate:
     - Assembly-CSharp
+    - main
+    - launcher
     nonObfuscatedButReferencingObfuscatedAssemblies: []
     additionalAssemblySearchPaths: []
     obfuscateObfuzRuntime: 1
