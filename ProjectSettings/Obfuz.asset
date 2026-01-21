@@ -19,7 +19,8 @@ MonoBehaviour:
   compatibilitySettings:
     targetRuntime: 0
   assemblySettings:
-    assembliesToObfuscate: []
+    assembliesToObfuscate:
+    - Assembly-CSharp
     nonObfuscatedButReferencingObfuscatedAssemblies: []
     additionalAssemblySearchPaths: []
     obfuscateObfuzRuntime: 1
@@ -36,7 +37,7 @@ MonoBehaviour:
   encryptionVMSettings:
     codeGenerationSecretKey: Obfuz
     encryptionOpCodeCount: 256
-    codeOutputPath: Assets/Obfuz/GeneratedEncryptionVirtualMachine.cs
+    codeOutputPath: Assets/Scripts/launcher/GeneratedEncryptionVirtualMachine.cs
   symbolObfusSettings:
     debug: 0
     obfuscatedNamePrefix: $

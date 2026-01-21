@@ -12,6 +12,12 @@
       "source": "embedded",
       "dependencies": {}
     },
+    "com.code-philosophy.obfuz4hybridclr": {
+      "version": "file:com.code-philosophy.obfuz4hybridclr",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.unity.adaptiveperformance": {
       "version": "5.1.5",
       "depth": 0,

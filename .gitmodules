@@ -4,3 +4,6 @@
 [submodule "Packages/com.code-philosophy.obfuz"]
 	path = Packages/com.code-philosophy.obfuz
 	url = https://gitee.com/focus-creative-games/obfuz.git
+[submodule "Packages/com.code-philosophy.obfuz4hybridclr"]
+	path = Packages/com.code-philosophy.obfuz4hybridclr
+	url = https://gitee.com/focus-creative-games/obfuz4hybridclr.git
