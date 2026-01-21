@@ -131,7 +131,7 @@ namespace RiseClient.Editor
             PlayerPrefs.DeleteAll();
         }
 
-        [MenuItem("Build/混淆")]
+        [MenuItem("Build/混淆", false, 3)]
         public static void CompileAndObfuscateAndCopyToStreamingAssets()
         {
             BuildTarget target = EditorUserBuildSettings.activeBuildTarget;
@@ -162,26 +162,26 @@ namespace RiseClient.Editor
         {
             get
             {
-                if (Platform.isWindows)
-                {
-                    return BuildTarget.StandaloneWindows64;
-                }
-                else if (Platform.isOSX)
-                {
-                    return BuildTarget.StandaloneOSX;
-                }
-                else if (Platform.isLinux)
-                {
-                    return BuildTarget.StandaloneLinux64;
-                }
-                else if (Platform.isIphone)
-                {
-                    return BuildTarget.iOS;
-                }
-                else if (Platform.isAndroid)
-                {
-                    return BuildTarget.Android;
-                }
+                //if (Platform.isWindows)
+                //{
+                //    return BuildTarget.StandaloneWindows64;
+                //}
+                //else if (Platform.isOSX)
+                //{
+                //    return BuildTarget.StandaloneOSX;
+                //}
+                //else if (Platform.isLinux)
+                //{
+                //    return BuildTarget.StandaloneLinux64;
+                //}
+                //else if (Platform.isIphone)
+                //{
+                //    return BuildTarget.iOS;
+                //}
+                //else if (Platform.isAndroid)
+                //{
+                //    return BuildTarget.Android;
+                //}
                 return BuildTarget.StandaloneWindows64;
             }
         }
