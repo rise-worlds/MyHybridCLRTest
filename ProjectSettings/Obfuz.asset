@@ -22,12 +22,11 @@ MonoBehaviour:
     assembliesToObfuscate:
     - Assembly-CSharp
     - main
-    - launcher
     nonObfuscatedButReferencingObfuscatedAssemblies: []
     additionalAssemblySearchPaths: []
     obfuscateObfuzRuntime: 1
   obfuscationPassSettings:
-    enabledPasses: -1
+    enabledPasses: 1056515
     ruleFiles: []
   secretSettings:
     defaultStaticSecretKey: Code Philosophy-Static
@@ -39,7 +38,7 @@ MonoBehaviour:
   encryptionVMSettings:
     codeGenerationSecretKey: Obfuz
     encryptionOpCodeCount: 256
-    codeOutputPath: Assets/Scripts/launcher/GeneratedEncryptionVirtualMachine.cs
+    codeOutputPath: Assets/Scripts/main/GeneratedEncryptionVirtualMachine.cs
   symbolObfusSettings:
     debug: 0
     obfuscatedNamePrefix: $

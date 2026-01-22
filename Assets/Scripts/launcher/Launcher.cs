@@ -1,7 +1,5 @@
 using FMODUnity;
 using HybridCLR;
-using Obfuz;
-using Obfuz.EncryptionVM;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -41,14 +39,6 @@ namespace RiseClient
 
         private List<UpdateFileInfo> updateFiles;
         private DownloadProgress downloadProgress = new DownloadProgress();
-
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
-        private static void SetUpStaticSecretKey()
-        {
-            Debug.Log("SetUpStaticSecret begin");
-            EncryptionService<DefaultStaticEncryptionScope>.Encryptor = new GeneratedEncryptionVirtualMachine(Resources.Load<TextAsset>("Obfuz/defaultStaticSecretKey").bytes);
-            Debug.Log("SetUpStaticSecret end");
-        }
 
         private static string GetAssetPath(string assetName)
         {

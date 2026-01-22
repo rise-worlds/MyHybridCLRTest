@@ -1,5 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <linker>
+  <assembly fullname="Obfuz.Runtime">
+    <type fullname="Obfuz.DefaultStaticEncryptionScope" preserve="all" />
+    <type fullname="Obfuz.EncryptionService`1" preserve="all" />
+    <type fullname="Obfuz.EncryptorBase" preserve="all" />
+    <type fullname="Obfuz.IEncryptor" preserve="all" />
+  </assembly>
   <assembly fullname="System">
     <type fullname="System.CodeDom.Compiler.GeneratedCodeAttribute" preserve="all" />
     <type fullname="System.ComponentModel.EditorBrowsableAttribute" preserve="all" />
@@ -8,6 +14,10 @@
   <assembly fullname="UnityEngine.CoreModule">
     <type fullname="UnityEngine.Debug" preserve="all" />
     <type fullname="UnityEngine.MonoBehaviour" preserve="all" />
+    <type fullname="UnityEngine.Resources" preserve="all" />
+    <type fullname="UnityEngine.RuntimeInitializeLoadType" preserve="all" />
+    <type fullname="UnityEngine.RuntimeInitializeOnLoadMethodAttribute" preserve="all" />
+    <type fullname="UnityEngine.TextAsset" preserve="all" />
   </assembly>
   <assembly fullname="UnityEngine.UI">
     <type fullname="UnityEngine.UI.Text" preserve="all" />
@@ -17,12 +27,15 @@
     <type fullname="System.Byte" preserve="all" />
     <type fullname="System.Diagnostics.DebuggableAttribute" preserve="all" />
     <type fullname="System.Diagnostics.DebuggableAttribute/DebuggingModes" preserve="all" />
+    <type fullname="System.Exception" preserve="all" />
+    <type fullname="System.Int32" preserve="all" />
     <type fullname="System.Object" preserve="all" />
     <type fullname="System.Runtime.CompilerServices.CompilationRelaxationsAttribute" preserve="all" />
     <type fullname="System.Runtime.CompilerServices.CompilerGeneratedAttribute" preserve="all" />
     <type fullname="System.Runtime.CompilerServices.RuntimeCompatibilityAttribute" preserve="all" />
     <type fullname="System.Runtime.CompilerServices.RuntimeHelpers" preserve="all" />
     <type fullname="System.RuntimeFieldHandle" preserve="all" />
+    <type fullname="System.String" preserve="all" />
     <type fullname="System.ValueType" preserve="all" />
   </assembly>
 </linker>

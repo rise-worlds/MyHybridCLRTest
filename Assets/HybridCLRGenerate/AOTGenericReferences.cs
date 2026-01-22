@@ -5,6 +5,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// {{ AOT assemblies
 	public static readonly IReadOnlyList<string> PatchedAOTAssemblyList = new List<string>
 	{
+		"UnityEngine.CoreModule.dll",
 	};
 	// }}
 
@@ -16,5 +17,6 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 
 	public void RefMethods()
 	{
+		// object UnityEngine.Resources.Load<object>(string)
 	}
 }

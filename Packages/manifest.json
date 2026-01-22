@@ -1,8 +1,6 @@
 {
   "dependencies": {
     "com.code-philosophy.hybridclr": "https://gitee.com/focus-creative-games/hybridclr_unity.git",
-    "com.unity.adaptiveperformance": "5.1.5",
-    "com.unity.adaptiveperformance.google.android": "5.1.5",
     "com.unity.ai.navigation": "1.1.7",
     "com.unity.assetbundlebrowser": "https://github.com/Unity-Technologies/AssetBundles-Browser.git",
     "com.unity.collab-proxy": "2.7.1",

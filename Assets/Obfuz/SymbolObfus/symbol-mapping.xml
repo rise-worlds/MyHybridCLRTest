@@ -1,0 +1,1080 @@
+<mapping>
+  <assembly name="Assembly-CSharp">
+    <type fullName="$Obfuz$ConstFieldHolder$0" newFullName="$r" status="Renamed">
+      <field signature="int $Obfuz$RVA_Value0" newName="$nA" />
+      <field signature="int $Obfuz$RVA_Value1" newName="$NA" />
+      <field signature="int $Obfuz$RVA_Value2" newName="$oA" />
+      <field signature="int $Obfuz$RVA_Value3" newName="$OA" />
+      <field signature="int $Obfuz$RVA_Value4" newName="$pA" />
+      <field signature="int $Obfuz$RVA_Value5" newName="$PA" />
+      <field signature="int $Obfuz$RVA_Value6" newName="$qA" />
+      <field signature="int $Obfuz$RVA_Value7" newName="$QA" />
+      <field signature="int $Obfuz$RVA_Value8" newName="$rA" />
+      <field signature="int $Obfuz$RVA_Value9" newName="$RA" />
+      <field signature="int $Obfuz$RVA_Value10" newName="$sA" />
+      <field signature="int $Obfuz$RVA_Value11" newName="$SA" />
+      <field signature="int $Obfuz$RVA_Value12" newName="$tA" />
+      <field signature="int $Obfuz$RVA_Value13" newName="$TA" />
+      <field signature="int $Obfuz$RVA_Value14" newName="$uA" />
+      <field signature="int $Obfuz$RVA_Value15" newName="$UA" />
+    </type>
+    <type fullName="$Obfuz$ProxyCall" newFullName="$R" status="Renamed">
+      <method signature="[Assembly-CSharp]RiseClient.AssetSrc $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_4882116(object, int)" newName="$GA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_4882116(Object, Int32)" newStackTraceSignature="$R:$GA(Object, Int32)" />
+      <method signature="[Assembly-CSharp]RiseClient.AssetSrc $Obfuz$ProxyCall::@$Obfuz$Dispatch_65367_4882116(object, object, int, int)" newName="$hA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_65367_4882116(Object, Object, Int32, Int32)" newStackTraceSignature="$R:$hA(Object, Object, Int32, Int32)" />
+      <method signature="[Assembly-CSharp]RiseClient.LoadState $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_7155305(object, int)" newName="$HA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_7155305(Object, Int32)" newStackTraceSignature="$R:$HA(Object, Int32)" />
+      <method signature="[Assembly-CSharp]RiseClient.ResEntity $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_15750999(object, int)" newName="$iA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_15750999(Object, Int32)" newStackTraceSignature="$R:$iA(Object, Int32)" />
+      <method signature="System.Action $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_3287101(object, object, int)" newName="$IA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_3287101(Object, Object, Int32)" newStackTraceSignature="$R:$IA(Object, Object, Int32)" />
+      <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_12616511(object, int)" newName="$jA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_12616511(Object, Int32)" newStackTraceSignature="$R:$jA(Object, Int32)" />
+      <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_12616511(int)" newName="$JA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_12616511(Int32)" newStackTraceSignature="$R:$JA(Int32)" />
+      <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_12616511(object, object, int)" newName="$kA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_12616511(Object, Object, Int32)" newStackTraceSignature="$R:$kA(Object, Object, Int32)" />
+      <method signature="System.Collections.Generic.IEnumerable`1&lt;[UnityEngine.AssetBundleModule]UnityEngine.AssetBundle&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_242698(int)" newName="$KA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_242698(Int32)" newStackTraceSignature="$R:$KA(Int32)" />
+      <method signature="int $Obfuz$ProxyCall::@$Obfuz$Dispatch_46378_12091355(int, int, int)" newName="$lA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_46378_12091355(Int32, Int32, Int32)" newStackTraceSignature="$R:$lA(Int32, Int32, Int32)" />
+      <method signature="object $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_10087402(object, int)" newName="$LA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_10087402(Object, Int32)" newStackTraceSignature="$R:$LA(Object, Int32)" />
+      <method signature="object[] $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_9505705(object, int)" newName="$mA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_9505705(Object, Int32)" newStackTraceSignature="$R:$mA(Object, Int32)" />
+      <method signature="string $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_11558398(object, int)" newName="$MA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_11558398(Object, Int32)" newStackTraceSignature="$R:$MA(Object, Int32)" />
+      <method signature="string $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_11558398(int)" newName="$nA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_11558398(Int32)" newStackTraceSignature="$R:$nA(Int32)" />
+      <method signature="string $Obfuz$ProxyCall::@$Obfuz$Dispatch_45707_11558398(object, int, object, int)" newName="$NA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_45707_11558398(Object, Int32, Object, Int32)" newStackTraceSignature="$R:$NA(Object, Int32, Object, Int32)" />
+      <method signature="System.Threading.Tasks.Task`1&lt;[UnityEngine.AssetBundleModule]UnityEngine.AssetBundle&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_14558530(object, object, int)" newName="$oA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_14558530(Object, Object, Int32)" newStackTraceSignature="$R:$oA(Object, Object, Int32)" />
+      <method signature="System.Threading.Tasks.Task`1&lt;[UnityEngine.AssetBundleModule]UnityEngine.AssetBundle&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_51425_14558530(object, int, int)" newName="$OA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_51425_14558530(Object, Int32, Int32)" newStackTraceSignature="$R:$OA(Object, Int32, Int32)" />
+      <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_4780505(object, object, int)" newName="$pA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_4780505(Object, Object, Int32)" newStackTraceSignature="$R:$pA(Object, Object, Int32)" />
+      <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_51425_4780505(object, int, int)" newName="$PA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_51425_4780505(Object, Int32, Int32)" newStackTraceSignature="$R:$PA(Object, Int32, Int32)" />
+      <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_52007_4780505(object, object[], int)" newName="$qA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_52007_4780505(Object, Object[], Int32)" newStackTraceSignature="$R:$qA(Object, Object[], Int32)" />
+      <method signature="[UnityEngine.AssetBundleModule]UnityEngine.AssetBundle $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_10832599(object, int)" newName="$QA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_10832599(Object, Int32)" newStackTraceSignature="$R:$QA(Object, Int32)" />
+      <method signature="[UnityEngine.AssetBundleModule]UnityEngine.AssetBundleCreateRequest $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_3851202(object, int)" newName="$rA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_3851202(Object, Int32)" newStackTraceSignature="$R:$rA(Object, Int32)" />
+      <method signature="[UnityEngine.CoreModule]UnityEngine.Object $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_11700658(object, object, int)" newName="$RA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_11700658(Object, Object, Int32)" newStackTraceSignature="$R:$RA(Object, Object, Int32)" />
+      <method signature="[UnityEngine.CoreModule]UnityEngine.Object[] $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_11118961(object, int)" newName="$sA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_11118961(Object, Int32)" newStackTraceSignature="$R:$sA(Object, Int32)" />
+    </type>
+    <type fullName="$Obfuz$RVA$0" newFullName="$Q" status="Renamed">
+      <field signature="[Assembly-CSharp]$ObfuzRVA$DataHolder2048 $RVA_Data0" newName="$mA" />
+      <field signature="byte[] $RVA_Value0" newName="$MA" />
+    </type>
+    <type fullName="$ObfuzRVA$DataHolder2048" newFullName="$q" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;" newFullName="$I" status="Renamed">
+      <field signature="[Assembly-CSharp]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=150 61892FEA66DF07A1331F3578DEECED8F63C0E750C7AFAB3340BF8135EEA635B8" newName="$lA" />
+      <field signature="[Assembly-CSharp]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=236 859D749100796BB4E47DDF80A81339C4FEC8D2667516823D440FCFE749CE8A96" newName="$iA" />
+    </type>
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize28_11" newFullName="$I/$O" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize28_4" newFullName="$I/$l" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize28_7" newFullName="$I/$M" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize32_12" newFullName="$I/$p" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_10" newFullName="$I/$o" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_13" newFullName="$I/$P" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_3" newFullName="$I/$K" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_6" newFullName="$I/$m" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_8" newFullName="$I/$n" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize44_2" newFullName="$I/$k" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize44_5" newFullName="$I/$L" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize48_9" newFullName="$I/$N" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=150" newFullName="$I/$j" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=236" newFullName="$I/$J" status="Renamed" />
+    <type fullName="AOTGenericReferences" newFullName="" status="NotRenamed">
+      <field signature="System.Collections.Generic.IReadOnlyList`1&lt;string&gt; PatchedAOTAssemblyList" newName="$a" />
+      <method signature="void AOTGenericReferences::RefMethods([Assembly-CSharp]AOTGenericReferences)" newName="$a" oldStackTraceSignature="AOTGenericReferences:RefMethods()" newStackTraceSignature="AOTGenericReferences:$a()" />
+    </type>
+    <type fullName="RiseClient.AssetSrc" newFullName="$a.$G" status="Renamed">
+      <field signature="[Assembly-CSharp]RiseClient.AssetSrc Resource" newName="$y" />
+      <field signature="[Assembly-CSharp]RiseClient.AssetSrc AssetBundle" newName="$Y" />
+      <field signature="[Assembly-CSharp]RiseClient.AssetSrc Raw" newName="$z" />
+    </type>
+    <type fullName="RiseClient.BuildABType" newFullName="$a.$g" status="Renamed">
+      <field signature="[Assembly-CSharp]RiseClient.BuildABType Code" newName="$x" />
+      <field signature="[Assembly-CSharp]RiseClient.BuildABType Res" newName="$X" />
+    </type>
+    <type fullName="RiseClient.LoadState" newFullName="$a.$C" status="Renamed">
+      <field signature="[Assembly-CSharp]RiseClient.LoadState Null" newName="$G" />
+      <field signature="[Assembly-CSharp]RiseClient.LoadState Loading" newName="$h" />
+      <field signature="[Assembly-CSharp]RiseClient.LoadState Ok" newName="$H" />
+      <field signature="[Assembly-CSharp]RiseClient.LoadState Fail" newName="$i" />
+    </type>
+    <type fullName="RiseClient.ObservableObject`1" newFullName="$a.$a`1" status="Renamed">
+      <field signature="System.Action`1&lt;!0&gt; _callAction" newName="$A" />
+      <field signature="System.Action`1&lt;!0&gt; _updateAction" newName="$b" />
+      <field signature="System.Action`1&lt;!0&gt; _onUpdateAction" newName="$B" />
+      <field signature="System.Collections.Generic.List`1&lt;System.Action`1&lt;!0&gt;&gt; _onceList" newName="$c" />
+      <field signature="!0 _def" newName="$C" />
+      <field signature="!0 _val" newName="$d" />
+      <property signature="!0 def" newName="$a" />
+      <property signature="!0 value" newName="$A" />
+      <property signature="!0 rawValue" newName="$b" />
+      <event signature="System.Action`1&lt;!0&gt; _callAction" newName="$B" />
+      <event signature="System.Action`1&lt;!0&gt; _updateAction" newName="$c" />
+      <event signature="System.Action`1&lt;!0&gt; _onUpdateAction" newName="$C" />
+      <method signature="void RiseClient.ObservableObject`1::add__callAction([Assembly-CSharp]RiseClient.ObservableObject`1&lt;!0&gt;, System.Action`1&lt;!0&gt;)" newName="$A" oldStackTraceSignature="RiseClient.ObservableObject`1:add__callAction(Action`1)" newStackTraceSignature="$a.$a`1:$A(Action`1)" />
+      <method signature="void RiseClient.ObservableObject`1::remove__callAction([Assembly-CSharp]RiseClient.ObservableObject`1&lt;!0&gt;, System.Action`1&lt;!0&gt;)" newName="$b" oldStackTraceSignature="RiseClient.ObservableObject`1:remove__callAction(Action`1)" newStackTraceSignature="$a.$a`1:$b(Action`1)" />
+      <method signature="void RiseClient.ObservableObject`1::add__updateAction([Assembly-CSharp]RiseClient.ObservableObject`1&lt;!0&gt;, System.Action`1&lt;!0&gt;)" newName="$B" oldStackTraceSignature="RiseClient.ObservableObject`1:add__updateAction(Action`1)" newStackTraceSignature="$a.$a`1:$B(Action`1)" />
+      <method signature="void RiseClient.ObservableObject`1::remove__updateAction([Assembly-CSharp]RiseClient.ObservableObject`1&lt;!0&gt;, System.Action`1&lt;!0&gt;)" newName="$c" oldStackTraceSignature="RiseClient.ObservableObject`1:remove__updateAction(Action`1)" newStackTraceSignature="$a.$a`1:$c(Action`1)" />
+      <method signature="void RiseClient.ObservableObject`1::add__onUpdateAction([Assembly-CSharp]RiseClient.ObservableObject`1&lt;!0&gt;, System.Action`1&lt;!0&gt;)" newName="$C" oldStackTraceSignature="RiseClient.ObservableObject`1:add__onUpdateAction(Action`1)" newStackTraceSignature="$a.$a`1:$C(Action`1)" />
+      <method signature="void RiseClient.ObservableObject`1::remove__onUpdateAction([Assembly-CSharp]RiseClient.ObservableObject`1&lt;!0&gt;, System.Action`1&lt;!0&gt;)" newName="$d" oldStackTraceSignature="RiseClient.ObservableObject`1:remove__onUpdateAction(Action`1)" newStackTraceSignature="$a.$a`1:$d(Action`1)" />
+      <method signature="void RiseClient.ObservableObject`1::set_def([Assembly-CSharp]RiseClient.ObservableObject`1&lt;!0&gt;, !0)" newName="$D" oldStackTraceSignature="RiseClient.ObservableObject`1:set_def(T)" newStackTraceSignature="$a.$a`1:$D(T)" />
+      <method signature="void RiseClient.ObservableObject`1::set_value([Assembly-CSharp]RiseClient.ObservableObject`1&lt;!0&gt;, !0)" newName="$e" oldStackTraceSignature="RiseClient.ObservableObject`1:set_value(T)" newStackTraceSignature="$a.$a`1:$e(T)" />
+      <method signature="!0 RiseClient.ObservableObject`1::get_value([Assembly-CSharp]RiseClient.ObservableObject`1&lt;!0&gt;)" newName="$E" oldStackTraceSignature="RiseClient.ObservableObject`1:get_value()" newStackTraceSignature="$a.$a`1:$E()" />
+      <method signature="void RiseClient.ObservableObject`1::set_rawValue([Assembly-CSharp]RiseClient.ObservableObject`1&lt;!0&gt;, !0)" newName="$f" oldStackTraceSignature="RiseClient.ObservableObject`1:set_rawValue(T)" newStackTraceSignature="$a.$a`1:$f(T)" />
+      <method signature="void RiseClient.ObservableObject`1::ResetValue([Assembly-CSharp]RiseClient.ObservableObject`1&lt;!0&gt;)" newName="$F" oldStackTraceSignature="RiseClient.ObservableObject`1:ResetValue()" newStackTraceSignature="$a.$a`1:$F()" />
+      <method signature="void RiseClient.ObservableObject`1::ReportChanged([Assembly-CSharp]RiseClient.ObservableObject`1&lt;!0&gt;)" newName="$g" oldStackTraceSignature="RiseClient.ObservableObject`1:ReportChanged()" newStackTraceSignature="$a.$a`1:$g()" />
+      <method signature="void RiseClient.ObservableObject`1::OnceUpdate([Assembly-CSharp]RiseClient.ObservableObject`1&lt;!0&gt;, System.Action`1&lt;!0&gt;)" newName="$G" oldStackTraceSignature="RiseClient.ObservableObject`1:OnceUpdate(Action`1)" newStackTraceSignature="$a.$a`1:$G(Action`1)" />
+      <method signature="System.Action RiseClient.ObservableObject`1::Update([Assembly-CSharp]RiseClient.ObservableObject`1&lt;!0&gt;, System.Action`1&lt;!0&gt;)" newName="$h" oldStackTraceSignature="RiseClient.ObservableObject`1:Update(Action`1)" newStackTraceSignature="$a.$a`1:$h(Action`1)" />
+      <method signature="System.Action RiseClient.ObservableObject`1::GetAndUpdate([Assembly-CSharp]RiseClient.ObservableObject`1&lt;!0&gt;, System.Action`1&lt;!0&gt;)" newName="$H" oldStackTraceSignature="RiseClient.ObservableObject`1:GetAndUpdate(Action`1)" newStackTraceSignature="$a.$a`1:$H(Action`1)" />
+      <method signature="System.Action RiseClient.ObservableObject`1::GetRemoveAndUpdate([Assembly-CSharp]RiseClient.ObservableObject`1&lt;!0&gt;, System.Action`1&lt;!0&gt;)" newName="$i" oldStackTraceSignature="RiseClient.ObservableObject`1:GetRemoveAndUpdate(Action`1)" newStackTraceSignature="$a.$a`1:$i(Action`1)" />
+      <method signature="void RiseClient.ObservableObject`1::RemoveUpdate([Assembly-CSharp]RiseClient.ObservableObject`1&lt;!0&gt;, System.Action`1&lt;!0&gt;)" newName="$I" oldStackTraceSignature="RiseClient.ObservableObject`1:RemoveUpdate(Action`1)" newStackTraceSignature="$a.$a`1:$I(Action`1)" />
+      <method signature="void RiseClient.ObservableObject`1::ResetUpdate([Assembly-CSharp]RiseClient.ObservableObject`1&lt;!0&gt;)" newName="$j" oldStackTraceSignature="RiseClient.ObservableObject`1:ResetUpdate()" newStackTraceSignature="$a.$a`1:$j()" />
+      <method signature="!0 RiseClient.ObservableObject`1::GetAndCall([Assembly-CSharp]RiseClient.ObservableObject`1&lt;!0&gt;, System.Action`1&lt;!0&gt;)" newName="$J" oldStackTraceSignature="RiseClient.ObservableObject`1:GetAndCall(Action`1)" newStackTraceSignature="$a.$a`1:$J(Action`1)" />
+      <method signature="void RiseClient.ObservableObject`1::ResetCall([Assembly-CSharp]RiseClient.ObservableObject`1&lt;!0&gt;)" newName="$k" oldStackTraceSignature="RiseClient.ObservableObject`1:ResetCall()" newStackTraceSignature="$a.$a`1:$k()" />
+      <method signature="void RiseClient.ObservableObject`1::Clear([Assembly-CSharp]RiseClient.ObservableObject`1&lt;!0&gt;)" newName="$uD" oldStackTraceSignature="RiseClient.ObservableObject`1:Clear()" newStackTraceSignature="$a.$a`1:$uD()" />
+      <method signature="void RiseClient.ObservableObject`1::&lt;OnceUpdate&gt;b__22_0([Assembly-CSharp]RiseClient.ObservableObject`1&lt;!0&gt;, !0)" newName="$K" oldStackTraceSignature="RiseClient.ObservableObject`1:&lt;OnceUpdate&gt;b__22_0(T)" newStackTraceSignature="$a.$a`1:$K(T)" />
+    </type>
+    <type fullName="RiseClient.ObservableObject`1/&lt;&gt;c__DisplayClass23_0" newFullName="$a.$a`1/$A" status="Renamed">
+      <field signature="[Assembly-CSharp]RiseClient.ObservableObject`1&lt;!0&gt; &lt;&gt;4__this" newName="$D" />
+      <field signature="System.Action`1&lt;!0&gt; updateFunc" newName="$e" />
+      <method signature="void RiseClient.ObservableObject`1/&lt;&gt;c__DisplayClass23_0::&lt;Update&gt;b__0([Assembly-CSharp]RiseClient.ObservableObject`1/&lt;&gt;c__DisplayClass23_0&lt;!0&gt;)" newName="$l" oldStackTraceSignature="RiseClient.&lt;&gt;c__DisplayClass23_0:&lt;Update&gt;b__0()" newStackTraceSignature="$a.$A:$l()" />
+    </type>
+    <type fullName="RiseClient.ObservableObject`1/&lt;&gt;c__DisplayClass24_0" newFullName="$a.$a`1/$b" status="Renamed">
+      <field signature="[Assembly-CSharp]RiseClient.ObservableObject`1&lt;!0&gt; &lt;&gt;4__this" newName="$E" />
+      <field signature="System.Action`1&lt;!0&gt; updateFunc" newName="$f" />
+      <method signature="void RiseClient.ObservableObject`1/&lt;&gt;c__DisplayClass24_0::&lt;GetAndUpdate&gt;b__0([Assembly-CSharp]RiseClient.ObservableObject`1/&lt;&gt;c__DisplayClass24_0&lt;!0&gt;)" newName="$L" oldStackTraceSignature="RiseClient.&lt;&gt;c__DisplayClass24_0:&lt;GetAndUpdate&gt;b__0()" newStackTraceSignature="$a.$b:$L()" />
+    </type>
+    <type fullName="RiseClient.ObservableObject`1/&lt;&gt;c__DisplayClass25_0" newFullName="$a.$a`1/$B" status="Renamed">
+      <field signature="[Assembly-CSharp]RiseClient.ObservableObject`1&lt;!0&gt; &lt;&gt;4__this" newName="$F" />
+      <field signature="System.Action`1&lt;!0&gt; updateFunc" newName="$g" />
+      <method signature="void RiseClient.ObservableObject`1/&lt;&gt;c__DisplayClass25_0::&lt;GetRemoveAndUpdate&gt;b__0([Assembly-CSharp]RiseClient.ObservableObject`1/&lt;&gt;c__DisplayClass25_0&lt;!0&gt;)" newName="$m" oldStackTraceSignature="RiseClient.&lt;&gt;c__DisplayClass25_0:&lt;GetRemoveAndUpdate&gt;b__0()" newStackTraceSignature="$a.$B:$m()" />
+    </type>
+    <type fullName="RiseClient.Platform" newFullName="$a.$c" status="Renamed">
+      <property signature="bool isEditor" newName="$a" />
+      <property signature="bool isRelease" newName="$A" />
+      <property signature="bool isStandalone" newName="$b" />
+      <property signature="bool isMobile" newName="$B" />
+      <property signature="bool isWindows" newName="$c" />
+      <property signature="bool isOSX" newName="$C" />
+      <property signature="bool isLinux" newName="$d" />
+      <property signature="bool isIphone" newName="$D" />
+      <property signature="bool isAndroid" newName="$e" />
+      <property signature="string platformName" newName="$E" />
+      <property signature="string AssetsBundleResPath" newName="$f" />
+      <property signature="string persistentAssetPath" newName="$F" />
+      <property signature="string streamingAssetPath" newName="$g" />
+      <property signature="string cachingAssetPath" newName="$G" />
+      <property signature="string assetBundleBuildPath" newName="$h" />
+      <property signature="string assetBundlePath" newName="$H" />
+      <property signature="string tmpPath" newName="$i" />
+      <method signature="bool RiseClient.Platform::@get_isEditor()" newName="$M" oldStackTraceSignature="RiseClient.Platform:get_isEditor()" newStackTraceSignature="$a.$c:$M()" />
+      <method signature="bool RiseClient.Platform::@get_isRelease()" newName="$n" oldStackTraceSignature="RiseClient.Platform:get_isRelease()" newStackTraceSignature="$a.$c:$n()" />
+      <method signature="bool RiseClient.Platform::@get_isStandalone()" newName="$N" oldStackTraceSignature="RiseClient.Platform:get_isStandalone()" newStackTraceSignature="$a.$c:$N()" />
+      <method signature="bool RiseClient.Platform::@get_isMobile()" newName="$o" oldStackTraceSignature="RiseClient.Platform:get_isMobile()" newStackTraceSignature="$a.$c:$o()" />
+      <method signature="bool RiseClient.Platform::@get_isWindows()" newName="$O" oldStackTraceSignature="RiseClient.Platform:get_isWindows()" newStackTraceSignature="$a.$c:$O()" />
+      <method signature="bool RiseClient.Platform::@get_isOSX()" newName="$p" oldStackTraceSignature="RiseClient.Platform:get_isOSX()" newStackTraceSignature="$a.$c:$p()" />
+      <method signature="bool RiseClient.Platform::@get_isLinux()" newName="$P" oldStackTraceSignature="RiseClient.Platform:get_isLinux()" newStackTraceSignature="$a.$c:$P()" />
+      <method signature="bool RiseClient.Platform::@get_isIphone()" newName="$q" oldStackTraceSignature="RiseClient.Platform:get_isIphone()" newStackTraceSignature="$a.$c:$q()" />
+      <method signature="bool RiseClient.Platform::@get_isAndroid()" newName="$Q" oldStackTraceSignature="RiseClient.Platform:get_isAndroid()" newStackTraceSignature="$a.$c:$Q()" />
+      <method signature="string RiseClient.Platform::@get_platformName()" newName="$r" oldStackTraceSignature="RiseClient.Platform:get_platformName()" newStackTraceSignature="$a.$c:$r()" />
+      <method signature="string RiseClient.Platform::@get_AssetsBundleResPath()" newName="$R" oldStackTraceSignature="RiseClient.Platform:get_AssetsBundleResPath()" newStackTraceSignature="$a.$c:$R()" />
+      <method signature="string RiseClient.Platform::@get_persistentAssetPath()" newName="$s" oldStackTraceSignature="RiseClient.Platform:get_persistentAssetPath()" newStackTraceSignature="$a.$c:$s()" />
+      <method signature="string RiseClient.Platform::@get_streamingAssetPath()" newName="$S" oldStackTraceSignature="RiseClient.Platform:get_streamingAssetPath()" newStackTraceSignature="$a.$c:$S()" />
+      <method signature="string RiseClient.Platform::@get_cachingAssetPath()" newName="$t" oldStackTraceSignature="RiseClient.Platform:get_cachingAssetPath()" newStackTraceSignature="$a.$c:$t()" />
+      <method signature="string RiseClient.Platform::@get_assetBundleBuildPath()" newName="$T" oldStackTraceSignature="RiseClient.Platform:get_assetBundleBuildPath()" newStackTraceSignature="$a.$c:$T()" />
+      <method signature="string RiseClient.Platform::@get_assetBundlePath()" newName="$u" oldStackTraceSignature="RiseClient.Platform:get_assetBundlePath()" newStackTraceSignature="$a.$c:$u()" />
+      <method signature="string RiseClient.Platform::@get_tmpPath()" newName="$U" oldStackTraceSignature="RiseClient.Platform:get_tmpPath()" newStackTraceSignature="$a.$c:$U()" />
+    </type>
+    <type fullName="RiseClient.ResEntity" newFullName="$a.$d" status="Renamed">
+      <field signature="string &lt;abUrl&gt;k__BackingField" newName="$I" />
+      <field signature="[Assembly-CSharp]RiseClient.LoadState &lt;loadState&gt;k__BackingField" newName="$j" />
+      <field signature="[Assembly-CSharp]RiseClient.ObservableObject`1&lt;[UnityEngine.AssetBundleModule]UnityEngine.AssetBundle&gt; _assetBundle" newName="$J" />
+      <field signature="System.Collections.Generic.Dictionary`2&lt;string,[Assembly-CSharp]RiseClient.ObservableObject`1&lt;object&gt;&gt; _resMap" newName="$k" />
+      <field signature="System.Collections.Generic.Dictionary`2&lt;string,[Assembly-CSharp]RiseClient.ObservableObject`1&lt;object[]&gt;&gt; _allResMap" newName="$K" />
+      <property signature="string abUrl" newName="$a" />
+      <property signature="[Assembly-CSharp]RiseClient.LoadState loadState" newName="$A" />
+      <property signature="bool isLoaded" newName="$b" />
+      <method signature="string RiseClient.ResEntity::get_abUrl([Assembly-CSharp]RiseClient.ResEntity)" newName="$v" oldStackTraceSignature="RiseClient.ResEntity:get_abUrl()" newStackTraceSignature="$a.$d:$v()" />
+      <method signature="void RiseClient.ResEntity::set_abUrl([Assembly-CSharp]RiseClient.ResEntity, string)" newName="$V" oldStackTraceSignature="RiseClient.ResEntity:set_abUrl(String)" newStackTraceSignature="$a.$d:$V(String)" />
+      <method signature="[Assembly-CSharp]RiseClient.LoadState RiseClient.ResEntity::get_loadState([Assembly-CSharp]RiseClient.ResEntity)" newName="$w" oldStackTraceSignature="RiseClient.ResEntity:get_loadState()" newStackTraceSignature="$a.$d:$w()" />
+      <method signature="void RiseClient.ResEntity::set_loadState([Assembly-CSharp]RiseClient.ResEntity, [Assembly-CSharp]RiseClient.LoadState)" newName="$W" oldStackTraceSignature="RiseClient.ResEntity:set_loadState(LoadState)" newStackTraceSignature="$a.$d:$W($C)" />
+      <method signature="bool RiseClient.ResEntity::get_isLoaded([Assembly-CSharp]RiseClient.ResEntity)" newName="$x" oldStackTraceSignature="RiseClient.ResEntity:get_isLoaded()" newStackTraceSignature="$a.$d:$x()" />
+      <method signature="bool RiseClient.ResEntity::HasResObj`1([Assembly-CSharp]RiseClient.ResEntity, string)" newName="$X" oldStackTraceSignature="RiseClient.ResEntity:HasResObj(String)" newStackTraceSignature="$a.$d:$X(String)" />
+      <method signature="!!0 RiseClient.ResEntity::GetResObj`1([Assembly-CSharp]RiseClient.ResEntity, string)" newName="$y" oldStackTraceSignature="RiseClient.ResEntity:GetResObj(String)" newStackTraceSignature="$a.$d:$y(String)" />
+      <method signature="System.Threading.Tasks.Task`1&lt;!!0&gt; RiseClient.ResEntity::LoadByAssetBundle`1([Assembly-CSharp]RiseClient.ResEntity, string, [Assembly-CSharp]RiseClient.BuildABType)" newName="$Y" oldStackTraceSignature="RiseClient.ResEntity:LoadByAssetBundle(String, BuildABType)" newStackTraceSignature="$a.$d:$Y(String, $g)" />
+      <method signature="!!0[] RiseClient.ResEntity::LoadAllByAssetInterior`1([Assembly-CSharp]RiseClient.ResEntity, string)" newName="$z" oldStackTraceSignature="RiseClient.ResEntity:LoadAllByAssetInterior(String)" newStackTraceSignature="$a.$d:$z(String)" />
+      <method signature="!!0 RiseClient.ResEntity::LoadByAssetInterior`1([Assembly-CSharp]RiseClient.ResEntity, string)" newName="$Z" oldStackTraceSignature="RiseClient.ResEntity:LoadByAssetInterior(String)" newStackTraceSignature="$a.$d:$Z(String)" />
+      <method signature="System.Threading.Tasks.Task`1&lt;[UnityEngine.AssetBundleModule]UnityEngine.AssetBundle&gt; RiseClient.ResEntity::LoadAssetBundle([Assembly-CSharp]RiseClient.ResEntity, [Assembly-CSharp]RiseClient.BuildABType)" newName="$aA" oldStackTraceSignature="RiseClient.ResEntity:LoadAssetBundle(BuildABType)" newStackTraceSignature="$a.$d:$aA($g)" />
+      <method signature="System.Threading.Tasks.Task`1&lt;!!0&gt; RiseClient.ResEntity::Load`1([Assembly-CSharp]RiseClient.ResEntity, string, [Assembly-CSharp]RiseClient.BuildABType)" newName="$AA" oldStackTraceSignature="RiseClient.ResEntity:Load(String, BuildABType)" newStackTraceSignature="$a.$d:$AA(String, $g)" />
+      <method signature="string RiseClient.ResEntity::GetFullPath([Assembly-CSharp]RiseClient.ResEntity, [Assembly-CSharp]RiseClient.BuildABType, string)" newName="$bA" oldStackTraceSignature="RiseClient.ResEntity:GetFullPath(BuildABType, String)" newStackTraceSignature="$a.$d:$bA($g, String)" />
+      <method signature="System.Threading.Tasks.Task`1&lt;[UnityEngine.AssetBundleModule]UnityEngine.AssetBundle&gt; RiseClient.ResEntity::LoadFromFileAsync([Assembly-CSharp]RiseClient.ResEntity, string)" newName="$BA" oldStackTraceSignature="RiseClient.ResEntity:LoadFromFileAsync(String)" newStackTraceSignature="$a.$d:$BA(String)" />
+      <method signature="[UnityEngine.AssetBundleModule]UnityEngine.AssetBundle RiseClient.ResEntity::LoadFromFileSync([Assembly-CSharp]RiseClient.ResEntity, string)" newName="$cA" oldStackTraceSignature="RiseClient.ResEntity:LoadFromFileSync(String)" newStackTraceSignature="$a.$d:$cA(String)" />
+    </type>
+    <type fullName="RiseClient.ResEntity/&lt;&gt;c__DisplayClass19_0" newFullName="$a.$d/$D" status="Renamed">
+      <field signature="System.Threading.Tasks.TaskCompletionSource`1&lt;[UnityEngine.AssetBundleModule]UnityEngine.AssetBundle&gt; tcs" newName="$l" />
+      <method signature="void RiseClient.ResEntity/&lt;&gt;c__DisplayClass19_0::&lt;LoadAssetBundle&gt;b__0([Assembly-CSharp]RiseClient.ResEntity/&lt;&gt;c__DisplayClass19_0, [UnityEngine.AssetBundleModule]UnityEngine.AssetBundle)" newName="$CA" oldStackTraceSignature="RiseClient.&lt;&gt;c__DisplayClass19_0:&lt;LoadAssetBundle&gt;b__0(AssetBundle)" newStackTraceSignature="$a.$D:$CA(AssetBundle)" />
+    </type>
+    <type fullName="RiseClient.ResEntity/&lt;Load&gt;d__20`1" newFullName="$a.$d/$e`1" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$L" />
+      <field signature="System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1&lt;!0&gt; &lt;&gt;t__builder" newName="$m" />
+      <field signature="[Assembly-CSharp]RiseClient.ResEntity &lt;&gt;4__this" newName="$M" />
+      <field signature="string resUrl" newName="$n" />
+      <field signature="[Assembly-CSharp]RiseClient.BuildABType type" newName="$N" />
+      <field signature="System.Runtime.CompilerServices.TaskAwaiter`1&lt;!0&gt; &lt;&gt;u__1" newName="$o" />
+    </type>
+    <type fullName="RiseClient.ResEntity/&lt;LoadAssetBundle&gt;d__19" newFullName="$a.$d/$E" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$O" />
+      <field signature="System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1&lt;[UnityEngine.AssetBundleModule]UnityEngine.AssetBundle&gt; &lt;&gt;t__builder" newName="$p" />
+      <field signature="[Assembly-CSharp]RiseClient.ResEntity &lt;&gt;4__this" newName="$P" />
+      <field signature="[Assembly-CSharp]RiseClient.BuildABType abtype" newName="$q" />
+      <field signature="System.Runtime.CompilerServices.TaskAwaiter`1&lt;[UnityEngine.AssetBundleModule]UnityEngine.AssetBundle&gt; &lt;&gt;u__1" newName="$Q" />
+    </type>
+    <type fullName="RiseClient.ResEntity/&lt;LoadByAssetBundle&gt;d__16`1" newFullName="$a.$d/$f`1" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$r" />
+      <field signature="System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1&lt;!0&gt; &lt;&gt;t__builder" newName="$R" />
+      <field signature="string resUrl" newName="$s" />
+      <field signature="[Assembly-CSharp]RiseClient.ResEntity &lt;&gt;4__this" newName="$S" />
+      <field signature="[Assembly-CSharp]RiseClient.BuildABType abtype" newName="$t" />
+      <field signature="[Assembly-CSharp]RiseClient.ObservableObject`1&lt;object&gt; &lt;resObj&gt;5__2" newName="$T" />
+      <field signature="System.Runtime.CompilerServices.TaskAwaiter`1&lt;[UnityEngine.AssetBundleModule]UnityEngine.AssetBundle&gt; &lt;&gt;u__1" newName="$u" />
+    </type>
+    <type fullName="RiseClient.ResEntity/&lt;LoadFromFileAsync&gt;d__22" newFullName="$a.$d/$F" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$U" />
+      <field signature="System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1&lt;[UnityEngine.AssetBundleModule]UnityEngine.AssetBundle&gt; &lt;&gt;t__builder" newName="$v" />
+      <field signature="string path" newName="$V" />
+      <field signature="[UnityEngine.AssetBundleModule]UnityEngine.AssetBundleCreateRequest &lt;request&gt;5__2" newName="$w" />
+      <field signature="System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter &lt;&gt;u__1" newName="$W" />
+    </type>
+    <type fullName="RiseClient.ResMgr" newFullName="$a.$h" status="Renamed">
+      <field signature="string AB_EXT" newName="$Z" />
+      <field signature="string AB_SPLIT" newName="$aA" />
+      <field signature="string AB_SOLO_SPLIT" newName="$AA" />
+      <field signature="System.Collections.Generic.Dictionary`2&lt;string,[Assembly-CSharp]RiseClient.ResEntity&gt; _assetMap" newName="$bA" />
+      <field signature="System.Collections.Generic.Dictionary`2&lt;string,[Assembly-CSharp]RiseClient.AssetSrc&gt; _srcMap" newName="$BA" />
+      <field signature="System.Collections.Generic.Dictionary`2&lt;string,int&gt; _packageRefs" newName="$cA" />
+      <method signature="[Assembly-CSharp]RiseClient.AssetSrc RiseClient.ResMgr::@GetAssetSrc(string)" newName="$dA" oldStackTraceSignature="RiseClient.ResMgr:GetAssetSrc(String)" newStackTraceSignature="$a.$h:$dA(String)" />
+      <method signature="[Assembly-CSharp]RiseClient.ResEntity RiseClient.ResMgr::@GetResEntity(string)" newName="$DA" oldStackTraceSignature="RiseClient.ResMgr:GetResEntity(String)" newStackTraceSignature="$a.$h:$DA(String)" />
+      <method signature="string RiseClient.ResMgr::@FormateAbUrl(string)" newName="$eA" oldStackTraceSignature="RiseClient.ResMgr:FormateAbUrl(String)" newStackTraceSignature="$a.$h:$eA(String)" />
+      <method signature="System.Threading.Tasks.Task`1&lt;!!0&gt; RiseClient.ResMgr::@LoadResEntity`1(string, [Assembly-CSharp]RiseClient.BuildABType)" newName="$EA" oldStackTraceSignature="RiseClient.ResMgr:LoadResEntity(String, BuildABType)" newStackTraceSignature="$a.$h:$EA(String, $g)" />
+    </type>
+    <type fullName="RiseClient.ResMgr/&lt;LoadResEntity&gt;d__9`1" newFullName="$a.$h/$H`1" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$CA" />
+      <field signature="System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1&lt;!0&gt; &lt;&gt;t__builder" newName="$dA" />
+      <field signature="string path" newName="$DA" />
+      <field signature="[Assembly-CSharp]RiseClient.BuildABType type" newName="$eA" />
+      <field signature="System.Runtime.CompilerServices.TaskAwaiter`1&lt;!0&gt; &lt;&gt;u__1" newName="$EA" />
+    </type>
+    <type fullName="RiseClient.Utils" newFullName="$a.$i" status="Renamed">
+      <method signature="!!1 RiseClient.Utils::@GetDictByKey`2(System.Collections.Generic.Dictionary`2&lt;!!0,!!1&gt;, !!0, !!1)" newName="$fA" oldStackTraceSignature="RiseClient.Utils:GetDictByKey(Dictionary`2, T1, T2)" newStackTraceSignature="$a.$i:$fA(Dictionary`2, T1, T2)" />
+      <method signature="bool RiseClient.Utils::@HasExtension(string, string)" newName="$FA" oldStackTraceSignature="RiseClient.Utils:HasExtension(String, String)" newStackTraceSignature="$a.$i:$FA(String, String)" />
+      <method signature="string RiseClient.Utils::@GetPathWithoutExtension(string)" newName="$gA" oldStackTraceSignature="RiseClient.Utils:GetPathWithoutExtension(String)" newStackTraceSignature="$a.$i:$gA(String)" />
+    </type>
+  </assembly>
+  <assembly name="launcher">
+    <type fullName="$Obfuz$ConstFieldHolder$0" newFullName="$SA" status="Renamed">
+      <field signature="int $Obfuz$RVA_Value0" newName="$Zc" />
+      <field signature="int $Obfuz$RVA_Value1" newName="$aC" />
+      <field signature="int $Obfuz$RVA_Value2" newName="$AC" />
+      <field signature="int $Obfuz$RVA_Value3" newName="$bC" />
+      <field signature="int $Obfuz$RVA_Value4" newName="$BC" />
+      <field signature="int $Obfuz$RVA_Value5" newName="$cC" />
+      <field signature="int $Obfuz$RVA_Value6" newName="$CC" />
+      <field signature="int $Obfuz$RVA_Value7" newName="$dC" />
+      <field signature="int $Obfuz$RVA_Value8" newName="$DC" />
+      <field signature="int $Obfuz$RVA_Value9" newName="$eC" />
+      <field signature="int $Obfuz$RVA_Value10" newName="$EC" />
+      <field signature="int $Obfuz$RVA_Value11" newName="$fC" />
+      <field signature="int $Obfuz$RVA_Value12" newName="$FC" />
+      <field signature="int $Obfuz$RVA_Value13" newName="$gC" />
+      <field signature="string $Obfuz$RVA_Value14" newName="$GC" />
+      <field signature="int $Obfuz$RVA_Value15" newName="$hC" />
+      <field signature="int $Obfuz$RVA_Value16" newName="$HC" />
+      <field signature="int $Obfuz$RVA_Value17" newName="$iC" />
+      <field signature="int $Obfuz$RVA_Value18" newName="$IC" />
+      <field signature="int $Obfuz$RVA_Value19" newName="$jC" />
+      <field signature="string $Obfuz$RVA_Value20" newName="$JC" />
+      <field signature="string $Obfuz$RVA_Value21" newName="$kC" />
+      <field signature="int $Obfuz$RVA_Value22" newName="$KC" />
+      <field signature="string $Obfuz$RVA_Value23" newName="$lC" />
+      <field signature="string $Obfuz$RVA_Value24" newName="$LC" />
+      <field signature="int $Obfuz$RVA_Value25" newName="$mC" />
+      <field signature="int $Obfuz$RVA_Value26" newName="$MC" />
+      <field signature="int $Obfuz$RVA_Value27" newName="$nC" />
+      <field signature="float $Obfuz$RVA_Value28" newName="$NC" />
+      <field signature="string $Obfuz$RVA_Value29" newName="$oC" />
+      <field signature="string $Obfuz$RVA_Value30" newName="$OC" />
+      <field signature="int $Obfuz$RVA_Value31" newName="$pC" />
+      <field signature="int $Obfuz$RVA_Value32" newName="$PC" />
+      <field signature="int $Obfuz$RVA_Value33" newName="$qC" />
+      <field signature="string $Obfuz$RVA_Value34" newName="$QC" />
+      <field signature="string $Obfuz$RVA_Value35" newName="$rC" />
+      <field signature="string $Obfuz$RVA_Value36" newName="$RC" />
+      <field signature="int $Obfuz$RVA_Value37" newName="$sC" />
+      <field signature="string $Obfuz$RVA_Value38" newName="$SC" />
+      <field signature="string $Obfuz$RVA_Value39" newName="$tC" />
+      <field signature="int $Obfuz$RVA_Value40" newName="$TC" />
+      <field signature="int $Obfuz$RVA_Value41" newName="$uC" />
+      <field signature="int $Obfuz$RVA_Value42" newName="$UC" />
+      <field signature="int $Obfuz$RVA_Value43" newName="$vC" />
+      <field signature="int $Obfuz$RVA_Value44" newName="$VC" />
+      <field signature="int $Obfuz$RVA_Value45" newName="$wC" />
+      <field signature="int $Obfuz$RVA_Value46" newName="$WC" />
+      <field signature="int $Obfuz$RVA_Value47" newName="$xC" />
+      <field signature="int $Obfuz$RVA_Value48" newName="$XC" />
+      <field signature="int $Obfuz$RVA_Value49" newName="$yC" />
+      <field signature="int $Obfuz$RVA_Value50" newName="$YC" />
+      <field signature="int $Obfuz$RVA_Value51" newName="$zC" />
+      <field signature="int $Obfuz$RVA_Value52" newName="$ZC" />
+      <field signature="int $Obfuz$RVA_Value53" newName="$ad" />
+      <field signature="int $Obfuz$RVA_Value54" newName="$Ad" />
+      <field signature="int $Obfuz$RVA_Value55" newName="$bd" />
+      <field signature="int $Obfuz$RVA_Value56" newName="$Bd" />
+      <field signature="int $Obfuz$RVA_Value57" newName="$cd" />
+      <field signature="int $Obfuz$RVA_Value58" newName="$Cd" />
+      <field signature="int $Obfuz$RVA_Value59" newName="$dd" />
+      <field signature="int $Obfuz$RVA_Value60" newName="$Dd" />
+      <field signature="int $Obfuz$RVA_Value61" newName="$ed" />
+      <field signature="int $Obfuz$RVA_Value62" newName="$Ed" />
+      <field signature="int $Obfuz$RVA_Value63" newName="$fd" />
+      <field signature="int $Obfuz$RVA_Value64" newName="$Fd" />
+      <field signature="int $Obfuz$RVA_Value65" newName="$gd" />
+      <field signature="int $Obfuz$RVA_Value66" newName="$Gd" />
+      <field signature="int $Obfuz$RVA_Value67" newName="$hd" />
+      <field signature="int $Obfuz$RVA_Value68" newName="$Hd" />
+      <field signature="int $Obfuz$RVA_Value69" newName="$id" />
+      <field signature="int $Obfuz$RVA_Value70" newName="$Id" />
+      <field signature="int $Obfuz$RVA_Value71" newName="$jd" />
+      <field signature="int $Obfuz$RVA_Value72" newName="$Jd" />
+      <field signature="int $Obfuz$RVA_Value73" newName="$kd" />
+      <field signature="int $Obfuz$RVA_Value74" newName="$Kd" />
+      <field signature="int $Obfuz$RVA_Value75" newName="$ld" />
+      <field signature="int $Obfuz$RVA_Value76" newName="$Ld" />
+      <field signature="int $Obfuz$RVA_Value77" newName="$md" />
+      <field signature="int $Obfuz$RVA_Value78" newName="$Md" />
+      <field signature="int $Obfuz$RVA_Value79" newName="$nd" />
+    </type>
+    <type fullName="$Obfuz$ProxyCall" newFullName="$uA" status="Renamed">
+      <method signature="[FMODUnity]FMOD.RESULT $Obfuz$ProxyCall::@$Obfuz$Dispatch_1505_10808469(nint, float, int)" newName="$Hc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_1505_10808469(IntPtr, Single, Int32)" newStackTraceSignature="$uA:$Hc(IntPtr, Single, Int32)" />
+      <method signature="[FMODUnity]FMOD.RESULT $Obfuz$ProxyCall::@$Obfuz$Dispatch_60431_10808469(nint, byte, int)" newName="$ic" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_60431_10808469(IntPtr, Byte, Int32)" newStackTraceSignature="$uA:$ic(IntPtr, Byte, Int32)" />
+      <method signature="[FMODUnity]FMOD.RESULT $Obfuz$ProxyCall::@$Obfuz$Dispatch_63447_10808469(nint, nuint, int)" newName="$Ic" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_63447_10808469(IntPtr, UIntPtr, Int32)" newStackTraceSignature="$uA:$Ic(IntPtr, UIntPtr, Int32)" />
+      <method signature="[FMODUnity]FMOD.Studio.Bus $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_13652240(object, int)" newName="$jc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_13652240(Object, Int32)" newStackTraceSignature="$uA:$jc(Object, Int32)" />
+      <method signature="[FMODUnity]FMOD.System $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_6086945(int)" newName="$Jc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_6086945(Int32)" newStackTraceSignature="$uA:$Jc(Int32)" />
+      <method signature="[FMODUnity]FMODUnity.EventReference $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_4508542(object, int)" newName="$kc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_4508542(Object, Int32)" newStackTraceSignature="$uA:$kc(Object, Int32)" />
+      <method signature="[FMODUnity]FMODUnity.StudioEventEmitter $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_10752225(object, int)" newName="$Kc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_10752225(Object, Int32)" newStackTraceSignature="$uA:$Kc(Object, Int32)" />
+      <method signature="[HybridCLR.Runtime]HybridCLR.LoadImageErrorCode $Obfuz$ProxyCall::@$Obfuz$Dispatch_54639_15112779(byte[], int, int)" newName="$lc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_54639_15112779(Byte[], Int32, Int32)" newStackTraceSignature="$uA:$lc(Byte[], Int32, Int32)" />
+      <method signature="[launcher]RiseClient.DownloadManager $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_3726403(object, int)" newName="$Lc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_3726403(Object, Int32)" newStackTraceSignature="$uA:$Lc(Object, Int32)" />
+      <method signature="[launcher]RiseClient.DownloadManager $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_3726403(int)" newName="$mc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_3726403(Int32)" newStackTraceSignature="$uA:$mc(Int32)" />
+      <method signature="[launcher]RiseClient.DownloadQueue $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_6477593(object, int)" newName="$Mc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_6477593(Object, Int32)" newStackTraceSignature="$uA:$Mc(Object, Int32)" />
+      <method signature="[launcher]RiseClient.DownloadQueue $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_6477593(int)" newName="$nc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_6477593(Int32)" newStackTraceSignature="$uA:$nc(Int32)" />
+      <method signature="[launcher]RiseClient.DownloadState $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_5337595(object, int)" newName="$Nc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_5337595(Object, Int32)" newStackTraceSignature="$uA:$Nc(Object, Int32)" />
+      <method signature="[launcher]RiseClient.SegmentInfoWrapper $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_15453986(object, int)" newName="$oc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_15453986(Object, Int32)" newStackTraceSignature="$uA:$oc(Object, Int32)" />
+      <method signature="[launcher]RiseClient.UpdateFileInfo $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_7408885(object, int)" newName="$Oc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_7408885(Object, Int32)" newStackTraceSignature="$uA:$Oc(Object, Int32)" />
+      <method signature="[launcher]RiseClient.UpdateFileInfo $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_7408885(object, object, int)" newName="$pc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_7408885(Object, Object, Int32)" newStackTraceSignature="$uA:$pc(Object, Object, Int32)" />
+      <method signature="System.Action`1&lt;float&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_14759582(object, int)" newName="$Pc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_14759582(Object, Int32)" newStackTraceSignature="$uA:$Pc(Object, Int32)" />
+      <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_12616511(object, int)" newName="$qc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_12616511(Object, Int32)" newStackTraceSignature="$uA:$qc(Object, Int32)" />
+      <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_12616511(object, object, int)" newName="$Qc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_12616511(Object, Object, Int32)" newStackTraceSignature="$uA:$Qc(Object, Object, Int32)" />
+      <method signature="bool $Obfuz$ProxyCall::@$Obfuz$Dispatch_50754_12616511(object, object, object, int)" newName="$rc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_50754_12616511(Object, Object, Object, Int32)" newStackTraceSignature="$uA:$rc(Object, Object, Object, Int32)" />
+      <method signature="byte[] $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_130600(object, int)" newName="$Rc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_130600(Object, Int32)" newStackTraceSignature="$uA:$Rc(Object, Int32)" />
+      <method signature="System.Collections.Generic.Dictionary`2&lt;string,long&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_389224(object, int)" newName="$sc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_389224(Object, Int32)" newStackTraceSignature="$uA:$sc(Object, Int32)" />
+      <method signature="System.Collections.Generic.IEnumerable`1&lt;[launcher]RiseClient.DownloadSegmentInfo&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_14223840(object, object, int)" newName="$Sc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_14223840(Object, Object, Int32)" newStackTraceSignature="$uA:$Sc(Object, Object, Int32)" />
+      <method signature="System.Collections.Generic.IEnumerable`1&lt;[launcher]RiseClient.UpdateFileInfo&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_4682436(object, object, int)" newName="$tc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_4682436(Object, Object, Int32)" newStackTraceSignature="$uA:$tc(Object, Object, Int32)" />
+      <method signature="System.Collections.Generic.IEnumerable`1&lt;System.Threading.Tasks.Task&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_11217135(object, object, int)" newName="$Tc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_11217135(Object, Object, Int32)" newStackTraceSignature="$uA:$Tc(Object, Object, Int32)" />
+      <method signature="System.Collections.Generic.List`1&lt;[launcher]RiseClient.DownloadSegment&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_16266475(object, int)" newName="$uc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_16266475(Object, Int32)" newStackTraceSignature="$uA:$uc(Object, Int32)" />
+      <method signature="System.Collections.Generic.List`1&lt;[launcher]RiseClient.DownloadSegmentInfo&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_3313771(object, int)" newName="$Uc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_3313771(Object, Int32)" newStackTraceSignature="$uA:$Uc(Object, Int32)" />
+      <method signature="System.Collections.Generic.List`1&lt;[launcher]RiseClient.UpdateFileInfo&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_10549583(object, int)" newName="$vc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_10549583(Object, Int32)" newStackTraceSignature="$uA:$vc(Object, Int32)" />
+      <method signature="System.Collections.Generic.List`1&lt;[launcher]RiseClient.UpdateFileInfo&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_10549583(object, object, int)" newName="$Vc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_10549583(Object, Object, Int32)" newStackTraceSignature="$uA:$Vc(Object, Object, Int32)" />
+      <method signature="System.Collections.Generic.List`1&lt;[launcher]RiseClient.UpdateFileInfo&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_43275_10549583(object, string[], int)" newName="$wc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_43275_10549583(Object, String[], Int32)" newStackTraceSignature="$uA:$wc(Object, String[], Int32)" />
+      <method signature="System.Collections.Generic.List`1&lt;string&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_12724855(object, int)" newName="$Wc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_12724855(Object, Int32)" newStackTraceSignature="$uA:$Wc(Object, Int32)" />
+      <method signature="System.Collections.Generic.List`1&lt;System.Threading.Tasks.Task&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_307066(object, int)" newName="$xc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_307066(Object, Int32)" newStackTraceSignature="$uA:$xc(Object, Int32)" />
+      <method signature="System.Collections.IEnumerator $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_13605213(int)" newName="$Xc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_13605213(Int32)" newStackTraceSignature="$uA:$Xc(Int32)" />
+      <method signature="int $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_12091355(object, int)" newName="$yc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_12091355(Object, Int32)" newStackTraceSignature="$uA:$yc(Object, Int32)" />
+      <method signature="int $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_12091355(int)" newName="$Yc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_12091355(Int32)" newStackTraceSignature="$uA:$Yc(Int32)" />
+      <method signature="int $Obfuz$ProxyCall::@$Obfuz$Dispatch_46378_12091355(int, int, int)" newName="$zc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_46378_12091355(Int32, Int32, Int32)" newStackTraceSignature="$uA:$zc(Int32, Int32, Int32)" />
+      <method signature="long $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_7551190(object, int)" newName="$Zc" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_7551190(Object, Int32)" newStackTraceSignature="$uA:$Zc(Object, Int32)" />
+      <method signature="long $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_7551190(object, object, int)" newName="$aC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_7551190(Object, Object, Int32)" newStackTraceSignature="$uA:$aC(Object, Object, Int32)" />
+      <method signature="long $Obfuz$ProxyCall::@$Obfuz$Dispatch_40180_7551190(long, long, int)" newName="$AC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_40180_7551190(Int64, Int64, Int32)" newStackTraceSignature="$uA:$AC(Int64, Int64, Int32)" />
+      <method signature="[System.Core]System.Linq.IOrderedEnumerable`1&lt;[launcher]RiseClient.DownloadSegment&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_8269653(object, object, int)" newName="$bC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_8269653(Object, Object, Int32)" newStackTraceSignature="$uA:$bC(Object, Object, Int32)" />
+      <method signature="[System.Net.Http]System.Net.Http.Headers.HttpHeaderValueCollection`1&lt;string&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_11211914(object, int)" newName="$BC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_11211914(Object, Int32)" newStackTraceSignature="$uA:$BC(Object, Int32)" />
+      <method signature="[System.Net.Http]System.Net.Http.Headers.HttpRequestHeaders $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_1471485(object, int)" newName="$cC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_1471485(Object, Int32)" newStackTraceSignature="$uA:$cC(Object, Int32)" />
+      <method signature="[System.Net.Http]System.Net.Http.Headers.HttpResponseHeaders $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_15986507(object, int)" newName="$CC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_15986507(Object, Int32)" newStackTraceSignature="$uA:$CC(Object, Int32)" />
+      <method signature="[System.Net.Http]System.Net.Http.HttpContent $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_3443289(object, int)" newName="$dC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_3443289(Object, Int32)" newStackTraceSignature="$uA:$dC(Object, Int32)" />
+      <method signature="float $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_3119315(object, int)" newName="$DC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_3119315(Object, Int32)" newStackTraceSignature="$uA:$DC(Object, Int32)" />
+      <method signature="float $Obfuz$ProxyCall::@$Obfuz$Dispatch_47418_3119315(float, float, int)" newName="$eC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_47418_3119315(Single, Single, Int32)" newStackTraceSignature="$uA:$eC(Single, Single, Int32)" />
+      <method signature="string $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_11558398(object, int)" newName="$EC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_11558398(Object, Int32)" newStackTraceSignature="$uA:$EC(Object, Int32)" />
+      <method signature="string $Obfuz$ProxyCall::@$Obfuz$Dispatch_12519_11558398(object, byte, int)" newName="$fC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_12519_11558398(Object, Byte, Int32)" newStackTraceSignature="$uA:$fC(Object, Byte, Int32)" />
+      <method signature="string $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_11558398(int)" newName="$FC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_11558398(Int32)" newStackTraceSignature="$uA:$FC(Int32)" />
+      <method signature="string $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_11558398(object, object, int)" newName="$gC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_11558398(Object, Object, Int32)" newStackTraceSignature="$uA:$gC(Object, Object, Int32)" />
+      <method signature="string[] $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_10976701(object, int)" newName="$GC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_10976701(Object, Int32)" newStackTraceSignature="$uA:$GC(Object, Int32)" />
+      <method signature="System.Threading.Tasks.Task $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_13355026(object, object, int)" newName="$hC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_13355026(Object, Object, Int32)" newStackTraceSignature="$uA:$hC(Object, Object, Int32)" />
+      <method signature="System.Threading.Tasks.Task $Obfuz$ProxyCall::@$Obfuz$Dispatch_50754_13355026(object, object, object, int)" newName="$HC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_50754_13355026(Object, Object, Object, Int32)" newStackTraceSignature="$uA:$HC(Object, Object, Object, Int32)" />
+      <method signature="System.Threading.Tasks.Task`1&lt;bool&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_15416806(object, object, int)" newName="$iC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_15416806(Object, Object, Int32)" newStackTraceSignature="$uA:$iC(Object, Object, Int32)" />
+      <method signature="System.Threading.Tasks.Task`1&lt;bool&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_496_15416806(object, object, object, long, object, object, int)" newName="$IC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_496_15416806(Object, Object, Object, Int64, Object, Object, Int32)" newStackTraceSignature="$uA:$IC(Object, Object, Object, Int64, Object, Object, Int32)" />
+      <method signature="System.Threading.Tasks.Task`1&lt;bool&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_50754_15416806(object, object, object, int)" newName="$jC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_50754_15416806(Object, Object, Object, Int32)" newStackTraceSignature="$uA:$jC(Object, Object, Object, Int32)" />
+      <method signature="System.Threading.Tasks.Task`1&lt;System.IO.Stream&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_13578239(object, int)" newName="$JC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_13578239(Object, Int32)" newStackTraceSignature="$uA:$JC(Object, Int32)" />
+      <method signature="System.Threading.Tasks.Task`1&lt;[System.Net.Http]System.Net.Http.HttpResponseMessage&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_4049763(object, object, int)" newName="$kC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_4049763(Object, Object, Int32)" newStackTraceSignature="$uA:$kC(Object, Object, Int32)" />
+      <method signature="System.Threading.Tasks.Task`1&lt;[System.Net.Http]System.Net.Http.HttpResponseMessage&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_65367_4049763(object, object, int, int)" newName="$KC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_65367_4049763(Object, Object, Int32, Int32)" newStackTraceSignature="$uA:$KC(Object, Object, Int32, Int32)" />
+      <method signature="System.Threading.Tasks.TaskCompletionSource`1&lt;bool&gt; $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_11472403(object, int)" newName="$lC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_11472403(Object, Int32)" newStackTraceSignature="$uA:$lC(Object, Int32)" />
+      <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_4780505(object, int)" newName="$LC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_4780505(Object, Int32)" newStackTraceSignature="$uA:$LC(Object, Int32)" />
+      <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_12519_4780505(object, byte, int)" newName="$mC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_12519_4780505(Object, Byte, Int32)" newStackTraceSignature="$uA:$mC(Object, Byte, Int32)" />
+      <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_19129_4780505(object, float, int)" newName="$MC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_19129_4780505(Object, Single, Int32)" newStackTraceSignature="$uA:$MC(Object, Single, Int32)" />
+      <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_24373_4780505([UnityEngine.CoreModule]UnityEngine.Rect, object, object, int)" newName="$nC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_24373_4780505(Rect, Object, Object, Int32)" newStackTraceSignature="$uA:$nC(Rect, Object, Object, Int32)" />
+      <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_25708_4780505(object, object, float, byte, int)" newName="$NC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_25708_4780505(Object, Object, Single, Byte, Int32)" newStackTraceSignature="$uA:$NC(Object, Object, Single, Byte, Int32)" />
+      <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_3304_4780505(object, long, int)" newName="$oC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_3304_4780505(Object, Int64, Int32)" newStackTraceSignature="$uA:$oC(Object, Int64, Int32)" />
+      <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_4780505(object, object, int)" newName="$OC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_4780505(Object, Object, Int32)" newStackTraceSignature="$uA:$OC(Object, Object, Int32)" />
+      <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_50754_4780505(object, object, object, int)" newName="$pC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_50754_4780505(Object, Object, Object, Int32)" newStackTraceSignature="$uA:$pC(Object, Object, Object, Int32)" />
+      <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_51425_4780505(object, int, int)" newName="$PC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_51425_4780505(Object, Int32, Int32)" newStackTraceSignature="$uA:$PC(Object, Int32, Int32)" />
+      <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_52393_4780505(byte, int)" newName="$qC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_52393_4780505(Byte, Int32)" newStackTraceSignature="$uA:$qC(Byte, Int32)" />
+      <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_61584_4780505([UnityEngine.CoreModule]UnityEngine.Matrix4x4, int)" newName="$QC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_61584_4780505(Matrix4x4, Int32)" newStackTraceSignature="$uA:$QC(Matrix4x4, Int32)" />
+      <method signature="[UnityEngine.AssetBundleModule]UnityEngine.AssetBundle $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_10832599(object, int)" newName="$rC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_10832599(Object, Int32)" newStackTraceSignature="$uA:$rC(Object, Int32)" />
+      <method signature="[UnityEngine.CoreModule]UnityEngine.Coroutine $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_11873513(object, object, int)" newName="$RC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_11873513(Object, Object, Int32)" newStackTraceSignature="$uA:$RC(Object, Object, Int32)" />
+      <method signature="[UnityEngine.CoreModule]UnityEngine.GameObject $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_11979780(object, int)" newName="$sC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_11979780(Object, Int32)" newStackTraceSignature="$uA:$sC(Object, Int32)" />
+      <method signature="[UnityEngine.CoreModule]UnityEngine.Matrix4x4 $Obfuz$ProxyCall::@$Obfuz$Dispatch_27577_8399300([UnityEngine.CoreModule]UnityEngine.Vector3, [UnityEngine.CoreModule]UnityEngine.Quaternion, [UnityEngine.CoreModule]UnityEngine.Vector3, int)" newName="$SC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_27577_8399300(Vector3, Quaternion, Vector3, Int32)" newStackTraceSignature="$uA:$SC(Vector3, Quaternion, Vector3, Int32)" />
+      <method signature="[UnityEngine.UnityWebRequestModule]UnityEngine.Networking.DownloadHandler $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_8124063(object, int)" newName="$tC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_8124063(Object, Int32)" newStackTraceSignature="$uA:$tC(Object, Int32)" />
+      <method signature="[UnityEngine.UnityWebRequestModule]UnityEngine.Networking.UnityWebRequest $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_8297717(object, int)" newName="$TC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_8297717(Object, Int32)" newStackTraceSignature="$uA:$TC(Object, Int32)" />
+      <method signature="[UnityEngine.UnityWebRequestModule]UnityEngine.Networking.UnityWebRequest/Result $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_4696047(object, int)" newName="$uC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_4696047(Object, Int32)" newStackTraceSignature="$uA:$uC(Object, Int32)" />
+      <method signature="[UnityEngine.UnityWebRequestModule]UnityEngine.Networking.UnityWebRequestAsyncOperation $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_13547406(object, int)" newName="$UC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_13547406(Object, Int32)" newStackTraceSignature="$uA:$UC(Object, Int32)" />
+      <method signature="[UnityEngine.CoreModule]UnityEngine.Quaternion $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_4455527(int)" newName="$vC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_4455527(Int32)" newStackTraceSignature="$uA:$vC(Int32)" />
+      <method signature="[UnityEngine.CoreModule]UnityEngine.TextAsset $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_3944058(object, object, int)" newName="$VC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_3944058(Object, Object, Int32)" newStackTraceSignature="$uA:$VC(Object, Object, Int32)" />
+      <method signature="[UnityEngine.CoreModule]UnityEngine.Transform $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_11509251(object, int)" newName="$wC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_11509251(Object, Int32)" newStackTraceSignature="$uA:$wC(Object, Int32)" />
+      <method signature="[UnityEngine.CoreModule]UnityEngine.Vector3 $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_590507(int)" newName="$WC" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_590507(Int32)" newStackTraceSignature="$uA:$WC(Int32)" />
+    </type>
+    <type fullName="$Obfuz$RVA$0" newFullName="$TA" status="Renamed">
+      <field signature="[launcher]$ObfuzRVA$DataHolder2048 $RVA_Data0" newName="$Nd" />
+      <field signature="byte[] $RVA_Value0" newName="$od" />
+      <field signature="[launcher]$ObfuzRVA$DataHolder2048 $RVA_Data1" newName="$Od" />
+      <field signature="byte[] $RVA_Value1" newName="$pd" />
+    </type>
+    <type fullName="$ObfuzRVA$DataHolder2048" newFullName="$tA" status="Renamed" />
+    <type fullName="&lt;&gt;f__AnonymousType0`1" newFullName="$cA`1" status="Renamed">
+      <field signature="!0 &lt;segments&gt;i__Field" newName="$fb" />
+      <property signature="!0 segments" newName="$a" />
+      <method signature="!0 &lt;&gt;f__AnonymousType0`1::get_segments([launcher]&lt;&gt;f__AnonymousType0`1&lt;!0&gt;)" newName="$UA" oldStackTraceSignature="&lt;&gt;f__AnonymousType0`1:get_segments()" newStackTraceSignature="$cA`1:$UA()" />
+    </type>
+    <type fullName="&lt;PrivateImplementationDetails&gt;" newFullName="$lA" status="Renamed">
+      <field signature="[launcher]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_3 $Obfuz$WatermarkDataHolderField3" newName="$Sc" />
+      <field signature="[launcher]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_13 $Obfuz$WatermarkDataHolderField13" newName="$tc" />
+      <field signature="[launcher]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_10 $Obfuz$WatermarkDataHolderField10" newName="$Tc" />
+      <field signature="[launcher]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize32_12 $Obfuz$WatermarkDataHolderField12" newName="$uc" />
+      <field signature="[launcher]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize48_9 $Obfuz$WatermarkDataHolderField9" newName="$Uc" />
+      <field signature="[launcher]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize28_7 $Obfuz$WatermarkDataHolderField7" newName="$vc" />
+      <field signature="[launcher]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=314 6492C7C096BA00CE7636651A5AA07B4E9120455A4A54043DB3AFB30A978CC397" newName="$Vc" />
+      <field signature="[launcher]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize44_2 $Obfuz$WatermarkDataHolderField2" newName="$wc" />
+      <field signature="[launcher]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_6 $Obfuz$WatermarkDataHolderField6" newName="$Wc" />
+      <field signature="[launcher]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize28_4 $Obfuz$WatermarkDataHolderField4" newName="$xc" />
+      <field signature="[launcher]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize44_5 $Obfuz$WatermarkDataHolderField5" newName="$Xc" />
+      <field signature="[launcher]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize28_11 $Obfuz$WatermarkDataHolderField11" newName="$yc" />
+      <field signature="[launcher]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=424 50B12B988FCD35676C52419780FCA502D40980477E171C32A740210AA18C4249" newName="$Yc" />
+      <field signature="[launcher]&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_8 $Obfuz$WatermarkDataHolderField8" newName="$zc" />
+    </type>
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize28_11" newFullName="$lA/$rA" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize28_4" newFullName="$lA/$NA" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize28_7" newFullName="$lA/$pA" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize32_12" newFullName="$lA/$RA" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_10" newFullName="$lA/$QA" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_13" newFullName="$lA/$sA" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_3" newFullName="$lA/$nA" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_6" newFullName="$lA/$OA" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_8" newFullName="$lA/$PA" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize44_2" newFullName="$lA/$MA" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize44_5" newFullName="$lA/$oA" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize48_9" newFullName="$lA/$qA" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=314" newFullName="$lA/$LA" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=424" newFullName="$lA/$mA" status="Renamed" />
+    <type fullName="Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine" newFullName="$A.$CA" status="Renamed">
+      <field signature="int[] _secretKey" newName="$Fb" />
+      <property signature="int OpCodeCount" newName="$a" />
+      <method signature="int Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine::get_OpCodeCount([launcher]Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine)" newName="$UD" oldStackTraceSignature="Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine:get_OpCodeCount()" newStackTraceSignature="$A.$CA:$UD()" />
+      <method signature="int Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine::Encrypt([launcher]Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine, int, int, int)" newName="$vD" oldStackTraceSignature="Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine:Encrypt(Int32, Int32, Int32)" newStackTraceSignature="$A.$CA:$vD(Int32, Int32, Int32)" />
+      <method signature="int Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine::Decrypt([launcher]Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine, int, int, int)" newName="$VD" oldStackTraceSignature="Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine:Decrypt(Int32, Int32, Int32)" newStackTraceSignature="$A.$CA:$VD(Int32, Int32, Int32)" />
+      <method signature="int Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine::ExecuteEncrypt([launcher]Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine, int, int, int)" newName="$vA" oldStackTraceSignature="Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine:ExecuteEncrypt(Int32, Int32, Int32)" newStackTraceSignature="$A.$CA:$vA(Int32, Int32, Int32)" />
+      <method signature="int Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine::ExecuteDecrypt([launcher]Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine, int, int, int)" newName="$VA" oldStackTraceSignature="Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine:ExecuteDecrypt(Int32, Int32, Int32)" newStackTraceSignature="$A.$CA:$VA(Int32, Int32, Int32)" />
+    </type>
+    <type fullName="RiseClient.ConsoleToScreen" newFullName="" status="NotRenamed">
+      <field signature="string _logStr" newName="$gb" />
+      <field signature="System.Collections.Generic.List`1&lt;string&gt; _lines" newName="$Gb" />
+      <method signature="void RiseClient.ConsoleToScreen::Log([launcher]RiseClient.ConsoleToScreen, string, string, [UnityEngine.CoreModule]UnityEngine.LogType)" newName="$wA" oldStackTraceSignature="RiseClient.ConsoleToScreen:Log(String, String, LogType)" newStackTraceSignature="RiseClient.ConsoleToScreen:$wA(String, String, LogType)" />
+    </type>
+    <type fullName="RiseClient.DownloadManager" newFullName="" status="NotRenamed">
+      <field signature="[launcher]RiseClient.DownloadManager _instance" newName="$sb" />
+      <field signature="[launcher]RiseClient.DownloadState _currentState" newName="$Sb" />
+      <field signature="System.Collections.Generic.Dictionary`2&lt;string,[launcher]RiseClient.DownloadTask&gt; _tasks" newName="$tb" />
+      <field signature="System.Threading.SemaphoreSlim _downloadSemaphore" newName="$Tb" />
+      <property signature="[launcher]RiseClient.DownloadManager Instance" newName="$a" />
+      <property signature="string StateFilePath" newName="$A" />
+      <method signature="[launcher]RiseClient.DownloadManager RiseClient.DownloadManager::@get_Instance()" newName="$tb" oldStackTraceSignature="RiseClient.DownloadManager:get_Instance()" newStackTraceSignature="RiseClient.DownloadManager:$tb()" />
+      <method signature="string RiseClient.DownloadManager::get_StateFilePath([launcher]RiseClient.DownloadManager)" newName="$Tb" oldStackTraceSignature="RiseClient.DownloadManager:get_StateFilePath()" newStackTraceSignature="RiseClient.DownloadManager:$Tb()" />
+      <method signature="System.Threading.Tasks.Task`1&lt;bool&gt; RiseClient.DownloadManager::DownloadFileAsync([launcher]RiseClient.DownloadManager, string, string, long, string, System.Action`1&lt;float&gt;)" newName="$ub" oldStackTraceSignature="RiseClient.DownloadManager:DownloadFileAsync(String, String, Int64, String, Action`1)" newStackTraceSignature="RiseClient.DownloadManager:$ub(String, String, Int64, String, Action`1)" />
+      <method signature="void RiseClient.DownloadManager::CreateDownloadSegments([launcher]RiseClient.DownloadManager, [launcher]RiseClient.DownloadTask)" newName="$Ub" oldStackTraceSignature="RiseClient.DownloadManager:CreateDownloadSegments(DownloadTask)" newStackTraceSignature="RiseClient.DownloadManager:$Ub($eA)" />
+      <method signature="bool RiseClient.DownloadManager::ValidateSegments([launcher]RiseClient.DownloadManager, [launcher]RiseClient.DownloadTask, System.Collections.Generic.List`1&lt;[launcher]RiseClient.DownloadSegmentInfo&gt;)" newName="$vb" oldStackTraceSignature="RiseClient.DownloadManager:ValidateSegments(DownloadTask, List`1)" newStackTraceSignature="RiseClient.DownloadManager:$vb($eA, List`1)" />
+      <method signature="void RiseClient.DownloadManager::RestoreSegments([launcher]RiseClient.DownloadManager, [launcher]RiseClient.DownloadTask, System.Collections.Generic.List`1&lt;[launcher]RiseClient.DownloadSegmentInfo&gt;)" newName="$Vb" oldStackTraceSignature="RiseClient.DownloadManager:RestoreSegments(DownloadTask, List`1)" newStackTraceSignature="RiseClient.DownloadManager:$Vb($eA, List`1)" />
+      <method signature="System.Threading.Tasks.Task`1&lt;bool&gt; RiseClient.DownloadManager::CheckResumeSupport([launcher]RiseClient.DownloadManager, string)" newName="$wb" oldStackTraceSignature="RiseClient.DownloadManager:CheckResumeSupport(String)" newStackTraceSignature="RiseClient.DownloadManager:$wb(String)" />
+      <method signature="System.Threading.Tasks.Task RiseClient.DownloadManager::DownloadSegmentAsync([launcher]RiseClient.DownloadManager, [launcher]RiseClient.DownloadTask, [launcher]RiseClient.DownloadSegment)" newName="$Wb" oldStackTraceSignature="RiseClient.DownloadManager:DownloadSegmentAsync(DownloadTask, DownloadSegment)" newStackTraceSignature="RiseClient.DownloadManager:$Wb($eA, $dA)" />
+      <method signature="System.Threading.Tasks.Task RiseClient.DownloadManager::MergeSegmentsAsync([launcher]RiseClient.DownloadManager, [launcher]RiseClient.DownloadTask)" newName="$xb" oldStackTraceSignature="RiseClient.DownloadManager:MergeSegmentsAsync(DownloadTask)" newStackTraceSignature="RiseClient.DownloadManager:$xb($eA)" />
+      <method signature="string RiseClient.DownloadManager::CalculateMD5([launcher]RiseClient.DownloadManager, string)" newName="$Xb" oldStackTraceSignature="RiseClient.DownloadManager:CalculateMD5(String)" newStackTraceSignature="RiseClient.DownloadManager:$Xb(String)" />
+      <method signature="void RiseClient.DownloadManager::PauseDownload([launcher]RiseClient.DownloadManager, string)" newName="$yb" oldStackTraceSignature="RiseClient.DownloadManager:PauseDownload(String)" newStackTraceSignature="RiseClient.DownloadManager:$yb(String)" />
+      <method signature="void RiseClient.DownloadManager::ResumeDownload([launcher]RiseClient.DownloadManager, string)" newName="$Yb" oldStackTraceSignature="RiseClient.DownloadManager:ResumeDownload(String)" newStackTraceSignature="RiseClient.DownloadManager:$Yb(String)" />
+      <method signature="void RiseClient.DownloadManager::CancelDownload([launcher]RiseClient.DownloadManager, string)" newName="$zb" oldStackTraceSignature="RiseClient.DownloadManager:CancelDownload(String)" newStackTraceSignature="RiseClient.DownloadManager:$zb(String)" />
+      <method signature="void RiseClient.DownloadManager::LoadState([launcher]RiseClient.DownloadManager)" newName="$Zb" oldStackTraceSignature="RiseClient.DownloadManager:LoadState()" newStackTraceSignature="RiseClient.DownloadManager:$Zb()" />
+      <method signature="void RiseClient.DownloadManager::SaveState([launcher]RiseClient.DownloadManager)" newName="$aB" oldStackTraceSignature="RiseClient.DownloadManager:SaveState()" newStackTraceSignature="RiseClient.DownloadManager:$aB()" />
+      <method signature="void RiseClient.DownloadManager::InitializeForVersion([launcher]RiseClient.DownloadManager, string)" newName="$AB" oldStackTraceSignature="RiseClient.DownloadManager:InitializeForVersion(String)" newStackTraceSignature="RiseClient.DownloadManager:$AB(String)" />
+      <method signature="bool RiseClient.DownloadManager::IsFileDownloaded([launcher]RiseClient.DownloadManager, string)" newName="$bB" oldStackTraceSignature="RiseClient.DownloadManager:IsFileDownloaded(String)" newStackTraceSignature="RiseClient.DownloadManager:$bB(String)" />
+      <method signature="void RiseClient.DownloadManager::MarkFileAsDownloaded([launcher]RiseClient.DownloadManager, string)" newName="$BB" oldStackTraceSignature="RiseClient.DownloadManager:MarkFileAsDownloaded(String)" newStackTraceSignature="RiseClient.DownloadManager:$BB(String)" />
+      <method signature="void RiseClient.DownloadManager::UpdatePartialDownload([launcher]RiseClient.DownloadManager, string, long)" newName="$cB" oldStackTraceSignature="RiseClient.DownloadManager:UpdatePartialDownload(String, Int64)" newStackTraceSignature="RiseClient.DownloadManager:$cB(String, Int64)" />
+      <method signature="long RiseClient.DownloadManager::GetPartialDownloadSize([launcher]RiseClient.DownloadManager, string)" newName="$CB" oldStackTraceSignature="RiseClient.DownloadManager:GetPartialDownloadSize(String)" newStackTraceSignature="RiseClient.DownloadManager:$CB(String)" />
+      <method signature="void RiseClient.DownloadManager::ClearState([launcher]RiseClient.DownloadManager)" newName="$dB" oldStackTraceSignature="RiseClient.DownloadManager:ClearState()" newStackTraceSignature="RiseClient.DownloadManager:$dB()" />
+      <method signature="System.Collections.Generic.List`1&lt;[launcher]RiseClient.UpdateFileInfo&gt; RiseClient.DownloadManager::FilterPendingDownloads([launcher]RiseClient.DownloadManager, System.Collections.Generic.List`1&lt;[launcher]RiseClient.UpdateFileInfo&gt;)" newName="$DB" oldStackTraceSignature="RiseClient.DownloadManager:FilterPendingDownloads(List`1)" newStackTraceSignature="RiseClient.DownloadManager:$DB(List`1)" />
+      <method signature="bool RiseClient.DownloadManager::&lt;FilterPendingDownloads&gt;b__30_0([launcher]RiseClient.DownloadManager, [launcher]RiseClient.UpdateFileInfo)" newName="$eB" oldStackTraceSignature="RiseClient.DownloadManager:&lt;FilterPendingDownloads&gt;b__30_0(UpdateFileInfo)" newStackTraceSignature="RiseClient.DownloadManager:$eB(UpdateFileInfo)" />
+    </type>
+    <type fullName="RiseClient.DownloadManager/&lt;&gt;c" newFullName="" status="NotRenamed">
+      <field signature="[launcher]RiseClient.DownloadManager/&lt;&gt;c &lt;&gt;9" newName="$ub" />
+      <field signature="System.Func`2&lt;[launcher]RiseClient.DownloadSegmentInfo,long&gt; &lt;&gt;9__13_0" newName="$Ub" />
+      <field signature="System.Func`2&lt;[launcher]RiseClient.DownloadSegment,long&gt; &lt;&gt;9__16_0" newName="$vb" />
+      <field signature="System.Func`2&lt;[launcher]RiseClient.DownloadSegment,bool&gt; &lt;&gt;9__16_1" newName="$Vb" />
+      <field signature="System.Func`2&lt;[launcher]RiseClient.DownloadSegment,long&gt; &lt;&gt;9__17_0" newName="$wb" />
+      <method signature="long RiseClient.DownloadManager/&lt;&gt;c::&lt;ValidateSegments&gt;b__13_0([launcher]RiseClient.DownloadManager/&lt;&gt;c, [launcher]RiseClient.DownloadSegmentInfo)" newName="$EB" oldStackTraceSignature="RiseClient.&lt;&gt;c:&lt;ValidateSegments&gt;b__13_0(DownloadSegmentInfo)" newStackTraceSignature="RiseClient.&lt;&gt;c:$EB($DA)" />
+      <method signature="long RiseClient.DownloadManager/&lt;&gt;c::&lt;DownloadSegmentAsync&gt;b__16_0([launcher]RiseClient.DownloadManager/&lt;&gt;c, [launcher]RiseClient.DownloadSegment)" newName="$fB" oldStackTraceSignature="RiseClient.&lt;&gt;c:&lt;DownloadSegmentAsync&gt;b__16_0(DownloadSegment)" newStackTraceSignature="RiseClient.&lt;&gt;c:$fB($dA)" />
+      <method signature="bool RiseClient.DownloadManager/&lt;&gt;c::&lt;DownloadSegmentAsync&gt;b__16_1([launcher]RiseClient.DownloadManager/&lt;&gt;c, [launcher]RiseClient.DownloadSegment)" newName="$FB" oldStackTraceSignature="RiseClient.&lt;&gt;c:&lt;DownloadSegmentAsync&gt;b__16_1(DownloadSegment)" newStackTraceSignature="RiseClient.&lt;&gt;c:$FB($dA)" />
+      <method signature="long RiseClient.DownloadManager/&lt;&gt;c::&lt;MergeSegmentsAsync&gt;b__17_0([launcher]RiseClient.DownloadManager/&lt;&gt;c, [launcher]RiseClient.DownloadSegment)" newName="$gB" oldStackTraceSignature="RiseClient.&lt;&gt;c:&lt;MergeSegmentsAsync&gt;b__17_0(DownloadSegment)" newStackTraceSignature="RiseClient.&lt;&gt;c:$gB($dA)" />
+    </type>
+    <type fullName="RiseClient.DownloadManager/&lt;&gt;c__DisplayClass11_0" newFullName="RiseClient.DownloadManager/$EA" status="Renamed">
+      <field signature="[launcher]RiseClient.DownloadManager &lt;&gt;4__this" newName="$Wb" />
+      <field signature="[launcher]RiseClient.DownloadTask task" newName="$xb" />
+      <method signature="System.Threading.Tasks.Task RiseClient.DownloadManager/&lt;&gt;c__DisplayClass11_0::&lt;DownloadFileAsync&gt;b__0([launcher]RiseClient.DownloadManager/&lt;&gt;c__DisplayClass11_0, [launcher]RiseClient.DownloadSegment)" newName="$GB" oldStackTraceSignature="RiseClient.&lt;&gt;c__DisplayClass11_0:&lt;DownloadFileAsync&gt;b__0(DownloadSegment)" newStackTraceSignature="RiseClient.$EA:$GB($dA)" />
+    </type>
+    <type fullName="RiseClient.DownloadManager/&lt;CheckResumeSupport&gt;d__15" newFullName="RiseClient.DownloadManager/$fA" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$Xb" />
+      <field signature="System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1&lt;bool&gt; &lt;&gt;t__builder" newName="$yb" />
+      <field signature="string url" newName="$Yb" />
+      <field signature="System.Runtime.CompilerServices.TaskAwaiter`1&lt;[System.Net.Http]System.Net.Http.HttpResponseMessage&gt; &lt;&gt;u__1" newName="$zb" />
+    </type>
+    <type fullName="RiseClient.DownloadManager/&lt;DownloadFileAsync&gt;d__11" newFullName="RiseClient.DownloadManager/$FA" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$Zb" />
+      <field signature="System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1&lt;bool&gt; &lt;&gt;t__builder" newName="$aB" />
+      <field signature="[launcher]RiseClient.DownloadManager &lt;&gt;4__this" newName="$AB" />
+      <field signature="string url" newName="$bB" />
+      <field signature="string savePath" newName="$BB" />
+      <field signature="long fileSize" newName="$cB" />
+      <field signature="string expectedMD5" newName="$CB" />
+      <field signature="System.Action`1&lt;float&gt; progressCallback" newName="$dB" />
+      <field signature="[launcher]RiseClient.DownloadManager/&lt;&gt;c__DisplayClass11_0 &lt;&gt;8__1" newName="$DB" />
+      <field signature="System.Runtime.CompilerServices.TaskAwaiter`1&lt;bool&gt; &lt;&gt;u__1" newName="$eB" />
+      <field signature="System.Runtime.CompilerServices.TaskAwaiter &lt;&gt;u__2" newName="$EB" />
+    </type>
+    <type fullName="RiseClient.DownloadManager/&lt;DownloadSegmentAsync&gt;d__16" newFullName="RiseClient.DownloadManager/$gA" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$fB" />
+      <field signature="System.Runtime.CompilerServices.AsyncTaskMethodBuilder &lt;&gt;t__builder" newName="$FB" />
+      <field signature="[launcher]RiseClient.DownloadManager &lt;&gt;4__this" newName="$gB" />
+      <field signature="[launcher]RiseClient.DownloadSegment segment" newName="$GB" />
+      <field signature="[launcher]RiseClient.DownloadTask task" newName="$hB" />
+      <field signature="System.Runtime.CompilerServices.TaskAwaiter &lt;&gt;u__1" newName="$HB" />
+      <field signature="[System.Net.Http]System.Net.Http.HttpClient &lt;request&gt;5__2" newName="$iB" />
+      <field signature="[System.Net.Http]System.Net.Http.HttpResponseMessage &lt;response&gt;5__3" newName="$IB" />
+      <field signature="System.IO.Stream &lt;stream&gt;5__4" newName="$jB" />
+      <field signature="System.IO.FileStream &lt;fileStream&gt;5__5" newName="$JB" />
+      <field signature="System.Runtime.CompilerServices.TaskAwaiter`1&lt;[System.Net.Http]System.Net.Http.HttpResponseMessage&gt; &lt;&gt;u__2" newName="$kB" />
+      <field signature="System.Runtime.CompilerServices.TaskAwaiter`1&lt;System.IO.Stream&gt; &lt;&gt;u__3" newName="$KB" />
+    </type>
+    <type fullName="RiseClient.DownloadManager/&lt;MergeSegmentsAsync&gt;d__17" newFullName="RiseClient.DownloadManager/$GA" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$lB" />
+      <field signature="System.Runtime.CompilerServices.AsyncTaskMethodBuilder &lt;&gt;t__builder" newName="$LB" />
+      <field signature="[launcher]RiseClient.DownloadTask task" newName="$mB" />
+      <field signature="string &lt;tempMergedFile&gt;5__2" newName="$MB" />
+      <field signature="System.IO.FileStream &lt;outputStream&gt;5__3" newName="$nB" />
+      <field signature="System.Collections.Generic.IEnumerator`1&lt;[launcher]RiseClient.DownloadSegment&gt; &lt;&gt;7__wrap3" newName="$NB" />
+      <field signature="System.IO.FileStream &lt;inputStream&gt;5__5" newName="$oB" />
+      <field signature="System.Runtime.CompilerServices.TaskAwaiter &lt;&gt;u__1" newName="$OB" />
+    </type>
+    <type fullName="RiseClient.DownloadProgress" newFullName="$a.$KA" status="Renamed">
+      <field signature="int &lt;TotalFiles&gt;k__BackingField" newName="$Qc" />
+      <field signature="int &lt;CompletedFiles&gt;k__BackingField" newName="$rc" />
+      <field signature="float &lt;CurrentFileProgress&gt;k__BackingField" newName="$Rc" />
+      <field signature="string &lt;CurrentFileName&gt;k__BackingField" newName="$sc" />
+      <property signature="int TotalFiles" newName="$a" />
+      <property signature="int CompletedFiles" newName="$A" />
+      <property signature="float CurrentFileProgress" newName="$b" />
+      <property signature="string CurrentFileName" newName="$B" />
+      <property signature="float TotalProgress" newName="$c" />
+      <method signature="int RiseClient.DownloadProgress::get_TotalFiles([launcher]RiseClient.DownloadProgress)" newName="$dc" oldStackTraceSignature="RiseClient.DownloadProgress:get_TotalFiles()" newStackTraceSignature="$a.$KA:$dc()" />
+      <method signature="void RiseClient.DownloadProgress::set_TotalFiles([launcher]RiseClient.DownloadProgress, int)" newName="$Dc" oldStackTraceSignature="RiseClient.DownloadProgress:set_TotalFiles(Int32)" newStackTraceSignature="$a.$KA:$Dc(Int32)" />
+      <method signature="int RiseClient.DownloadProgress::get_CompletedFiles([launcher]RiseClient.DownloadProgress)" newName="$ec" oldStackTraceSignature="RiseClient.DownloadProgress:get_CompletedFiles()" newStackTraceSignature="$a.$KA:$ec()" />
+      <method signature="void RiseClient.DownloadProgress::set_CompletedFiles([launcher]RiseClient.DownloadProgress, int)" newName="$Ec" oldStackTraceSignature="RiseClient.DownloadProgress:set_CompletedFiles(Int32)" newStackTraceSignature="$a.$KA:$Ec(Int32)" />
+      <method signature="float RiseClient.DownloadProgress::get_CurrentFileProgress([launcher]RiseClient.DownloadProgress)" newName="$fc" oldStackTraceSignature="RiseClient.DownloadProgress:get_CurrentFileProgress()" newStackTraceSignature="$a.$KA:$fc()" />
+      <method signature="void RiseClient.DownloadProgress::set_CurrentFileProgress([launcher]RiseClient.DownloadProgress, float)" newName="$Fc" oldStackTraceSignature="RiseClient.DownloadProgress:set_CurrentFileProgress(Single)" newStackTraceSignature="$a.$KA:$Fc(Single)" />
+      <method signature="string RiseClient.DownloadProgress::get_CurrentFileName([launcher]RiseClient.DownloadProgress)" newName="$gc" oldStackTraceSignature="RiseClient.DownloadProgress:get_CurrentFileName()" newStackTraceSignature="$a.$KA:$gc()" />
+      <method signature="void RiseClient.DownloadProgress::set_CurrentFileName([launcher]RiseClient.DownloadProgress, string)" newName="$Gc" oldStackTraceSignature="RiseClient.DownloadProgress:set_CurrentFileName(String)" newStackTraceSignature="$a.$KA:$Gc(String)" />
+      <method signature="float RiseClient.DownloadProgress::get_TotalProgress([launcher]RiseClient.DownloadProgress)" newName="$hc" oldStackTraceSignature="RiseClient.DownloadProgress:get_TotalProgress()" newStackTraceSignature="$a.$KA:$hc()" />
+    </type>
+    <type fullName="RiseClient.DownloadQueue" newFullName="" status="NotRenamed">
+      <field signature="[launcher]RiseClient.DownloadQueue _instance" newName="$QB" />
+      <field signature="System.Collections.Generic.Queue`1&lt;[launcher]RiseClient.DownloadQueueItem&gt; downloadQueue" newName="$rB" />
+      <field signature="bool isProcessing" newName="$RB" />
+      <field signature="[launcher]RiseClient.DownloadQueueItem currentItem" newName="$sB" />
+      <property signature="[launcher]RiseClient.DownloadQueue Instance" newName="$a" />
+      <method signature="[launcher]RiseClient.DownloadQueue RiseClient.DownloadQueue::@get_Instance()" newName="$kB" oldStackTraceSignature="RiseClient.DownloadQueue:get_Instance()" newStackTraceSignature="RiseClient.DownloadQueue:$kB()" />
+      <method signature="void RiseClient.DownloadQueue::EnqueueDownload([launcher]RiseClient.DownloadQueue, [launcher]RiseClient.UpdateFileInfo, System.Action`1&lt;float&gt;)" newName="$KB" oldStackTraceSignature="RiseClient.DownloadQueue:EnqueueDownload(UpdateFileInfo, Action`1)" newStackTraceSignature="RiseClient.DownloadQueue:$KB(UpdateFileInfo, Action`1)" />
+      <method signature="System.Threading.Tasks.Task`1&lt;bool&gt; RiseClient.DownloadQueue::EnqueueDownloadWithTask([launcher]RiseClient.DownloadQueue, [launcher]RiseClient.UpdateFileInfo, System.Action`1&lt;float&gt;)" newName="$lB" oldStackTraceSignature="RiseClient.DownloadQueue:EnqueueDownloadWithTask(UpdateFileInfo, Action`1)" newStackTraceSignature="RiseClient.DownloadQueue:$lB(UpdateFileInfo, Action`1)" />
+      <method signature="void RiseClient.DownloadQueue::ProcessQueueAsync([launcher]RiseClient.DownloadQueue)" newName="$LB" oldStackTraceSignature="RiseClient.DownloadQueue:ProcessQueueAsync()" newStackTraceSignature="RiseClient.DownloadQueue:$LB()" />
+      <method signature="void RiseClient.DownloadQueue::ClearQueue([launcher]RiseClient.DownloadQueue)" newName="$mB" oldStackTraceSignature="RiseClient.DownloadQueue:ClearQueue()" newStackTraceSignature="RiseClient.DownloadQueue:$mB()" />
+      <method signature="int RiseClient.DownloadQueue::GetQueueCount([launcher]RiseClient.DownloadQueue)" newName="$MB" oldStackTraceSignature="RiseClient.DownloadQueue:GetQueueCount()" newStackTraceSignature="RiseClient.DownloadQueue:$MB()" />
+      <method signature="[launcher]RiseClient.DownloadQueueItem RiseClient.DownloadQueue::GetCurrentDownload([launcher]RiseClient.DownloadQueue)" newName="$nB" oldStackTraceSignature="RiseClient.DownloadQueue:GetCurrentDownload()" newStackTraceSignature="RiseClient.DownloadQueue:$nB()" />
+    </type>
+    <type fullName="RiseClient.DownloadQueue/&lt;ProcessQueueAsync&gt;d__8" newFullName="RiseClient.DownloadQueue/$HA" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$SB" />
+      <field signature="System.Runtime.CompilerServices.AsyncVoidMethodBuilder &lt;&gt;t__builder" newName="$tB" />
+      <field signature="[launcher]RiseClient.DownloadQueue &lt;&gt;4__this" newName="$TB" />
+      <field signature="System.Runtime.CompilerServices.TaskAwaiter`1&lt;bool&gt; &lt;&gt;u__1" newName="$uB" />
+    </type>
+    <type fullName="RiseClient.DownloadQueueItem" newFullName="$a.$hA" status="Renamed">
+      <field signature="[launcher]RiseClient.UpdateFileInfo &lt;FileInfo&gt;k__BackingField" newName="$pB" />
+      <field signature="System.Action`1&lt;float&gt; &lt;OnProgress&gt;k__BackingField" newName="$PB" />
+      <field signature="System.Threading.Tasks.TaskCompletionSource`1&lt;bool&gt; &lt;CompletionSource&gt;k__BackingField" newName="$qB" />
+      <property signature="[launcher]RiseClient.UpdateFileInfo FileInfo" newName="$a" />
+      <property signature="System.Action`1&lt;float&gt; OnProgress" newName="$A" />
+      <property signature="System.Threading.Tasks.TaskCompletionSource`1&lt;bool&gt; CompletionSource" newName="$b" />
+      <method signature="[launcher]RiseClient.UpdateFileInfo RiseClient.DownloadQueueItem::get_FileInfo([launcher]RiseClient.DownloadQueueItem)" newName="$hB" oldStackTraceSignature="RiseClient.DownloadQueueItem:get_FileInfo()" newStackTraceSignature="$a.$hA:$hB()" />
+      <method signature="void RiseClient.DownloadQueueItem::set_FileInfo([launcher]RiseClient.DownloadQueueItem, [launcher]RiseClient.UpdateFileInfo)" newName="$HB" oldStackTraceSignature="RiseClient.DownloadQueueItem:set_FileInfo(UpdateFileInfo)" newStackTraceSignature="$a.$hA:$HB(UpdateFileInfo)" />
+      <method signature="System.Action`1&lt;float&gt; RiseClient.DownloadQueueItem::get_OnProgress([launcher]RiseClient.DownloadQueueItem)" newName="$iB" oldStackTraceSignature="RiseClient.DownloadQueueItem:get_OnProgress()" newStackTraceSignature="$a.$hA:$iB()" />
+      <method signature="void RiseClient.DownloadQueueItem::set_OnProgress([launcher]RiseClient.DownloadQueueItem, System.Action`1&lt;float&gt;)" newName="$IB" oldStackTraceSignature="RiseClient.DownloadQueueItem:set_OnProgress(Action`1)" newStackTraceSignature="$a.$hA:$IB(Action`1)" />
+      <method signature="System.Threading.Tasks.TaskCompletionSource`1&lt;bool&gt; RiseClient.DownloadQueueItem::get_CompletionSource([launcher]RiseClient.DownloadQueueItem)" newName="$jB" oldStackTraceSignature="RiseClient.DownloadQueueItem:get_CompletionSource()" newStackTraceSignature="$a.$hA:$jB()" />
+      <method signature="void RiseClient.DownloadQueueItem::set_CompletionSource([launcher]RiseClient.DownloadQueueItem, System.Threading.Tasks.TaskCompletionSource`1&lt;bool&gt;)" newName="$JB" oldStackTraceSignature="RiseClient.DownloadQueueItem:set_CompletionSource(TaskCompletionSource`1)" newStackTraceSignature="$a.$hA:$JB(TaskCompletionSource`1)" />
+    </type>
+    <type fullName="RiseClient.DownloadSegment" newFullName="$a.$dA" status="Renamed">
+      <field signature="long &lt;StartPosition&gt;k__BackingField" newName="$hb" />
+      <field signature="long &lt;EndPosition&gt;k__BackingField" newName="$Hb" />
+      <field signature="long &lt;CurrentPosition&gt;k__BackingField" newName="$ib" />
+      <field signature="string &lt;TempFile&gt;k__BackingField" newName="$Ib" />
+      <property signature="long StartPosition" newName="$a" />
+      <property signature="long EndPosition" newName="$A" />
+      <property signature="long CurrentPosition" newName="$b" />
+      <property signature="string TempFile" newName="$B" />
+      <property signature="bool IsCompleted" newName="$c" />
+      <method signature="long RiseClient.DownloadSegment::get_StartPosition([launcher]RiseClient.DownloadSegment)" newName="$WA" oldStackTraceSignature="RiseClient.DownloadSegment:get_StartPosition()" newStackTraceSignature="$a.$dA:$WA()" />
+      <method signature="void RiseClient.DownloadSegment::set_StartPosition([launcher]RiseClient.DownloadSegment, long)" newName="$xA" oldStackTraceSignature="RiseClient.DownloadSegment:set_StartPosition(Int64)" newStackTraceSignature="$a.$dA:$xA(Int64)" />
+      <method signature="long RiseClient.DownloadSegment::get_EndPosition([launcher]RiseClient.DownloadSegment)" newName="$XA" oldStackTraceSignature="RiseClient.DownloadSegment:get_EndPosition()" newStackTraceSignature="$a.$dA:$XA()" />
+      <method signature="void RiseClient.DownloadSegment::set_EndPosition([launcher]RiseClient.DownloadSegment, long)" newName="$yA" oldStackTraceSignature="RiseClient.DownloadSegment:set_EndPosition(Int64)" newStackTraceSignature="$a.$dA:$yA(Int64)" />
+      <method signature="long RiseClient.DownloadSegment::get_CurrentPosition([launcher]RiseClient.DownloadSegment)" newName="$YA" oldStackTraceSignature="RiseClient.DownloadSegment:get_CurrentPosition()" newStackTraceSignature="$a.$dA:$YA()" />
+      <method signature="void RiseClient.DownloadSegment::set_CurrentPosition([launcher]RiseClient.DownloadSegment, long)" newName="$zA" oldStackTraceSignature="RiseClient.DownloadSegment:set_CurrentPosition(Int64)" newStackTraceSignature="$a.$dA:$zA(Int64)" />
+      <method signature="string RiseClient.DownloadSegment::get_TempFile([launcher]RiseClient.DownloadSegment)" newName="$ZA" oldStackTraceSignature="RiseClient.DownloadSegment:get_TempFile()" newStackTraceSignature="$a.$dA:$ZA()" />
+      <method signature="void RiseClient.DownloadSegment::set_TempFile([launcher]RiseClient.DownloadSegment, string)" newName="$ab" oldStackTraceSignature="RiseClient.DownloadSegment:set_TempFile(String)" newStackTraceSignature="$a.$dA:$ab(String)" />
+      <method signature="bool RiseClient.DownloadSegment::get_IsCompleted([launcher]RiseClient.DownloadSegment)" newName="$Ab" oldStackTraceSignature="RiseClient.DownloadSegment:get_IsCompleted()" newStackTraceSignature="$a.$dA:$Ab()" />
+    </type>
+    <type fullName="RiseClient.DownloadSegmentInfo" newFullName="$a.$DA" status="Renamed">
+      <field signature="long &lt;StartPosition&gt;k__BackingField" newName="$jb" />
+      <field signature="long &lt;EndPosition&gt;k__BackingField" newName="$Jb" />
+      <field signature="bool &lt;IsCompleted&gt;k__BackingField" newName="$kb" />
+      <field signature="long &lt;DownloadedSize&gt;k__BackingField" newName="$Kb" />
+      <property signature="long StartPosition" newName="$a" />
+      <property signature="long EndPosition" newName="$A" />
+      <property signature="bool IsCompleted" newName="$b" />
+      <property signature="long DownloadedSize" newName="$B" />
+      <method signature="long RiseClient.DownloadSegmentInfo::get_StartPosition([launcher]RiseClient.DownloadSegmentInfo)" newName="$bb" oldStackTraceSignature="RiseClient.DownloadSegmentInfo:get_StartPosition()" newStackTraceSignature="$a.$DA:$bb()" />
+      <method signature="void RiseClient.DownloadSegmentInfo::set_StartPosition([launcher]RiseClient.DownloadSegmentInfo, long)" newName="$Bb" oldStackTraceSignature="RiseClient.DownloadSegmentInfo:set_StartPosition(Int64)" newStackTraceSignature="$a.$DA:$Bb(Int64)" />
+      <method signature="long RiseClient.DownloadSegmentInfo::get_EndPosition([launcher]RiseClient.DownloadSegmentInfo)" newName="$cb" oldStackTraceSignature="RiseClient.DownloadSegmentInfo:get_EndPosition()" newStackTraceSignature="$a.$DA:$cb()" />
+      <method signature="void RiseClient.DownloadSegmentInfo::set_EndPosition([launcher]RiseClient.DownloadSegmentInfo, long)" newName="$Cb" oldStackTraceSignature="RiseClient.DownloadSegmentInfo:set_EndPosition(Int64)" newStackTraceSignature="$a.$DA:$Cb(Int64)" />
+      <method signature="bool RiseClient.DownloadSegmentInfo::get_IsCompleted([launcher]RiseClient.DownloadSegmentInfo)" newName="$db" oldStackTraceSignature="RiseClient.DownloadSegmentInfo:get_IsCompleted()" newStackTraceSignature="$a.$DA:$db()" />
+      <method signature="void RiseClient.DownloadSegmentInfo::set_IsCompleted([launcher]RiseClient.DownloadSegmentInfo, bool)" newName="$Db" oldStackTraceSignature="RiseClient.DownloadSegmentInfo:set_IsCompleted(Boolean)" newStackTraceSignature="$a.$DA:$Db(Boolean)" />
+      <method signature="long RiseClient.DownloadSegmentInfo::get_DownloadedSize([launcher]RiseClient.DownloadSegmentInfo)" newName="$eb" oldStackTraceSignature="RiseClient.DownloadSegmentInfo:get_DownloadedSize()" newStackTraceSignature="$a.$DA:$eb()" />
+      <method signature="void RiseClient.DownloadSegmentInfo::set_DownloadedSize([launcher]RiseClient.DownloadSegmentInfo, long)" newName="$Eb" oldStackTraceSignature="RiseClient.DownloadSegmentInfo:set_DownloadedSize(Int64)" newStackTraceSignature="$a.$DA:$Eb(Int64)" />
+    </type>
+    <type fullName="RiseClient.DownloadState" newFullName="" status="NotRenamed">
+      <field signature="string &lt;TargetVersion&gt;k__BackingField" newName="$Qb" />
+      <field signature="System.Collections.Generic.List`1&lt;string&gt; &lt;CompletedFiles&gt;k__BackingField" newName="$rb" />
+      <field signature="System.Collections.Generic.Dictionary`2&lt;string,long&gt; &lt;PartialDownloads&gt;k__BackingField" newName="$Rb" />
+      <method signature="string RiseClient.DownloadState::get_TargetVersion([launcher]RiseClient.DownloadState)" newName="$qb" oldStackTraceSignature="RiseClient.DownloadState:get_TargetVersion()" newStackTraceSignature="RiseClient.DownloadState:$qb()" />
+      <method signature="void RiseClient.DownloadState::set_TargetVersion([launcher]RiseClient.DownloadState, string)" newName="$Qb" oldStackTraceSignature="RiseClient.DownloadState:set_TargetVersion(String)" newStackTraceSignature="RiseClient.DownloadState:$Qb(String)" />
+      <method signature="System.Collections.Generic.List`1&lt;string&gt; RiseClient.DownloadState::get_CompletedFiles([launcher]RiseClient.DownloadState)" newName="$rb" oldStackTraceSignature="RiseClient.DownloadState:get_CompletedFiles()" newStackTraceSignature="RiseClient.DownloadState:$rb()" />
+      <method signature="void RiseClient.DownloadState::set_CompletedFiles([launcher]RiseClient.DownloadState, System.Collections.Generic.List`1&lt;string&gt;)" newName="$Rb" oldStackTraceSignature="RiseClient.DownloadState:set_CompletedFiles(List`1)" newStackTraceSignature="RiseClient.DownloadState:$Rb(List`1)" />
+      <method signature="System.Collections.Generic.Dictionary`2&lt;string,long&gt; RiseClient.DownloadState::get_PartialDownloads([launcher]RiseClient.DownloadState)" newName="$sb" oldStackTraceSignature="RiseClient.DownloadState:get_PartialDownloads()" newStackTraceSignature="RiseClient.DownloadState:$sb()" />
+      <method signature="void RiseClient.DownloadState::set_PartialDownloads([launcher]RiseClient.DownloadState, System.Collections.Generic.Dictionary`2&lt;string,long&gt;)" newName="$Sb" oldStackTraceSignature="RiseClient.DownloadState:set_PartialDownloads(Dictionary`2)" newStackTraceSignature="RiseClient.DownloadState:$Sb(Dictionary`2)" />
+    </type>
+    <type fullName="RiseClient.DownloadTask" newFullName="$a.$eA" status="Renamed">
+      <field signature="string &lt;Url&gt;k__BackingField" newName="$lb" />
+      <field signature="string &lt;SavePath&gt;k__BackingField" newName="$Lb" />
+      <field signature="string &lt;MD5&gt;k__BackingField" newName="$mb" />
+      <field signature="long &lt;FileSize&gt;k__BackingField" newName="$Mb" />
+      <field signature="long &lt;DownloadedSize&gt;k__BackingField" newName="$nb" />
+      <field signature="System.Action`1&lt;float&gt; OnProgressChanged" newName="$Nb" />
+      <field signature="bool &lt;IsPaused&gt;k__BackingField" newName="$ob" />
+      <field signature="bool &lt;IsCompleted&gt;k__BackingField" newName="$Ob" />
+      <field signature="System.Collections.Generic.List`1&lt;[launcher]RiseClient.DownloadSegment&gt; &lt;Segments&gt;k__BackingField" newName="$pb" />
+      <property signature="string Url" newName="$a" />
+      <property signature="string SavePath" newName="$A" />
+      <property signature="string MD5" newName="$b" />
+      <property signature="long FileSize" newName="$B" />
+      <property signature="long DownloadedSize" newName="$c" />
+      <property signature="float Progress" newName="$C" />
+      <property signature="bool IsPaused" newName="$d" />
+      <property signature="bool IsCompleted" newName="$D" />
+      <property signature="System.Collections.Generic.List`1&lt;[launcher]RiseClient.DownloadSegment&gt; Segments" newName="$e" />
+      <property signature="string TempFolder" newName="$E" />
+      <property signature="string SegmentInfoPath" newName="$f" />
+      <method signature="string RiseClient.DownloadTask::get_Url([launcher]RiseClient.DownloadTask)" newName="$fb" oldStackTraceSignature="RiseClient.DownloadTask:get_Url()" newStackTraceSignature="$a.$eA:$fb()" />
+      <method signature="void RiseClient.DownloadTask::set_Url([launcher]RiseClient.DownloadTask, string)" newName="$Fb" oldStackTraceSignature="RiseClient.DownloadTask:set_Url(String)" newStackTraceSignature="$a.$eA:$Fb(String)" />
+      <method signature="string RiseClient.DownloadTask::get_SavePath([launcher]RiseClient.DownloadTask)" newName="$gb" oldStackTraceSignature="RiseClient.DownloadTask:get_SavePath()" newStackTraceSignature="$a.$eA:$gb()" />
+      <method signature="void RiseClient.DownloadTask::set_SavePath([launcher]RiseClient.DownloadTask, string)" newName="$Gb" oldStackTraceSignature="RiseClient.DownloadTask:set_SavePath(String)" newStackTraceSignature="$a.$eA:$Gb(String)" />
+      <method signature="string RiseClient.DownloadTask::get_MD5([launcher]RiseClient.DownloadTask)" newName="$hb" oldStackTraceSignature="RiseClient.DownloadTask:get_MD5()" newStackTraceSignature="$a.$eA:$hb()" />
+      <method signature="void RiseClient.DownloadTask::set_MD5([launcher]RiseClient.DownloadTask, string)" newName="$Hb" oldStackTraceSignature="RiseClient.DownloadTask:set_MD5(String)" newStackTraceSignature="$a.$eA:$Hb(String)" />
+      <method signature="long RiseClient.DownloadTask::get_FileSize([launcher]RiseClient.DownloadTask)" newName="$ib" oldStackTraceSignature="RiseClient.DownloadTask:get_FileSize()" newStackTraceSignature="$a.$eA:$ib()" />
+      <method signature="void RiseClient.DownloadTask::set_FileSize([launcher]RiseClient.DownloadTask, long)" newName="$Ib" oldStackTraceSignature="RiseClient.DownloadTask:set_FileSize(Int64)" newStackTraceSignature="$a.$eA:$Ib(Int64)" />
+      <method signature="long RiseClient.DownloadTask::get_DownloadedSize([launcher]RiseClient.DownloadTask)" newName="$jb" oldStackTraceSignature="RiseClient.DownloadTask:get_DownloadedSize()" newStackTraceSignature="$a.$eA:$jb()" />
+      <method signature="void RiseClient.DownloadTask::set_DownloadedSize([launcher]RiseClient.DownloadTask, long)" newName="$Jb" oldStackTraceSignature="RiseClient.DownloadTask:set_DownloadedSize(Int64)" newStackTraceSignature="$a.$eA:$Jb(Int64)" />
+      <method signature="float RiseClient.DownloadTask::get_Progress([launcher]RiseClient.DownloadTask)" newName="$kb" oldStackTraceSignature="RiseClient.DownloadTask:get_Progress()" newStackTraceSignature="$a.$eA:$kb()" />
+      <method signature="bool RiseClient.DownloadTask::get_IsPaused([launcher]RiseClient.DownloadTask)" newName="$Kb" oldStackTraceSignature="RiseClient.DownloadTask:get_IsPaused()" newStackTraceSignature="$a.$eA:$Kb()" />
+      <method signature="void RiseClient.DownloadTask::set_IsPaused([launcher]RiseClient.DownloadTask, bool)" newName="$lb" oldStackTraceSignature="RiseClient.DownloadTask:set_IsPaused(Boolean)" newStackTraceSignature="$a.$eA:$lb(Boolean)" />
+      <method signature="bool RiseClient.DownloadTask::get_IsCompleted([launcher]RiseClient.DownloadTask)" newName="$Lb" oldStackTraceSignature="RiseClient.DownloadTask:get_IsCompleted()" newStackTraceSignature="$a.$eA:$Lb()" />
+      <method signature="void RiseClient.DownloadTask::set_IsCompleted([launcher]RiseClient.DownloadTask, bool)" newName="$mb" oldStackTraceSignature="RiseClient.DownloadTask:set_IsCompleted(Boolean)" newStackTraceSignature="$a.$eA:$mb(Boolean)" />
+      <method signature="System.Collections.Generic.List`1&lt;[launcher]RiseClient.DownloadSegment&gt; RiseClient.DownloadTask::get_Segments([launcher]RiseClient.DownloadTask)" newName="$Mb" oldStackTraceSignature="RiseClient.DownloadTask:get_Segments()" newStackTraceSignature="$a.$eA:$Mb()" />
+      <method signature="void RiseClient.DownloadTask::set_Segments([launcher]RiseClient.DownloadTask, System.Collections.Generic.List`1&lt;[launcher]RiseClient.DownloadSegment&gt;)" newName="$nb" oldStackTraceSignature="RiseClient.DownloadTask:set_Segments(List`1)" newStackTraceSignature="$a.$eA:$nb(List`1)" />
+      <method signature="string RiseClient.DownloadTask::get_TempFolder([launcher]RiseClient.DownloadTask)" newName="$Nb" oldStackTraceSignature="RiseClient.DownloadTask:get_TempFolder()" newStackTraceSignature="$a.$eA:$Nb()" />
+      <method signature="string RiseClient.DownloadTask::get_SegmentInfoPath([launcher]RiseClient.DownloadTask)" newName="$ob" oldStackTraceSignature="RiseClient.DownloadTask:get_SegmentInfoPath()" newStackTraceSignature="$a.$eA:$ob()" />
+      <method signature="void RiseClient.DownloadTask::SaveSegmentsInfo([launcher]RiseClient.DownloadTask)" newName="$Ob" oldStackTraceSignature="RiseClient.DownloadTask:SaveSegmentsInfo()" newStackTraceSignature="$a.$eA:$Ob()" />
+      <method signature="System.Collections.Generic.List`1&lt;[launcher]RiseClient.DownloadSegmentInfo&gt; RiseClient.DownloadTask::LoadSegmentsInfo([launcher]RiseClient.DownloadTask)" newName="$pb" oldStackTraceSignature="RiseClient.DownloadTask:LoadSegmentsInfo()" newStackTraceSignature="$a.$eA:$pb()" />
+    </type>
+    <type fullName="RiseClient.DownloadTask/&lt;&gt;c" newFullName="" status="NotRenamed">
+      <field signature="[launcher]RiseClient.DownloadTask/&lt;&gt;c &lt;&gt;9" newName="$Pb" />
+      <field signature="System.Func`2&lt;[launcher]RiseClient.DownloadSegment,[launcher]RiseClient.DownloadSegmentInfo&gt; &lt;&gt;9__39_0" newName="$qb" />
+      <method signature="[launcher]RiseClient.DownloadSegmentInfo RiseClient.DownloadTask/&lt;&gt;c::&lt;SaveSegmentsInfo&gt;b__39_0([launcher]RiseClient.DownloadTask/&lt;&gt;c, [launcher]RiseClient.DownloadSegment)" newName="$Pb" oldStackTraceSignature="RiseClient.&lt;&gt;c:&lt;SaveSegmentsInfo&gt;b__39_0(DownloadSegment)" newStackTraceSignature="$a.&lt;&gt;c:$Pb($dA)" />
+    </type>
+    <type fullName="RiseClient.Launcher" newFullName="" status="NotRenamed">
+      <field signature="string localVersion" newName="$UB" />
+      <field signature="System.Collections.Generic.List`1&lt;[launcher]RiseClient.UpdateFileInfo&gt; updateFiles" newName="$vB" />
+      <field signature="[launcher]RiseClient.DownloadProgress downloadProgress" newName="$VB" />
+      <property signature="string remoteBaseUrl" newName="$a" />
+      <property signature="string abUrl" newName="$A" />
+      <property signature="string versionUrl" newName="$b" />
+      <property signature="string localVersionPath" newName="$B" />
+      <method signature="string RiseClient.Launcher::get_remoteBaseUrl([launcher]RiseClient.Launcher)" newName="$NB" oldStackTraceSignature="RiseClient.Launcher:get_remoteBaseUrl()" newStackTraceSignature="RiseClient.Launcher:$NB()" />
+      <method signature="string RiseClient.Launcher::get_abUrl([launcher]RiseClient.Launcher)" newName="$oB" oldStackTraceSignature="RiseClient.Launcher:get_abUrl()" newStackTraceSignature="RiseClient.Launcher:$oB()" />
+      <method signature="string RiseClient.Launcher::get_versionUrl([launcher]RiseClient.Launcher)" newName="$OB" oldStackTraceSignature="RiseClient.Launcher:get_versionUrl()" newStackTraceSignature="RiseClient.Launcher:$OB()" />
+      <method signature="string RiseClient.Launcher::@get_localVersionPath()" newName="$pB" oldStackTraceSignature="RiseClient.Launcher:get_localVersionPath()" newStackTraceSignature="RiseClient.Launcher:$pB()" />
+      <method signature="string RiseClient.Launcher::@GetAssetPath(string)" newName="$PB" oldStackTraceSignature="RiseClient.Launcher:GetAssetPath(String)" newStackTraceSignature="RiseClient.Launcher:$PB(String)" />
+      <method signature="System.Collections.IEnumerator RiseClient.Launcher::CheckAndUpdate([launcher]RiseClient.Launcher)" newName="$qB" oldStackTraceSignature="RiseClient.Launcher:CheckAndUpdate()" newStackTraceSignature="RiseClient.Launcher:$qB()" />
+      <method signature="System.Collections.IEnumerator RiseClient.Launcher::@LoadMetadataForAOTAssemblies()" newName="$QB" oldStackTraceSignature="RiseClient.Launcher:LoadMetadataForAOTAssemblies()" newStackTraceSignature="RiseClient.Launcher:$QB()" />
+      <method signature="System.Threading.Tasks.Task`1&lt;bool&gt; RiseClient.Launcher::DownloadFileWithRetry([launcher]RiseClient.Launcher, [launcher]RiseClient.UpdateFileInfo, int)" newName="$rB" oldStackTraceSignature="RiseClient.Launcher:DownloadFileWithRetry(UpdateFileInfo, Int32)" newStackTraceSignature="RiseClient.Launcher:$rB(UpdateFileInfo, Int32)" />
+      <method signature="void RiseClient.Launcher::UpdateDownloadUI([launcher]RiseClient.Launcher)" newName="$RB" oldStackTraceSignature="RiseClient.Launcher:UpdateDownloadUI()" newStackTraceSignature="RiseClient.Launcher:$RB()" />
+      <method signature="string RiseClient.Launcher::FormatBytes([launcher]RiseClient.Launcher, ulong)" newName="$sB" oldStackTraceSignature="RiseClient.Launcher:FormatBytes(UInt64)" newStackTraceSignature="RiseClient.Launcher:$sB(UInt64)" />
+      <method signature="void RiseClient.Launcher::initSound([launcher]RiseClient.Launcher)" newName="$SB" oldStackTraceSignature="RiseClient.Launcher:initSound()" newStackTraceSignature="RiseClient.Launcher:$SB()" />
+      <method signature="void RiseClient.Launcher::&lt;DownloadFileWithRetry&gt;b__20_0([launcher]RiseClient.Launcher, float)" newName="$tB" oldStackTraceSignature="RiseClient.Launcher:&lt;DownloadFileWithRetry&gt;b__20_0(Single)" newStackTraceSignature="RiseClient.Launcher:$tB(Single)" />
+    </type>
+    <type fullName="RiseClient.Launcher/&lt;&gt;c" newFullName="" status="NotRenamed">
+      <field signature="[launcher]RiseClient.Launcher/&lt;&gt;c &lt;&gt;9" newName="$wB" />
+      <field signature="System.Func`2&lt;[launcher]RiseClient.UpdateFileInfo,bool&gt; &lt;&gt;9__18_0" newName="$WB" />
+      <field signature="System.Func`2&lt;[launcher]RiseClient.UpdateFileInfo,bool&gt; &lt;&gt;9__18_1" newName="$xB" />
+      <field signature="System.Predicate`1&lt;string&gt; &lt;&gt;9__18_2" newName="$XB" />
+      <method signature="bool RiseClient.Launcher/&lt;&gt;c::&lt;CheckAndUpdate&gt;b__18_0([launcher]RiseClient.Launcher/&lt;&gt;c, [launcher]RiseClient.UpdateFileInfo)" newName="$TB" oldStackTraceSignature="RiseClient.&lt;&gt;c:&lt;CheckAndUpdate&gt;b__18_0(UpdateFileInfo)" newStackTraceSignature="RiseClient.&lt;&gt;c:$TB(UpdateFileInfo)" />
+      <method signature="bool RiseClient.Launcher/&lt;&gt;c::&lt;CheckAndUpdate&gt;b__18_1([launcher]RiseClient.Launcher/&lt;&gt;c, [launcher]RiseClient.UpdateFileInfo)" newName="$uB" oldStackTraceSignature="RiseClient.&lt;&gt;c:&lt;CheckAndUpdate&gt;b__18_1(UpdateFileInfo)" newStackTraceSignature="RiseClient.&lt;&gt;c:$uB(UpdateFileInfo)" />
+      <method signature="bool RiseClient.Launcher/&lt;&gt;c::&lt;CheckAndUpdate&gt;b__18_2([launcher]RiseClient.Launcher/&lt;&gt;c, string)" newName="$UB" oldStackTraceSignature="RiseClient.&lt;&gt;c:&lt;CheckAndUpdate&gt;b__18_2(String)" newStackTraceSignature="RiseClient.&lt;&gt;c:$UB(String)" />
+    </type>
+    <type fullName="RiseClient.Launcher/&lt;&gt;c__DisplayClass18_0" newFullName="RiseClient.Launcher/$iA" status="Renamed">
+      <field signature="[launcher]RiseClient.Launcher &lt;&gt;4__this" newName="$yB" />
+      <field signature="System.Threading.Tasks.TaskCompletionSource`1&lt;bool[]&gt; tcs" newName="$YB" />
+      <method signature="void RiseClient.Launcher/&lt;&gt;c__DisplayClass18_0::&lt;CheckAndUpdate&gt;b__3([launcher]RiseClient.Launcher/&lt;&gt;c__DisplayClass18_0, System.Threading.Tasks.Task`1&lt;bool[]&gt;)" newName="$vB" oldStackTraceSignature="RiseClient.&lt;&gt;c__DisplayClass18_0:&lt;CheckAndUpdate&gt;b__3(Task`1)" newStackTraceSignature="RiseClient.$iA:$vB(Task`1)" />
+    </type>
+    <type fullName="RiseClient.Launcher/&lt;&gt;c__DisplayClass18_1" newFullName="RiseClient.Launcher/$IA" status="Renamed">
+      <field signature="[launcher]RiseClient.UpdateFileInfo fileInfo" newName="$zB" />
+      <field signature="[launcher]RiseClient.Launcher/&lt;&gt;c__DisplayClass18_0 CS$&lt;&gt;8__locals1" newName="$ZB" />
+      <method signature="void RiseClient.Launcher/&lt;&gt;c__DisplayClass18_1::&lt;CheckAndUpdate&gt;b__4([launcher]RiseClient.Launcher/&lt;&gt;c__DisplayClass18_1, float)" newName="$VB" oldStackTraceSignature="RiseClient.&lt;&gt;c__DisplayClass18_1:&lt;CheckAndUpdate&gt;b__4(Single)" newStackTraceSignature="RiseClient.$IA:$VB(Single)" />
+    </type>
+    <type fullName="RiseClient.Launcher/&lt;CheckAndUpdate&gt;d__18" newFullName="RiseClient.Launcher/$jA" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$ac" />
+      <field signature="object &lt;&gt;2__current" newName="$Ac" />
+      <field signature="[launcher]RiseClient.Launcher &lt;&gt;4__this" newName="$bc" />
+      <field signature="[launcher]RiseClient.Launcher/&lt;&gt;c__DisplayClass18_0 &lt;&gt;8__1" newName="$Bc" />
+      <field signature="float &lt;totalSteps&gt;5__2" newName="$cc" />
+      <field signature="float &lt;currentStep&gt;5__3" newName="$Cc" />
+      <field signature="[UnityEngine.UnityWebRequestModule]UnityEngine.Networking.UnityWebRequest &lt;versionReq&gt;5__4" newName="$dc" />
+      <field signature="string &lt;versionContent&gt;5__5" newName="$Dc" />
+      <field signature="string &lt;remoteVersion&gt;5__6" newName="$ec" />
+      <field signature="System.Collections.Generic.List`1&lt;[launcher]RiseClient.UpdateFileInfo&gt; &lt;pendingFiles&gt;5__7" newName="$Ec" />
+      <field signature="bool &lt;allSuccess&gt;5__8" newName="$fc" />
+      <property signature="object System.Collections.Generic.IEnumerator&lt;System.Object&gt;.Current" newName="$a" />
+      <property signature="object System.Collections.IEnumerator.Current" newName="$A" />
+      <method signature="void RiseClient.Launcher/&lt;CheckAndUpdate&gt;d__18::System.IDisposable.Dispose([launcher]RiseClient.Launcher/&lt;CheckAndUpdate&gt;d__18)" newName="$wD" oldStackTraceSignature="RiseClient.&lt;CheckAndUpdate&gt;d__18:System.IDisposable.Dispose()" newStackTraceSignature="RiseClient.$jA:$wD()" />
+      <method signature="object RiseClient.Launcher/&lt;CheckAndUpdate&gt;d__18::System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current([launcher]RiseClient.Launcher/&lt;CheckAndUpdate&gt;d__18)" newName="$WD" oldStackTraceSignature="RiseClient.&lt;CheckAndUpdate&gt;d__18:System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current()" newStackTraceSignature="RiseClient.$jA:$WD()" />
+      <method signature="void RiseClient.Launcher/&lt;CheckAndUpdate&gt;d__18::System.Collections.IEnumerator.Reset([launcher]RiseClient.Launcher/&lt;CheckAndUpdate&gt;d__18)" newName="$xD" oldStackTraceSignature="RiseClient.&lt;CheckAndUpdate&gt;d__18:System.Collections.IEnumerator.Reset()" newStackTraceSignature="RiseClient.$jA:$xD()" />
+      <method signature="object RiseClient.Launcher/&lt;CheckAndUpdate&gt;d__18::System.Collections.IEnumerator.get_Current([launcher]RiseClient.Launcher/&lt;CheckAndUpdate&gt;d__18)" newName="$XD" oldStackTraceSignature="RiseClient.&lt;CheckAndUpdate&gt;d__18:System.Collections.IEnumerator.get_Current()" newStackTraceSignature="RiseClient.$jA:$XD()" />
+    </type>
+    <type fullName="RiseClient.Launcher/&lt;DownloadFileWithRetry&gt;d__20" newFullName="RiseClient.Launcher/$JA" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$Fc" />
+      <field signature="System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1&lt;bool&gt; &lt;&gt;t__builder" newName="$gc" />
+      <field signature="[launcher]RiseClient.Launcher &lt;&gt;4__this" newName="$Gc" />
+      <field signature="[launcher]RiseClient.UpdateFileInfo fileInfo" newName="$hc" />
+      <field signature="int maxRetries" newName="$Hc" />
+      <field signature="int &lt;i&gt;5__2" newName="$ic" />
+      <field signature="object &lt;&gt;7__wrap2" newName="$Ic" />
+      <field signature="int &lt;&gt;7__wrap3" newName="$jc" />
+      <field signature="System.Runtime.CompilerServices.TaskAwaiter`1&lt;bool&gt; &lt;&gt;u__1" newName="$Jc" />
+      <field signature="System.Runtime.CompilerServices.TaskAwaiter &lt;&gt;u__2" newName="$kc" />
+    </type>
+    <type fullName="RiseClient.Launcher/&lt;LoadMetadataForAOTAssemblies&gt;d__19" newFullName="RiseClient.Launcher/$kA" status="Renamed">
+      <field signature="int &lt;&gt;1__state" newName="$Kc" />
+      <field signature="object &lt;&gt;2__current" newName="$lc" />
+      <field signature="bool &lt;copy&gt;5__2" newName="$Lc" />
+      <field signature="System.Collections.Generic.List`1/Enumerator&lt;string&gt; &lt;&gt;7__wrap2" newName="$mc" />
+      <field signature="string &lt;aotDllName&gt;5__4" newName="$Mc" />
+      <field signature="string &lt;path&gt;5__5" newName="$nc" />
+      <field signature="[UnityEngine.UnityWebRequestModule]UnityEngine.Networking.UnityWebRequest &lt;req&gt;5__6" newName="$Nc" />
+      <property signature="object System.Collections.Generic.IEnumerator&lt;System.Object&gt;.Current" newName="$a" />
+      <property signature="object System.Collections.IEnumerator.Current" newName="$A" />
+      <method signature="void RiseClient.Launcher/&lt;LoadMetadataForAOTAssemblies&gt;d__19::System.IDisposable.Dispose([launcher]RiseClient.Launcher/&lt;LoadMetadataForAOTAssemblies&gt;d__19)" newName="$yD" oldStackTraceSignature="RiseClient.&lt;LoadMetadataForAOTAssemblies&gt;d__19:System.IDisposable.Dispose()" newStackTraceSignature="RiseClient.$kA:$yD()" />
+      <method signature="void RiseClient.Launcher/&lt;LoadMetadataForAOTAssemblies&gt;d__19::&lt;&gt;m__Finally1([launcher]RiseClient.Launcher/&lt;LoadMetadataForAOTAssemblies&gt;d__19)" newName="$wB" oldStackTraceSignature="RiseClient.&lt;LoadMetadataForAOTAssemblies&gt;d__19:&lt;&gt;m__Finally1()" newStackTraceSignature="RiseClient.$kA:$wB()" />
+      <method signature="object RiseClient.Launcher/&lt;LoadMetadataForAOTAssemblies&gt;d__19::System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current([launcher]RiseClient.Launcher/&lt;LoadMetadataForAOTAssemblies&gt;d__19)" newName="$YD" oldStackTraceSignature="RiseClient.&lt;LoadMetadataForAOTAssemblies&gt;d__19:System.Collections.Generic.IEnumerator&lt;System.Object&gt;.get_Current()" newStackTraceSignature="RiseClient.$kA:$YD()" />
+      <method signature="void RiseClient.Launcher/&lt;LoadMetadataForAOTAssemblies&gt;d__19::System.Collections.IEnumerator.Reset([launcher]RiseClient.Launcher/&lt;LoadMetadataForAOTAssemblies&gt;d__19)" newName="$zD" oldStackTraceSignature="RiseClient.&lt;LoadMetadataForAOTAssemblies&gt;d__19:System.Collections.IEnumerator.Reset()" newStackTraceSignature="RiseClient.$kA:$zD()" />
+      <method signature="object RiseClient.Launcher/&lt;LoadMetadataForAOTAssemblies&gt;d__19::System.Collections.IEnumerator.get_Current([launcher]RiseClient.Launcher/&lt;LoadMetadataForAOTAssemblies&gt;d__19)" newName="$ZD" oldStackTraceSignature="RiseClient.&lt;LoadMetadataForAOTAssemblies&gt;d__19:System.Collections.IEnumerator.get_Current()" newStackTraceSignature="RiseClient.$kA:$ZD()" />
+    </type>
+    <type fullName="RiseClient.UpdateFileInfo" newFullName="" status="NotRenamed">
+      <field signature="string &lt;LocalPath&gt;k__BackingField" newName="$oc" />
+      <field signature="string &lt;RemoteUrl&gt;k__BackingField" newName="$Oc" />
+      <field signature="long &lt;FileSize&gt;k__BackingField" newName="$pc" />
+      <field signature="string &lt;MD5&gt;k__BackingField" newName="$Pc" />
+      <field signature="bool &lt;IsDownloaded&gt;k__BackingField" newName="$qc" />
+      <method signature="string RiseClient.UpdateFileInfo::get_LocalPath([launcher]RiseClient.UpdateFileInfo)" newName="$WB" oldStackTraceSignature="RiseClient.UpdateFileInfo:get_LocalPath()" newStackTraceSignature="RiseClient.UpdateFileInfo:$WB()" />
+      <method signature="void RiseClient.UpdateFileInfo::set_LocalPath([launcher]RiseClient.UpdateFileInfo, string)" newName="$xB" oldStackTraceSignature="RiseClient.UpdateFileInfo:set_LocalPath(String)" newStackTraceSignature="RiseClient.UpdateFileInfo:$xB(String)" />
+      <method signature="string RiseClient.UpdateFileInfo::get_RemoteUrl([launcher]RiseClient.UpdateFileInfo)" newName="$XB" oldStackTraceSignature="RiseClient.UpdateFileInfo:get_RemoteUrl()" newStackTraceSignature="RiseClient.UpdateFileInfo:$XB()" />
+      <method signature="void RiseClient.UpdateFileInfo::set_RemoteUrl([launcher]RiseClient.UpdateFileInfo, string)" newName="$yB" oldStackTraceSignature="RiseClient.UpdateFileInfo:set_RemoteUrl(String)" newStackTraceSignature="RiseClient.UpdateFileInfo:$yB(String)" />
+      <method signature="long RiseClient.UpdateFileInfo::get_FileSize([launcher]RiseClient.UpdateFileInfo)" newName="$YB" oldStackTraceSignature="RiseClient.UpdateFileInfo:get_FileSize()" newStackTraceSignature="RiseClient.UpdateFileInfo:$YB()" />
+      <method signature="void RiseClient.UpdateFileInfo::set_FileSize([launcher]RiseClient.UpdateFileInfo, long)" newName="$zB" oldStackTraceSignature="RiseClient.UpdateFileInfo:set_FileSize(Int64)" newStackTraceSignature="RiseClient.UpdateFileInfo:$zB(Int64)" />
+      <method signature="string RiseClient.UpdateFileInfo::get_MD5([launcher]RiseClient.UpdateFileInfo)" newName="$ZB" oldStackTraceSignature="RiseClient.UpdateFileInfo:get_MD5()" newStackTraceSignature="RiseClient.UpdateFileInfo:$ZB()" />
+      <method signature="void RiseClient.UpdateFileInfo::set_MD5([launcher]RiseClient.UpdateFileInfo, string)" newName="$ac" oldStackTraceSignature="RiseClient.UpdateFileInfo:set_MD5(String)" newStackTraceSignature="RiseClient.UpdateFileInfo:$ac(String)" />
+      <method signature="bool RiseClient.UpdateFileInfo::get_IsDownloaded([launcher]RiseClient.UpdateFileInfo)" newName="$Ac" oldStackTraceSignature="RiseClient.UpdateFileInfo:get_IsDownloaded()" newStackTraceSignature="RiseClient.UpdateFileInfo:$Ac()" />
+      <method signature="void RiseClient.UpdateFileInfo::set_IsDownloaded([launcher]RiseClient.UpdateFileInfo, bool)" newName="$bc" oldStackTraceSignature="RiseClient.UpdateFileInfo:set_IsDownloaded(Boolean)" newStackTraceSignature="RiseClient.UpdateFileInfo:$bc(Boolean)" />
+      <method signature="string RiseClient.UpdateFileInfo::GetFullLocalPath([launcher]RiseClient.UpdateFileInfo)" newName="$Bc" oldStackTraceSignature="RiseClient.UpdateFileInfo:GetFullLocalPath()" newStackTraceSignature="RiseClient.UpdateFileInfo:$Bc()" />
+      <method signature="System.Collections.Generic.List`1&lt;[launcher]RiseClient.UpdateFileInfo&gt; RiseClient.UpdateFileInfo::@ParseVersionFile(string, string[])" newName="$cc" oldStackTraceSignature="RiseClient.UpdateFileInfo:ParseVersionFile(String, String[])" newStackTraceSignature="RiseClient.UpdateFileInfo:$cc(String, String[])" />
+      <method signature="string RiseClient.UpdateFileInfo::@GetVersionNumber(string)" newName="$Cc" oldStackTraceSignature="RiseClient.UpdateFileInfo:GetVersionNumber(String)" newStackTraceSignature="RiseClient.UpdateFileInfo:$Cc(String)" />
+    </type>
+  </assembly>
+  <assembly name="main">
+    <type fullName="$Obfuz$ConstFieldHolder$0" newFullName="$aA" status="Renamed">
+      <field signature="int $Obfuz$RVA_Value0" newName="$cb" />
+      <field signature="int $Obfuz$RVA_Value1" newName="$Cb" />
+      <field signature="int $Obfuz$RVA_Value2" newName="$db" />
+      <field signature="int $Obfuz$RVA_Value3" newName="$Db" />
+    </type>
+    <type fullName="$Obfuz$ProxyCall" newFullName="$BA" status="Renamed">
+      <method signature="string $Obfuz$ProxyCall::@$Obfuz$Dispatch_22824_11558398(int)" newName="$tA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_22824_11558398(Int32)" newStackTraceSignature="$BA:$tA(Int32)" />
+      <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_11150_4780505(object, int)" newName="$TA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_11150_4780505(Object, Int32)" newStackTraceSignature="$BA:$TA(Object, Int32)" />
+      <method signature="void $Obfuz$ProxyCall::@$Obfuz$Dispatch_36812_4780505(object, object, int)" newName="$uA" oldStackTraceSignature="$Obfuz$ProxyCall:$Obfuz$Dispatch_36812_4780505(Object, Object, Int32)" newStackTraceSignature="$BA:$uA(Object, Object, Int32)" />
+    </type>
+    <type fullName="$Obfuz$RVA$0" newFullName="$bA" status="Renamed">
+      <field signature="[main]$ObfuzRVA$DataHolder2048 $RVA_Data0" newName="$eb" />
+      <field signature="byte[] $RVA_Value0" newName="$Eb" />
+    </type>
+    <type fullName="$ObfuzRVA$DataHolder2048" newFullName="$AA" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;" newFullName="$S" status="Renamed">
+      <field signature="[main]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=146 8345ACF7673D22CCEC43087C083DD44100F32236F8A7AE1B07F57CF0A54A89B3" newName="$FA" />
+      <field signature="[main]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=106 883471056998C74D2F457EFEF713CA20BE2033CBA75EC1913AAA8349043558A4" newName="$gA" />
+    </type>
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize28_11" newFullName="$S/$Y" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize28_4" newFullName="$S/$v" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize28_7" newFullName="$S/$W" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize32_12" newFullName="$S/$z" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_10" newFullName="$S/$y" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_13" newFullName="$S/$Z" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_3" newFullName="$S/$U" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_6" newFullName="$S/$w" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_8" newFullName="$S/$x" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize44_2" newFullName="$S/$u" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize44_5" newFullName="$S/$V" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize48_9" newFullName="$S/$X" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=106" newFullName="$S/$e" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=146" newFullName="$S/$f" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=49" newFullName="$S/$t" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=81" newFullName="$S/$T" status="Renamed" />
+    <type fullName="Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine" newFullName="$A.$a" status="Renamed">
+      <field signature="int[] _secretKey" newName="$fA" />
+      <property signature="int OpCodeCount" newName="$a" />
+      <method signature="int Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine::get_OpCodeCount([main]Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine)" newName="$UD" oldStackTraceSignature="Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine:get_OpCodeCount()" newStackTraceSignature="$A.$a:$UD()" />
+      <method signature="int Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine::Encrypt([main]Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine, int, int, int)" newName="$vD" oldStackTraceSignature="Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine:Encrypt(Int32, Int32, Int32)" newStackTraceSignature="$A.$a:$vD(Int32, Int32, Int32)" />
+      <method signature="int Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine::Decrypt([main]Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine, int, int, int)" newName="$VD" oldStackTraceSignature="Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine:Decrypt(Int32, Int32, Int32)" newStackTraceSignature="$A.$a:$VD(Int32, Int32, Int32)" />
+      <method signature="int Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine::ExecuteEncrypt([main]Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine, int, int, int)" newName="$UA" oldStackTraceSignature="Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine:ExecuteEncrypt(Int32, Int32, Int32)" newStackTraceSignature="$A.$a:$UA(Int32, Int32, Int32)" />
+      <method signature="int Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine::ExecuteDecrypt([main]Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine, int, int, int)" newName="$vA" oldStackTraceSignature="Obfuz.EncryptionVM.GeneratedEncryptionVirtualMachine:ExecuteDecrypt(Int32, Int32, Int32)" newStackTraceSignature="$A.$a:$vA(Int32, Int32, Int32)" />
+    </type>
+    <type fullName="RiseClient.TestHotUpdate" newFullName="$a.$s" status="Renamed">
+      <method signature="string RiseClient.TestHotUpdate::@Run()" newName="$SA" oldStackTraceSignature="RiseClient.TestHotUpdate:Run()" newStackTraceSignature="$a.$s:$SA()" />
+    </type>
+  </assembly>
+  <assembly name="Obfuz.Runtime">
+    <type fullName="&lt;PrivateImplementationDetails&gt;" newFullName="$bb" status="Renamed">
+      <field signature="[Obfuz.Runtime]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=846 420F1D6604C5F76CDF04C23910B68CA5DD995B8AAA16504AD2423EF5307A1673" newName="$Xd" />
+      <field signature="[Obfuz.Runtime]&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=428 7DC72EACF4C52A1729F6C06DF08DBBB25CECF769449A70A0D97F6EADE43D51F3" newName="$Ud" />
+    </type>
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize28_11" newFullName="$bb/$hb" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize28_4" newFullName="$bb/$Db" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize28_7" newFullName="$bb/$fb" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize32_12" newFullName="$bb/$Hb" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_10" newFullName="$bb/$Gb" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_13" newFullName="$bb/$ib" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_3" newFullName="$bb/$db" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_6" newFullName="$bb/$Eb" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize36_8" newFullName="$bb/$Fb" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize44_2" newFullName="$bb/$Cb" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize44_5" newFullName="$bb/$eb" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/$Obfuz$WatermarkDataHolderSize48_9" newFullName="$bb/$gb" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=428" newFullName="$bb/$Bb" status="Renamed" />
+    <type fullName="&lt;PrivateImplementationDetails&gt;/__StaticArrayInitTypeSize=846" newFullName="$bb/$cb" status="Renamed" />
+    <type fullName="Obfuz.AssertUtility" newFullName="$b.$UA" status="Renamed">
+      <method signature="void Obfuz.AssertUtility::@VerifySecretKey(int, int)" newName="$xC" oldStackTraceSignature="Obfuz.AssertUtility:VerifySecretKey(Int32, Int32)" newStackTraceSignature="$b.$UA:$xC(Int32, Int32)" />
+    </type>
+    <type fullName="Obfuz.ConstUtility" newFullName="$b.$vA" status="Renamed">
+      <method signature="int Obfuz.ConstUtility::@GetInt(byte[], int)" newName="$XC" oldStackTraceSignature="Obfuz.ConstUtility:GetInt(Byte[], Int32)" newStackTraceSignature="$b.$vA:$XC(Byte[], Int32)" />
+      <method signature="long Obfuz.ConstUtility::@GetLong(byte[], int)" newName="$yC" oldStackTraceSignature="Obfuz.ConstUtility:GetLong(Byte[], Int32)" newStackTraceSignature="$b.$vA:$yC(Byte[], Int32)" />
+      <method signature="float Obfuz.ConstUtility::@GetFloat(byte[], int)" newName="$YC" oldStackTraceSignature="Obfuz.ConstUtility:GetFloat(Byte[], Int32)" newStackTraceSignature="$b.$vA:$YC(Byte[], Int32)" />
+      <method signature="double Obfuz.ConstUtility::@GetDouble(byte[], int)" newName="$zC" oldStackTraceSignature="Obfuz.ConstUtility:GetDouble(Byte[], Int32)" newStackTraceSignature="$b.$vA:$zC(Byte[], Int32)" />
+      <method signature="string Obfuz.ConstUtility::@GetString(byte[], int, int)" newName="$ZC" oldStackTraceSignature="Obfuz.ConstUtility:GetString(Byte[], Int32, Int32)" newStackTraceSignature="$b.$vA:$ZC(Byte[], Int32, Int32)" />
+      <method signature="byte[] Obfuz.ConstUtility::@GetBytes(byte[], int, int)" newName="$ad" oldStackTraceSignature="Obfuz.ConstUtility:GetBytes(Byte[], Int32, Int32)" newStackTraceSignature="$b.$vA:$ad(Byte[], Int32, Int32)" />
+      <method signature="int[] Obfuz.ConstUtility::@GetInts(byte[], int, int)" newName="$Ad" oldStackTraceSignature="Obfuz.ConstUtility:GetInts(Byte[], Int32, Int32)" newStackTraceSignature="$b.$vA:$Ad(Byte[], Int32, Int32)" />
+      <method signature="void Obfuz.ConstUtility::@InitializeArray(System.Array, byte[], int, int)" newName="$bd" oldStackTraceSignature="Obfuz.ConstUtility:InitializeArray(Array, Byte[], Int32, Int32)" newStackTraceSignature="$b.$vA:$bd(Array, Byte[], Int32, Int32)" />
+      <method signature="int Obfuz.ConstUtility::@CastFloatAsInt(float)" newName="$Bd" oldStackTraceSignature="Obfuz.ConstUtility:CastFloatAsInt(Single)" newStackTraceSignature="$b.$vA:$Bd(Single)" />
+      <method signature="float Obfuz.ConstUtility::@CastIntAsFloat(int)" newName="$cd" oldStackTraceSignature="Obfuz.ConstUtility:CastIntAsFloat(Int32)" newStackTraceSignature="$b.$vA:$cd(Int32)" />
+      <method signature="long Obfuz.ConstUtility::@CastDoubleAsLong(double)" newName="$Cd" oldStackTraceSignature="Obfuz.ConstUtility:CastDoubleAsLong(Double)" newStackTraceSignature="$b.$vA:$Cd(Double)" />
+      <method signature="double Obfuz.ConstUtility::@CastLongAsDouble(long)" newName="$dd" oldStackTraceSignature="Obfuz.ConstUtility:CastLongAsDouble(Int64)" newStackTraceSignature="$b.$vA:$dd(Int64)" />
+    </type>
+    <type fullName="Obfuz.DefaultDynamicEncryptionScope" newFullName="$b.$WA" status="Renamed">
+      <method signature="void Obfuz.DefaultDynamicEncryptionScope::ForcePreserveAOT([Obfuz.Runtime]Obfuz.DefaultDynamicEncryptionScope&amp;)" newName="$ed" oldStackTraceSignature="Obfuz.DefaultDynamicEncryptionScope:ForcePreserveAOT()" newStackTraceSignature="$b.$WA:$ed()" />
+    </type>
+    <type fullName="Obfuz.DefaultStaticEncryptionScope" newFullName="$b.$xA" status="Renamed">
+      <method signature="void Obfuz.DefaultStaticEncryptionScope::ForcePreserveAOT([Obfuz.Runtime]Obfuz.DefaultStaticEncryptionScope&amp;)" newName="$Ed" oldStackTraceSignature="Obfuz.DefaultStaticEncryptionScope:ForcePreserveAOT()" newStackTraceSignature="$b.$xA:$Ed()" />
+    </type>
+    <type fullName="Obfuz.EncryptionScopeBase" newFullName="$b.$wA" status="Renamed">
+      <method signature="void Obfuz.EncryptionScopeBase::ForcePreserveAOT([Obfuz.Runtime]Obfuz.EncryptionScopeBase)" newName="$Dd" oldStackTraceSignature="Obfuz.EncryptionScopeBase:ForcePreserveAOT()" newStackTraceSignature="$b.$wA:$Dd()" />
+    </type>
+    <type fullName="Obfuz.EncryptionService`1" newFullName="$b.$XA`1" status="Renamed">
+      <field signature="[Obfuz.Runtime]Obfuz.IEncryptor _encryptor" newName="$Pd" />
+      <property signature="[Obfuz.Runtime]Obfuz.IEncryptor Encryptor" newName="$a" />
+      <method signature="[Obfuz.Runtime]Obfuz.IEncryptor Obfuz.EncryptionService`1::@get_Encryptor()" newName="$fd" oldStackTraceSignature="Obfuz.EncryptionService`1:get_Encryptor()" newStackTraceSignature="$b.$XA`1:$fd()" />
+      <method signature="void Obfuz.EncryptionService`1::@set_Encryptor([Obfuz.Runtime]Obfuz.IEncryptor)" newName="$Fd" oldStackTraceSignature="Obfuz.EncryptionService`1:set_Encryptor(IEncryptor)" newStackTraceSignature="$b.$XA`1:$Fd($zA)" />
+      <method signature="void Obfuz.EncryptionService`1::@EncryptBlock(byte[], int, int)" newName="$gd" oldStackTraceSignature="Obfuz.EncryptionService`1:EncryptBlock(Byte[], Int32, Int32)" newStackTraceSignature="$b.$XA`1:$gd(Byte[], Int32, Int32)" />
+      <method signature="void Obfuz.EncryptionService`1::@DecryptBlock(byte[], int, int)" newName="$Gd" oldStackTraceSignature="Obfuz.EncryptionService`1:DecryptBlock(Byte[], Int32, Int32)" newStackTraceSignature="$b.$XA`1:$Gd(Byte[], Int32, Int32)" />
+      <method signature="int Obfuz.EncryptionService`1::@Encrypt(int, int, int)" newName="$hd" oldStackTraceSignature="Obfuz.EncryptionService`1:Encrypt(Int32, Int32, Int32)" newStackTraceSignature="$b.$XA`1:$hd(Int32, Int32, Int32)" />
+      <method signature="int Obfuz.EncryptionService`1::@Decrypt(int, int, int)" newName="$Hd" oldStackTraceSignature="Obfuz.EncryptionService`1:Decrypt(Int32, Int32, Int32)" newStackTraceSignature="$b.$XA`1:$Hd(Int32, Int32, Int32)" />
+      <method signature="long Obfuz.EncryptionService`1::@Encrypt(long, int, int)" newName="$id" oldStackTraceSignature="Obfuz.EncryptionService`1:Encrypt(Int64, Int32, Int32)" newStackTraceSignature="$b.$XA`1:$id(Int64, Int32, Int32)" />
+      <method signature="long Obfuz.EncryptionService`1::@Decrypt(long, int, int)" newName="$Id" oldStackTraceSignature="Obfuz.EncryptionService`1:Decrypt(Int64, Int32, Int32)" newStackTraceSignature="$b.$XA`1:$Id(Int64, Int32, Int32)" />
+      <method signature="float Obfuz.EncryptionService`1::@Encrypt(float, int, int)" newName="$jd" oldStackTraceSignature="Obfuz.EncryptionService`1:Encrypt(Single, Int32, Int32)" newStackTraceSignature="$b.$XA`1:$jd(Single, Int32, Int32)" />
+      <method signature="float Obfuz.EncryptionService`1::@Decrypt(float, int, int)" newName="$Jd" oldStackTraceSignature="Obfuz.EncryptionService`1:Decrypt(Single, Int32, Int32)" newStackTraceSignature="$b.$XA`1:$Jd(Single, Int32, Int32)" />
+      <method signature="double Obfuz.EncryptionService`1::@Encrypt(double, int, int)" newName="$kd" oldStackTraceSignature="Obfuz.EncryptionService`1:Encrypt(Double, Int32, Int32)" newStackTraceSignature="$b.$XA`1:$kd(Double, Int32, Int32)" />
+      <method signature="double Obfuz.EncryptionService`1::@Decrypt(double, int, int)" newName="$Kd" oldStackTraceSignature="Obfuz.EncryptionService`1:Decrypt(Double, Int32, Int32)" newStackTraceSignature="$b.$XA`1:$Kd(Double, Int32, Int32)" />
+      <method signature="byte[] Obfuz.EncryptionService`1::@Encrypt(byte[], int, int, int, int)" newName="$ld" oldStackTraceSignature="Obfuz.EncryptionService`1:Encrypt(Byte[], Int32, Int32, Int32, Int32)" newStackTraceSignature="$b.$XA`1:$ld(Byte[], Int32, Int32, Int32, Int32)" />
+      <method signature="byte[] Obfuz.EncryptionService`1::@Decrypt(byte[], int, int, int, int)" newName="$Ld" oldStackTraceSignature="Obfuz.EncryptionService`1:Decrypt(Byte[], Int32, Int32, Int32, Int32)" newStackTraceSignature="$b.$XA`1:$Ld(Byte[], Int32, Int32, Int32, Int32)" />
+      <method signature="byte[] Obfuz.EncryptionService`1::@Encrypt(string, int, int)" newName="$md" oldStackTraceSignature="Obfuz.EncryptionService`1:Encrypt(String, Int32, Int32)" newStackTraceSignature="$b.$XA`1:$md(String, Int32, Int32)" />
+      <method signature="string Obfuz.EncryptionService`1::@DecryptString(byte[], int, int, int, int)" newName="$Md" oldStackTraceSignature="Obfuz.EncryptionService`1:DecryptString(Byte[], Int32, Int32, Int32, Int32)" newStackTraceSignature="$b.$XA`1:$Md(Byte[], Int32, Int32, Int32, Int32)" />
+      <method signature="int Obfuz.EncryptionService`1::@DecryptFromRvaInt(byte[], int, int, int)" newName="$nd" oldStackTraceSignature="Obfuz.EncryptionService`1:DecryptFromRvaInt(Byte[], Int32, Int32, Int32)" newStackTraceSignature="$b.$XA`1:$nd(Byte[], Int32, Int32, Int32)" />
+      <method signature="long Obfuz.EncryptionService`1::@DecryptFromRvaLong(byte[], int, int, int)" newName="$Nd" oldStackTraceSignature="Obfuz.EncryptionService`1:DecryptFromRvaLong(Byte[], Int32, Int32, Int32)" newStackTraceSignature="$b.$XA`1:$Nd(Byte[], Int32, Int32, Int32)" />
+      <method signature="float Obfuz.EncryptionService`1::@DecryptFromRvaFloat(byte[], int, int, int)" newName="$od" oldStackTraceSignature="Obfuz.EncryptionService`1:DecryptFromRvaFloat(Byte[], Int32, Int32, Int32)" newStackTraceSignature="$b.$XA`1:$od(Byte[], Int32, Int32, Int32)" />
+      <method signature="double Obfuz.EncryptionService`1::@DecryptFromRvaDouble(byte[], int, int, int)" newName="$Od" oldStackTraceSignature="Obfuz.EncryptionService`1:DecryptFromRvaDouble(Byte[], Int32, Int32, Int32)" newStackTraceSignature="$b.$XA`1:$Od(Byte[], Int32, Int32, Int32)" />
+      <method signature="string Obfuz.EncryptionService`1::@DecryptFromRvaString(byte[], int, int, int, int)" newName="$pd" oldStackTraceSignature="Obfuz.EncryptionService`1:DecryptFromRvaString(Byte[], Int32, Int32, Int32, Int32)" newStackTraceSignature="$b.$XA`1:$pd(Byte[], Int32, Int32, Int32, Int32)" />
+      <method signature="byte[] Obfuz.EncryptionService`1::@DecryptFromRvaBytes(byte[], int, int, int, int)" newName="$Pd" oldStackTraceSignature="Obfuz.EncryptionService`1:DecryptFromRvaBytes(Byte[], Int32, Int32, Int32, Int32)" newStackTraceSignature="$b.$XA`1:$Pd(Byte[], Int32, Int32, Int32, Int32)" />
+      <method signature="void Obfuz.EncryptionService`1::@DecryptInitializeArray(System.Array, System.RuntimeFieldHandle, int, int, int)" newName="$qd" oldStackTraceSignature="Obfuz.EncryptionService`1:DecryptInitializeArray(Array, RuntimeFieldHandle, Int32, Int32, Int32)" newStackTraceSignature="$b.$XA`1:$qd(Array, RuntimeFieldHandle, Int32, Int32, Int32)" />
+    </type>
+    <type fullName="Obfuz.EncryptorBase" newFullName="$b.$yA" status="Renamed">
+      <property signature="int OpCodeCount" newName="$a" />
+      <method signature="int Obfuz.EncryptorBase::get_OpCodeCount([Obfuz.Runtime]Obfuz.EncryptorBase)" newName="$UD" oldStackTraceSignature="Obfuz.EncryptorBase:get_OpCodeCount()" newStackTraceSignature="$b.$yA:$UD()" />
+      <method signature="int[] Obfuz.EncryptorBase::@ConvertToIntKey(byte[])" newName="$Qd" oldStackTraceSignature="Obfuz.EncryptorBase:ConvertToIntKey(Byte[])" newStackTraceSignature="$b.$yA:$Qd(Byte[])" />
+      <method signature="int Obfuz.EncryptorBase::Encrypt([Obfuz.Runtime]Obfuz.EncryptorBase, int, int, int)" newName="$vD" oldStackTraceSignature="Obfuz.EncryptorBase:Encrypt(Int32, Int32, Int32)" newStackTraceSignature="$b.$yA:$vD(Int32, Int32, Int32)" />
+      <method signature="int Obfuz.EncryptorBase::Decrypt([Obfuz.Runtime]Obfuz.EncryptorBase, int, int, int)" newName="$VD" oldStackTraceSignature="Obfuz.EncryptorBase:Decrypt(Int32, Int32, Int32)" newStackTraceSignature="$b.$yA:$VD(Int32, Int32, Int32)" />
+      <method signature="long Obfuz.EncryptorBase::Encrypt([Obfuz.Runtime]Obfuz.EncryptorBase, long, int, int)" newName="$ae" oldStackTraceSignature="Obfuz.EncryptorBase:Encrypt(Int64, Int32, Int32)" newStackTraceSignature="$b.$yA:$ae(Int64, Int32, Int32)" />
+      <method signature="long Obfuz.EncryptorBase::Decrypt([Obfuz.Runtime]Obfuz.EncryptorBase, long, int, int)" newName="$Ae" oldStackTraceSignature="Obfuz.EncryptorBase:Decrypt(Int64, Int32, Int32)" newStackTraceSignature="$b.$yA:$Ae(Int64, Int32, Int32)" />
+      <method signature="float Obfuz.EncryptorBase::Encrypt([Obfuz.Runtime]Obfuz.EncryptorBase, float, int, int)" newName="$be" oldStackTraceSignature="Obfuz.EncryptorBase:Encrypt(Single, Int32, Int32)" newStackTraceSignature="$b.$yA:$be(Single, Int32, Int32)" />
+      <method signature="float Obfuz.EncryptorBase::Decrypt([Obfuz.Runtime]Obfuz.EncryptorBase, float, int, int)" newName="$Be" oldStackTraceSignature="Obfuz.EncryptorBase:Decrypt(Single, Int32, Int32)" newStackTraceSignature="$b.$yA:$Be(Single, Int32, Int32)" />
+      <method signature="double Obfuz.EncryptorBase::Encrypt([Obfuz.Runtime]Obfuz.EncryptorBase, double, int, int)" newName="$ce" oldStackTraceSignature="Obfuz.EncryptorBase:Encrypt(Double, Int32, Int32)" newStackTraceSignature="$b.$yA:$ce(Double, Int32, Int32)" />
+      <method signature="double Obfuz.EncryptorBase::Decrypt([Obfuz.Runtime]Obfuz.EncryptorBase, double, int, int)" newName="$Ce" oldStackTraceSignature="Obfuz.EncryptorBase:Decrypt(Double, Int32, Int32)" newStackTraceSignature="$b.$yA:$Ce(Double, Int32, Int32)" />
+      <method signature="byte[] Obfuz.EncryptorBase::Encrypt([Obfuz.Runtime]Obfuz.EncryptorBase, byte[], int, int, int, int)" newName="$de" oldStackTraceSignature="Obfuz.EncryptorBase:Encrypt(Byte[], Int32, Int32, Int32, Int32)" newStackTraceSignature="$b.$yA:$de(Byte[], Int32, Int32, Int32, Int32)" />
+      <method signature="byte[] Obfuz.EncryptorBase::Decrypt([Obfuz.Runtime]Obfuz.EncryptorBase, byte[], int, int, int, int)" newName="$De" oldStackTraceSignature="Obfuz.EncryptorBase:Decrypt(Byte[], Int32, Int32, Int32, Int32)" newStackTraceSignature="$b.$yA:$De(Byte[], Int32, Int32, Int32, Int32)" />
+      <method signature="byte[] Obfuz.EncryptorBase::Encrypt([Obfuz.Runtime]Obfuz.EncryptorBase, string, int, int)" newName="$ee" oldStackTraceSignature="Obfuz.EncryptorBase:Encrypt(String, Int32, Int32)" newStackTraceSignature="$b.$yA:$ee(String, Int32, Int32)" />
+      <method signature="string Obfuz.EncryptorBase::DecryptString([Obfuz.Runtime]Obfuz.EncryptorBase, byte[], int, int, int, int)" newName="$Ee" oldStackTraceSignature="Obfuz.EncryptorBase:DecryptString(Byte[], Int32, Int32, Int32, Int32)" newStackTraceSignature="$b.$yA:$Ee(Byte[], Int32, Int32, Int32, Int32)" />
+      <method signature="void Obfuz.EncryptorBase::EncryptBlock([Obfuz.Runtime]Obfuz.EncryptorBase, byte[], int, int)" newName="$fe" oldStackTraceSignature="Obfuz.EncryptorBase:EncryptBlock(Byte[], Int32, Int32)" newStackTraceSignature="$b.$yA:$fe(Byte[], Int32, Int32)" />
+      <method signature="void Obfuz.EncryptorBase::DecryptBlock([Obfuz.Runtime]Obfuz.EncryptorBase, byte[], int, int)" newName="$Fe" oldStackTraceSignature="Obfuz.EncryptorBase:DecryptBlock(Byte[], Int32, Int32)" newStackTraceSignature="$b.$yA:$Fe(Byte[], Int32, Int32)" />
+      <method signature="void Obfuz.EncryptorBase::DecryptBlock([Obfuz.Runtime]Obfuz.EncryptorBase, byte*, int, int, int)" newName="$rd" oldStackTraceSignature="Obfuz.EncryptorBase:DecryptBlock(Byte*, Int32, Int32, Int32)" newStackTraceSignature="$b.$yA:$rd(Byte*, Int32, Int32, Int32)" />
+      <method signature="void Obfuz.EncryptorBase::DecryptInitializeArray([Obfuz.Runtime]Obfuz.EncryptorBase, System.Array, System.RuntimeFieldHandle, int, int, int)" newName="$ge" oldStackTraceSignature="Obfuz.EncryptorBase:DecryptInitializeArray(Array, RuntimeFieldHandle, Int32, Int32, Int32)" newStackTraceSignature="$b.$yA:$ge(Array, RuntimeFieldHandle, Int32, Int32, Int32)" />
+    </type>
+    <type fullName="Obfuz.ExprUtility" newFullName="$b.$YA" status="Renamed">
+      <method signature="int Obfuz.ExprUtility::@Add(int, int)" newName="$Rd" oldStackTraceSignature="Obfuz.ExprUtility:Add(Int32, Int32)" newStackTraceSignature="$b.$YA:$Rd(Int32, Int32)" />
+      <method signature="long Obfuz.ExprUtility::@Add(long, long)" newName="$sd" oldStackTraceSignature="Obfuz.ExprUtility:Add(Int64, Int64)" newStackTraceSignature="$b.$YA:$sd(Int64, Int64)" />
+      <method signature="float Obfuz.ExprUtility::@Add(float, float)" newName="$Sd" oldStackTraceSignature="Obfuz.ExprUtility:Add(Single, Single)" newStackTraceSignature="$b.$YA:$Sd(Single, Single)" />
+      <method signature="double Obfuz.ExprUtility::@Add(double, double)" newName="$td" oldStackTraceSignature="Obfuz.ExprUtility:Add(Double, Double)" newStackTraceSignature="$b.$YA:$td(Double, Double)" />
+      <method signature="nint Obfuz.ExprUtility::@Add(nint, nint)" newName="$Td" oldStackTraceSignature="Obfuz.ExprUtility:Add(IntPtr, IntPtr)" newStackTraceSignature="$b.$YA:$Td(IntPtr, IntPtr)" />
+      <method signature="nint Obfuz.ExprUtility::@Add(nint, int)" newName="$ud" oldStackTraceSignature="Obfuz.ExprUtility:Add(IntPtr, Int32)" newStackTraceSignature="$b.$YA:$ud(IntPtr, Int32)" />
+      <method signature="int Obfuz.ExprUtility::@Subtract(int, int)" newName="$Ud" oldStackTraceSignature="Obfuz.ExprUtility:Subtract(Int32, Int32)" newStackTraceSignature="$b.$YA:$Ud(Int32, Int32)" />
+      <method signature="long Obfuz.ExprUtility::@Subtract(long, long)" newName="$vd" oldStackTraceSignature="Obfuz.ExprUtility:Subtract(Int64, Int64)" newStackTraceSignature="$b.$YA:$vd(Int64, Int64)" />
+      <method signature="float Obfuz.ExprUtility::@Subtract(float, float)" newName="$Vd" oldStackTraceSignature="Obfuz.ExprUtility:Subtract(Single, Single)" newStackTraceSignature="$b.$YA:$Vd(Single, Single)" />
+      <method signature="double Obfuz.ExprUtility::@Subtract(double, double)" newName="$wd" oldStackTraceSignature="Obfuz.ExprUtility:Subtract(Double, Double)" newStackTraceSignature="$b.$YA:$wd(Double, Double)" />
+      <method signature="nint Obfuz.ExprUtility::@Subtract(nint, nint)" newName="$Wd" oldStackTraceSignature="Obfuz.ExprUtility:Subtract(IntPtr, IntPtr)" newStackTraceSignature="$b.$YA:$Wd(IntPtr, IntPtr)" />
+      <method signature="nint Obfuz.ExprUtility::@Subtract(nint, int)" newName="$xd" oldStackTraceSignature="Obfuz.ExprUtility:Subtract(IntPtr, Int32)" newStackTraceSignature="$b.$YA:$xd(IntPtr, Int32)" />
+      <method signature="int Obfuz.ExprUtility::@Multiply(int, int)" newName="$Xd" oldStackTraceSignature="Obfuz.ExprUtility:Multiply(Int32, Int32)" newStackTraceSignature="$b.$YA:$Xd(Int32, Int32)" />
+      <method signature="long Obfuz.ExprUtility::@Multiply(long, long)" newName="$yd" oldStackTraceSignature="Obfuz.ExprUtility:Multiply(Int64, Int64)" newStackTraceSignature="$b.$YA:$yd(Int64, Int64)" />
+      <method signature="float Obfuz.ExprUtility::@Multiply(float, float)" newName="$Yd" oldStackTraceSignature="Obfuz.ExprUtility:Multiply(Single, Single)" newStackTraceSignature="$b.$YA:$Yd(Single, Single)" />
+      <method signature="double Obfuz.ExprUtility::@Multiply(double, double)" newName="$zd" oldStackTraceSignature="Obfuz.ExprUtility:Multiply(Double, Double)" newStackTraceSignature="$b.$YA:$zd(Double, Double)" />
+      <method signature="nint Obfuz.ExprUtility::@Multiply(nint, nint)" newName="$Zd" oldStackTraceSignature="Obfuz.ExprUtility:Multiply(IntPtr, IntPtr)" newStackTraceSignature="$b.$YA:$Zd(IntPtr, IntPtr)" />
+      <method signature="nint Obfuz.ExprUtility::@Multiply(nint, int)" newName="$aD" oldStackTraceSignature="Obfuz.ExprUtility:Multiply(IntPtr, Int32)" newStackTraceSignature="$b.$YA:$aD(IntPtr, Int32)" />
+      <method signature="int Obfuz.ExprUtility::@Divide(int, int)" newName="$AD" oldStackTraceSignature="Obfuz.ExprUtility:Divide(Int32, Int32)" newStackTraceSignature="$b.$YA:$AD(Int32, Int32)" />
+      <method signature="long Obfuz.ExprUtility::@Divide(long, long)" newName="$bD" oldStackTraceSignature="Obfuz.ExprUtility:Divide(Int64, Int64)" newStackTraceSignature="$b.$YA:$bD(Int64, Int64)" />
+      <method signature="float Obfuz.ExprUtility::@Divide(float, float)" newName="$BD" oldStackTraceSignature="Obfuz.ExprUtility:Divide(Single, Single)" newStackTraceSignature="$b.$YA:$BD(Single, Single)" />
+      <method signature="double Obfuz.ExprUtility::@Divide(double, double)" newName="$cD" oldStackTraceSignature="Obfuz.ExprUtility:Divide(Double, Double)" newStackTraceSignature="$b.$YA:$cD(Double, Double)" />
+      <method signature="int Obfuz.ExprUtility::@DivideUn(int, int)" newName="$CD" oldStackTraceSignature="Obfuz.ExprUtility:DivideUn(Int32, Int32)" newStackTraceSignature="$b.$YA:$CD(Int32, Int32)" />
+      <method signature="long Obfuz.ExprUtility::@DivideUn(long, long)" newName="$dD" oldStackTraceSignature="Obfuz.ExprUtility:DivideUn(Int64, Int64)" newStackTraceSignature="$b.$YA:$dD(Int64, Int64)" />
+      <method signature="int Obfuz.ExprUtility::@Rem(int, int)" newName="$DD" oldStackTraceSignature="Obfuz.ExprUtility:Rem(Int32, Int32)" newStackTraceSignature="$b.$YA:$DD(Int32, Int32)" />
+      <method signature="long Obfuz.ExprUtility::@Rem(long, long)" newName="$eD" oldStackTraceSignature="Obfuz.ExprUtility:Rem(Int64, Int64)" newStackTraceSignature="$b.$YA:$eD(Int64, Int64)" />
+      <method signature="float Obfuz.ExprUtility::@Rem(float, float)" newName="$ED" oldStackTraceSignature="Obfuz.ExprUtility:Rem(Single, Single)" newStackTraceSignature="$b.$YA:$ED(Single, Single)" />
+      <method signature="double Obfuz.ExprUtility::@Rem(double, double)" newName="$fD" oldStackTraceSignature="Obfuz.ExprUtility:Rem(Double, Double)" newStackTraceSignature="$b.$YA:$fD(Double, Double)" />
+      <method signature="int Obfuz.ExprUtility::@RemUn(int, int)" newName="$FD" oldStackTraceSignature="Obfuz.ExprUtility:RemUn(Int32, Int32)" newStackTraceSignature="$b.$YA:$FD(Int32, Int32)" />
+      <method signature="long Obfuz.ExprUtility::@RemUn(long, long)" newName="$gD" oldStackTraceSignature="Obfuz.ExprUtility:RemUn(Int64, Int64)" newStackTraceSignature="$b.$YA:$gD(Int64, Int64)" />
+      <method signature="int Obfuz.ExprUtility::@Negate(int)" newName="$GD" oldStackTraceSignature="Obfuz.ExprUtility:Negate(Int32)" newStackTraceSignature="$b.$YA:$GD(Int32)" />
+      <method signature="long Obfuz.ExprUtility::@Negate(long)" newName="$hD" oldStackTraceSignature="Obfuz.ExprUtility:Negate(Int64)" newStackTraceSignature="$b.$YA:$hD(Int64)" />
+      <method signature="float Obfuz.ExprUtility::@Negate(float)" newName="$HD" oldStackTraceSignature="Obfuz.ExprUtility:Negate(Single)" newStackTraceSignature="$b.$YA:$HD(Single)" />
+      <method signature="double Obfuz.ExprUtility::@Negate(double)" newName="$iD" oldStackTraceSignature="Obfuz.ExprUtility:Negate(Double)" newStackTraceSignature="$b.$YA:$iD(Double)" />
+      <method signature="int Obfuz.ExprUtility::@And(int, int)" newName="$ID" oldStackTraceSignature="Obfuz.ExprUtility:And(Int32, Int32)" newStackTraceSignature="$b.$YA:$ID(Int32, Int32)" />
+      <method signature="long Obfuz.ExprUtility::@And(long, long)" newName="$jD" oldStackTraceSignature="Obfuz.ExprUtility:And(Int64, Int64)" newStackTraceSignature="$b.$YA:$jD(Int64, Int64)" />
+      <method signature="int Obfuz.ExprUtility::@Or(int, int)" newName="$JD" oldStackTraceSignature="Obfuz.ExprUtility:Or(Int32, Int32)" newStackTraceSignature="$b.$YA:$JD(Int32, Int32)" />
+      <method signature="long Obfuz.ExprUtility::@Or(long, long)" newName="$kD" oldStackTraceSignature="Obfuz.ExprUtility:Or(Int64, Int64)" newStackTraceSignature="$b.$YA:$kD(Int64, Int64)" />
+      <method signature="int Obfuz.ExprUtility::@Xor(int, int)" newName="$KD" oldStackTraceSignature="Obfuz.ExprUtility:Xor(Int32, Int32)" newStackTraceSignature="$b.$YA:$KD(Int32, Int32)" />
+      <method signature="long Obfuz.ExprUtility::@Xor(long, long)" newName="$lD" oldStackTraceSignature="Obfuz.ExprUtility:Xor(Int64, Int64)" newStackTraceSignature="$b.$YA:$lD(Int64, Int64)" />
+      <method signature="int Obfuz.ExprUtility::@Not(int)" newName="$LD" oldStackTraceSignature="Obfuz.ExprUtility:Not(Int32)" newStackTraceSignature="$b.$YA:$LD(Int32)" />
+      <method signature="long Obfuz.ExprUtility::@Not(long)" newName="$mD" oldStackTraceSignature="Obfuz.ExprUtility:Not(Int64)" newStackTraceSignature="$b.$YA:$mD(Int64)" />
+      <method signature="int Obfuz.ExprUtility::@ShiftLeft(int, int)" newName="$MD" oldStackTraceSignature="Obfuz.ExprUtility:ShiftLeft(Int32, Int32)" newStackTraceSignature="$b.$YA:$MD(Int32, Int32)" />
+      <method signature="long Obfuz.ExprUtility::@ShiftLeft(long, int)" newName="$nD" oldStackTraceSignature="Obfuz.ExprUtility:ShiftLeft(Int64, Int32)" newStackTraceSignature="$b.$YA:$nD(Int64, Int32)" />
+      <method signature="int Obfuz.ExprUtility::@ShiftRight(int, int)" newName="$ND" oldStackTraceSignature="Obfuz.ExprUtility:ShiftRight(Int32, Int32)" newStackTraceSignature="$b.$YA:$ND(Int32, Int32)" />
+      <method signature="long Obfuz.ExprUtility::@ShiftRight(long, int)" newName="$oD" oldStackTraceSignature="Obfuz.ExprUtility:ShiftRight(Int64, Int32)" newStackTraceSignature="$b.$YA:$oD(Int64, Int32)" />
+      <method signature="int Obfuz.ExprUtility::@ShiftRightUn(int, int)" newName="$OD" oldStackTraceSignature="Obfuz.ExprUtility:ShiftRightUn(Int32, Int32)" newStackTraceSignature="$b.$YA:$OD(Int32, Int32)" />
+      <method signature="long Obfuz.ExprUtility::@ShiftRightUn(long, int)" newName="$pD" oldStackTraceSignature="Obfuz.ExprUtility:ShiftRightUn(Int64, Int32)" newStackTraceSignature="$b.$YA:$pD(Int64, Int32)" />
+    </type>
+    <type fullName="Obfuz.IEncryptionScope" newFullName="$b.$VA" status="Renamed" />
+    <type fullName="Obfuz.IEncryptor" newFullName="$b.$zA" status="Renamed">
+      <property signature="int OpCodeCount" newName="$a" />
+      <method signature="int Obfuz.IEncryptor::get_OpCodeCount([Obfuz.Runtime]Obfuz.IEncryptor)" newName="$UD" oldStackTraceSignature="Obfuz.IEncryptor:get_OpCodeCount()" newStackTraceSignature="$b.$zA:$UD()" />
+      <method signature="void Obfuz.IEncryptor::EncryptBlock([Obfuz.Runtime]Obfuz.IEncryptor, byte[], int, int)" newName="$fe" oldStackTraceSignature="Obfuz.IEncryptor:EncryptBlock(Byte[], Int32, Int32)" newStackTraceSignature="$b.$zA:$fe(Byte[], Int32, Int32)" />
+      <method signature="void Obfuz.IEncryptor::DecryptBlock([Obfuz.Runtime]Obfuz.IEncryptor, byte[], int, int)" newName="$Fe" oldStackTraceSignature="Obfuz.IEncryptor:DecryptBlock(Byte[], Int32, Int32)" newStackTraceSignature="$b.$zA:$Fe(Byte[], Int32, Int32)" />
+      <method signature="int Obfuz.IEncryptor::Encrypt([Obfuz.Runtime]Obfuz.IEncryptor, int, int, int)" newName="$vD" oldStackTraceSignature="Obfuz.IEncryptor:Encrypt(Int32, Int32, Int32)" newStackTraceSignature="$b.$zA:$vD(Int32, Int32, Int32)" />
+      <method signature="int Obfuz.IEncryptor::Decrypt([Obfuz.Runtime]Obfuz.IEncryptor, int, int, int)" newName="$VD" oldStackTraceSignature="Obfuz.IEncryptor:Decrypt(Int32, Int32, Int32)" newStackTraceSignature="$b.$zA:$VD(Int32, Int32, Int32)" />
+      <method signature="long Obfuz.IEncryptor::Encrypt([Obfuz.Runtime]Obfuz.IEncryptor, long, int, int)" newName="$ae" oldStackTraceSignature="Obfuz.IEncryptor:Encrypt(Int64, Int32, Int32)" newStackTraceSignature="$b.$zA:$ae(Int64, Int32, Int32)" />
+      <method signature="long Obfuz.IEncryptor::Decrypt([Obfuz.Runtime]Obfuz.IEncryptor, long, int, int)" newName="$Ae" oldStackTraceSignature="Obfuz.IEncryptor:Decrypt(Int64, Int32, Int32)" newStackTraceSignature="$b.$zA:$Ae(Int64, Int32, Int32)" />
+      <method signature="float Obfuz.IEncryptor::Encrypt([Obfuz.Runtime]Obfuz.IEncryptor, float, int, int)" newName="$be" oldStackTraceSignature="Obfuz.IEncryptor:Encrypt(Single, Int32, Int32)" newStackTraceSignature="$b.$zA:$be(Single, Int32, Int32)" />
+      <method signature="float Obfuz.IEncryptor::Decrypt([Obfuz.Runtime]Obfuz.IEncryptor, float, int, int)" newName="$Be" oldStackTraceSignature="Obfuz.IEncryptor:Decrypt(Single, Int32, Int32)" newStackTraceSignature="$b.$zA:$Be(Single, Int32, Int32)" />
+      <method signature="double Obfuz.IEncryptor::Encrypt([Obfuz.Runtime]Obfuz.IEncryptor, double, int, int)" newName="$ce" oldStackTraceSignature="Obfuz.IEncryptor:Encrypt(Double, Int32, Int32)" newStackTraceSignature="$b.$zA:$ce(Double, Int32, Int32)" />
+      <method signature="double Obfuz.IEncryptor::Decrypt([Obfuz.Runtime]Obfuz.IEncryptor, double, int, int)" newName="$Ce" oldStackTraceSignature="Obfuz.IEncryptor:Decrypt(Double, Int32, Int32)" newStackTraceSignature="$b.$zA:$Ce(Double, Int32, Int32)" />
+      <method signature="byte[] Obfuz.IEncryptor::Encrypt([Obfuz.Runtime]Obfuz.IEncryptor, byte[], int, int, int, int)" newName="$de" oldStackTraceSignature="Obfuz.IEncryptor:Encrypt(Byte[], Int32, Int32, Int32, Int32)" newStackTraceSignature="$b.$zA:$de(Byte[], Int32, Int32, Int32, Int32)" />
+      <method signature="byte[] Obfuz.IEncryptor::Decrypt([Obfuz.Runtime]Obfuz.IEncryptor, byte[], int, int, int, int)" newName="$De" oldStackTraceSignature="Obfuz.IEncryptor:Decrypt(Byte[], Int32, Int32, Int32, Int32)" newStackTraceSignature="$b.$zA:$De(Byte[], Int32, Int32, Int32, Int32)" />
+      <method signature="byte[] Obfuz.IEncryptor::Encrypt([Obfuz.Runtime]Obfuz.IEncryptor, string, int, int)" newName="$ee" oldStackTraceSignature="Obfuz.IEncryptor:Encrypt(String, Int32, Int32)" newStackTraceSignature="$b.$zA:$ee(String, Int32, Int32)" />
+      <method signature="string Obfuz.IEncryptor::DecryptString([Obfuz.Runtime]Obfuz.IEncryptor, byte[], int, int, int, int)" newName="$Ee" oldStackTraceSignature="Obfuz.IEncryptor:DecryptString(Byte[], Int32, Int32, Int32, Int32)" newStackTraceSignature="$b.$zA:$Ee(Byte[], Int32, Int32, Int32, Int32)" />
+      <method signature="void Obfuz.IEncryptor::DecryptInitializeArray([Obfuz.Runtime]Obfuz.IEncryptor, System.Array, System.RuntimeFieldHandle, int, int, int)" newName="$ge" oldStackTraceSignature="Obfuz.IEncryptor:DecryptInitializeArray(Array, RuntimeFieldHandle, Int32, Int32, Int32)" newStackTraceSignature="$b.$zA:$ge(Array, RuntimeFieldHandle, Int32, Int32, Int32)" />
+    </type>
+    <type fullName="Obfuz.NullEncryptor" newFullName="$b.$ZA" status="Renamed">
+      <field signature="byte[] _key" newName="$qd" />
+      <property signature="int OpCodeCount" newName="$a" />
+      <method signature="int Obfuz.NullEncryptor::get_OpCodeCount([Obfuz.Runtime]Obfuz.NullEncryptor)" newName="$UD" oldStackTraceSignature="Obfuz.NullEncryptor:get_OpCodeCount()" newStackTraceSignature="$b.$ZA:$UD()" />
+      <method signature="int Obfuz.NullEncryptor::Encrypt([Obfuz.Runtime]Obfuz.NullEncryptor, int, int, int)" newName="$vD" oldStackTraceSignature="Obfuz.NullEncryptor:Encrypt(Int32, Int32, Int32)" newStackTraceSignature="$b.$ZA:$vD(Int32, Int32, Int32)" />
+      <method signature="int Obfuz.NullEncryptor::Decrypt([Obfuz.Runtime]Obfuz.NullEncryptor, int, int, int)" newName="$VD" oldStackTraceSignature="Obfuz.NullEncryptor:Decrypt(Int32, Int32, Int32)" newStackTraceSignature="$b.$ZA:$VD(Int32, Int32, Int32)" />
+      <method signature="long Obfuz.NullEncryptor::Encrypt([Obfuz.Runtime]Obfuz.NullEncryptor, long, int, int)" newName="$ae" oldStackTraceSignature="Obfuz.NullEncryptor:Encrypt(Int64, Int32, Int32)" newStackTraceSignature="$b.$ZA:$ae(Int64, Int32, Int32)" />
+      <method signature="long Obfuz.NullEncryptor::Decrypt([Obfuz.Runtime]Obfuz.NullEncryptor, long, int, int)" newName="$Ae" oldStackTraceSignature="Obfuz.NullEncryptor:Decrypt(Int64, Int32, Int32)" newStackTraceSignature="$b.$ZA:$Ae(Int64, Int32, Int32)" />
+      <method signature="float Obfuz.NullEncryptor::Encrypt([Obfuz.Runtime]Obfuz.NullEncryptor, float, int, int)" newName="$be" oldStackTraceSignature="Obfuz.NullEncryptor:Encrypt(Single, Int32, Int32)" newStackTraceSignature="$b.$ZA:$be(Single, Int32, Int32)" />
+      <method signature="float Obfuz.NullEncryptor::Decrypt([Obfuz.Runtime]Obfuz.NullEncryptor, float, int, int)" newName="$Be" oldStackTraceSignature="Obfuz.NullEncryptor:Decrypt(Single, Int32, Int32)" newStackTraceSignature="$b.$ZA:$Be(Single, Int32, Int32)" />
+      <method signature="double Obfuz.NullEncryptor::Encrypt([Obfuz.Runtime]Obfuz.NullEncryptor, double, int, int)" newName="$ce" oldStackTraceSignature="Obfuz.NullEncryptor:Encrypt(Double, Int32, Int32)" newStackTraceSignature="$b.$ZA:$ce(Double, Int32, Int32)" />
+      <method signature="double Obfuz.NullEncryptor::Decrypt([Obfuz.Runtime]Obfuz.NullEncryptor, double, int, int)" newName="$Ce" oldStackTraceSignature="Obfuz.NullEncryptor:Decrypt(Double, Int32, Int32)" newStackTraceSignature="$b.$ZA:$Ce(Double, Int32, Int32)" />
+      <method signature="byte[] Obfuz.NullEncryptor::Encrypt([Obfuz.Runtime]Obfuz.NullEncryptor, byte[], int, int, int, int)" newName="$de" oldStackTraceSignature="Obfuz.NullEncryptor:Encrypt(Byte[], Int32, Int32, Int32, Int32)" newStackTraceSignature="$b.$ZA:$de(Byte[], Int32, Int32, Int32, Int32)" />
+      <method signature="byte[] Obfuz.NullEncryptor::Decrypt([Obfuz.Runtime]Obfuz.NullEncryptor, byte[], int, int, int, int)" newName="$De" oldStackTraceSignature="Obfuz.NullEncryptor:Decrypt(Byte[], Int32, Int32, Int32, Int32)" newStackTraceSignature="$b.$ZA:$De(Byte[], Int32, Int32, Int32, Int32)" />
+      <method signature="byte[] Obfuz.NullEncryptor::Encrypt([Obfuz.Runtime]Obfuz.NullEncryptor, string, int, int)" newName="$ee" oldStackTraceSignature="Obfuz.NullEncryptor:Encrypt(String, Int32, Int32)" newStackTraceSignature="$b.$ZA:$ee(String, Int32, Int32)" />
+      <method signature="string Obfuz.NullEncryptor::DecryptString([Obfuz.Runtime]Obfuz.NullEncryptor, byte[], int, int, int, int)" newName="$Ee" oldStackTraceSignature="Obfuz.NullEncryptor:DecryptString(Byte[], Int32, Int32, Int32, Int32)" newStackTraceSignature="$b.$ZA:$Ee(Byte[], Int32, Int32, Int32, Int32)" />
+    </type>
+    <type fullName="Obfuz.ObfuscationInstincts" newFullName="$b.$ab" status="Renamed">
+      <method signature="string Obfuz.ObfuscationInstincts::@FullNameOf`1()" newName="$PD" oldStackTraceSignature="Obfuz.ObfuscationInstincts:FullNameOf()" newStackTraceSignature="$b.$ab:$PD()" />
+      <method signature="string Obfuz.ObfuscationInstincts::@NameOf`1()" newName="$qD" oldStackTraceSignature="Obfuz.ObfuscationInstincts:NameOf()" newStackTraceSignature="$b.$ab:$qD()" />
+      <method signature="void Obfuz.ObfuscationInstincts::@RegisterReflectionType`1()" newName="$QD" oldStackTraceSignature="Obfuz.ObfuscationInstincts:RegisterReflectionType()" newStackTraceSignature="$b.$ab:$QD()" />
+    </type>
+    <type fullName="Obfuz.ObfuscationTypeMapper" newFullName="$b.$Ab" status="Renamed">
+      <field signature="System.Collections.Generic.Dictionary`2&lt;System.Type,string&gt; _type2OriginalFullName" newName="$Qd" />
+      <field signature="System.Collections.Generic.Dictionary`2&lt;System.Reflection.Assembly,System.Collections.Generic.Dictionary`2&lt;string,System.Type&gt;&gt; _originalFullName2Types" newName="$rd" />
+      <method signature="void Obfuz.ObfuscationTypeMapper::@RegisterType`1(string)" newName="$rD" oldStackTraceSignature="Obfuz.ObfuscationTypeMapper:RegisterType(String)" newStackTraceSignature="$b.$Ab:$rD(String)" />
+      <method signature="void Obfuz.ObfuscationTypeMapper::@RegisterType(System.Type, string)" newName="$RD" oldStackTraceSignature="Obfuz.ObfuscationTypeMapper:RegisterType(Type, String)" newStackTraceSignature="$b.$Ab:$RD(Type, String)" />
+      <method signature="string Obfuz.ObfuscationTypeMapper::@GetOriginalTypeFullName(System.Type)" newName="$sD" oldStackTraceSignature="Obfuz.ObfuscationTypeMapper:GetOriginalTypeFullName(Type)" newStackTraceSignature="$b.$Ab:$sD(Type)" />
+      <method signature="string Obfuz.ObfuscationTypeMapper::@GetOriginalTypeFullNameOrCurrent(System.Type)" newName="$SD" oldStackTraceSignature="Obfuz.ObfuscationTypeMapper:GetOriginalTypeFullNameOrCurrent(Type)" newStackTraceSignature="$b.$Ab:$SD(Type)" />
+      <method signature="System.Type Obfuz.ObfuscationTypeMapper::@GetTypeByOriginalFullName(System.Reflection.Assembly, string)" newName="$tD" oldStackTraceSignature="Obfuz.ObfuscationTypeMapper:GetTypeByOriginalFullName(Assembly, String)" newStackTraceSignature="$b.$Ab:$tD(Assembly, String)" />
+      <method signature="void Obfuz.ObfuscationTypeMapper::@Clear()" newName="$TD" oldStackTraceSignature="Obfuz.ObfuscationTypeMapper:Clear()" newStackTraceSignature="$b.$Ab:$TD()" />
+    </type>
+  </assembly>
+</mapping>

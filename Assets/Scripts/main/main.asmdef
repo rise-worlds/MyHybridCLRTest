@@ -1,7 +1,13 @@
 {
     "name": "main",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:4140bd2e2764f1f47ab93125ecb61942",
+        "GUID:13ba8ce62aa80c74598530029cb2d649",
+        "GUID:0c752da273b17c547ae705acf0f2adf2",
+        "GUID:44d09cf463b68274884d8a3c8a94e528",
+        "GUID:13e2b3f91d9697f4c9fcaa1a7f99e088"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
