@@ -91,8 +91,7 @@ namespace RiseClient
 
             downloadText.gameObject.SetActive(false);
             downloadProgressBar.gameObject.SetActive(false);
-            //StartCoroutine(CheckAndUpdate());
-#if !UNITY_EDITOR
+#if UNITY_EDITOR
             // 在编辑器中直接加载main场景
             string mainScene = "Assets/Scenes/main.unity"; // 替换为你的main场景路径
             if (File.Exists(mainScene))
@@ -104,6 +103,7 @@ namespace RiseClient
                 Debug.LogError("未找到main场景");
             }
 #else
+            StartCoroutine(CheckAndUpdate());
 #endif
             initSound();
         }

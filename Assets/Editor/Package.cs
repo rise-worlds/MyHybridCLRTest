@@ -79,6 +79,8 @@ namespace RiseClient.Editor
             PrebuildCommand.GenerateAll();
             Debug.Log("====> 复制热更新资源和代码");
             BuildAndCopyABAOTHotUpdateDlls();
+            //BuildTarget target = EditorUserBuildSettings.activeBuildTarget;
+            //CompileDllCommand.CompileDll(target);
 
             string assetBundleDirectory = "Assets/HotUpdateAssemblies";
             if (!Directory.Exists(assetBundleDirectory))
@@ -131,61 +133,62 @@ namespace RiseClient.Editor
             PlayerPrefs.DeleteAll();
         }
 
-        [MenuItem("Build/混淆", false, 3)]
-        public static void CompileAndObfuscateAndCopyToStreamingAssets()
-        {
-            BuildTarget target = EditorUserBuildSettings.activeBuildTarget;
-            CompileDllCommand.CompileDll(target);
+        //[MenuItem("Build/混淆", false, 3)]
+        //public static void CompileAndObfuscateAndCopyToStreamingAssets()
+        //{
+        //    BuildTarget target = EditorUserBuildSettings.activeBuildTarget;
+        //    CompileDllCommand.CompileDll(target);
 
-            string obfuscatedHotUpdateDllPath = PrebuildCommandExt.GetObfuscatedHotUpdateAssemblyOutputPath(target);
-            ObfuscateUtil.ObfuscateHotUpdateAssemblies(target, obfuscatedHotUpdateDllPath);
+        //    string obfuscatedHotUpdateDllPath = PrebuildCommandExt.GetObfuscatedHotUpdateAssemblyOutputPath(target);
+        //    ObfuscateUtil.ObfuscateHotUpdateAssemblies(target, obfuscatedHotUpdateDllPath);
 
-            Directory.CreateDirectory(Application.streamingAssetsPath);
+        //    Directory.CreateDirectory(Application.streamingAssetsPath);
 
-            string hotUpdateDllPath = $"{SettingsUtil.GetHotUpdateDllsOutputDirByTarget(target)}";
-            List<string> obfuscationRelativeAssemblyNames = ObfuzSettings.Instance.assemblySettings.GetObfuscationRelativeAssemblyNames();
+        //    string hotUpdateDllPath = $"{SettingsUtil.GetHotUpdateDllsOutputDirByTarget(target)}";
+        //    List<string> obfuscationRelativeAssemblyNames = ObfuzSettings.Instance.assemblySettings.GetObfuscationRelativeAssemblyNames();
 
-            foreach (string assName in SettingsUtil.HotUpdateAssemblyNamesIncludePreserved)
-            {
-                string srcDir = obfuscationRelativeAssemblyNames.Contains(assName) ? obfuscatedHotUpdateDllPath : hotUpdateDllPath;
-                string srcFile = $"{srcDir}/{assName}.dll";
-                string dstFile = $"{Application.streamingAssetsPath}/{assName}.dll.bytes";
-                if (File.Exists(srcFile))
-                {
-                    File.Copy(srcFile, dstFile, true);
-                    Debug.Log($"[CompileAndObfuscate] Copy {srcFile} to {dstFile}");
-                }
-            }
-        }
+        //    foreach (string assName in SettingsUtil.HotUpdateAssemblyNamesIncludePreserved)
+        //    {
+        //        string srcDir = obfuscationRelativeAssemblyNames.Contains(assName) ? obfuscatedHotUpdateDllPath : hotUpdateDllPath;
+        //        string srcFile = $"{srcDir}/{assName}.dll";
+        //        string dstFile = $"{Application.streamingAssetsPath}/{assName}.dll.bytes";
+        //        if (File.Exists(srcFile))
+        //        {
+        //            File.Copy(srcFile, dstFile, true);
+        //            Debug.Log($"[CompileAndObfuscate] Copy {srcFile} to {dstFile}");
+        //        }
+        //    }
+        //}
 
+        #region BuildTarget Helper
         public static BuildTarget buildTarget
         {
             get
             {
-                //if (Platform.isWindows)
-                //{
-                //    return BuildTarget.StandaloneWindows64;
-                //}
-                //else if (Platform.isOSX)
-                //{
-                //    return BuildTarget.StandaloneOSX;
-                //}
-                //else if (Platform.isLinux)
-                //{
-                //    return BuildTarget.StandaloneLinux64;
-                //}
-                //else if (Platform.isIphone)
-                //{
-                //    return BuildTarget.iOS;
-                //}
-                //else if (Platform.isAndroid)
-                //{
-                //    return BuildTarget.Android;
-                //}
+                if (Platform.isWindows)
+                {
+                    return BuildTarget.StandaloneWindows64;
+                }
+                else if (Platform.isOSX)
+                {
+                    return BuildTarget.StandaloneOSX;
+                }
+                else if (Platform.isLinux)
+                {
+                    return BuildTarget.StandaloneLinux64;
+                }
+                else if (Platform.isIphone)
+                {
+                    return BuildTarget.iOS;
+                }
+                else if (Platform.isAndroid)
+                {
+                    return BuildTarget.Android;
+                }
                 return BuildTarget.StandaloneWindows64;
             }
         }
-
+        #endregion
 
         public static string GetAssetBundleOutputDirByTarget(BuildTarget target)
         {
@@ -243,6 +246,10 @@ namespace RiseClient.Editor
             BuildTarget target = EditorUserBuildSettings.activeBuildTarget;
             BuildAssetBundleByTarget(target);
             CompileDllCommand.CompileDll(target);
+            // 混淆热更新DLL
+            string obfuscatedHotUpdateDllPath = PrebuildCommandExt.GetObfuscatedHotUpdateAssemblyOutputPath(target);
+            ObfuscateUtil.ObfuscateHotUpdateAssemblies(target, obfuscatedHotUpdateDllPath);
+
             CopyABAOTHotUpdateDlls(target);
             AssetDatabase.Refresh();
         }
@@ -250,8 +257,9 @@ namespace RiseClient.Editor
         public static void CopyABAOTHotUpdateDlls(BuildTarget target)
         {
             CopyAssetBundlesToStreamingAssets(target);
-            CopyAOTAssembliesToStreamingAssets();
-            CopyHotUpdateAssembliesToStreamingAssets();
+            //CopyAOTAssembliesToStreamingAssets(target);
+            //CopyHotUpdateAssembliesToStreamingAssets(target);
+            CopyObfuscatAssembliesToStreamingAssets(target);
         }
 
 
@@ -261,9 +269,8 @@ namespace RiseClient.Editor
             BuildAssetBundleByTarget(EditorUserBuildSettings.activeBuildTarget);
         }
 
-        public static void CopyAOTAssembliesToStreamingAssets()
+        public static void CopyAOTAssembliesToStreamingAssets(BuildTarget target)
         {
-            var target = EditorUserBuildSettings.activeBuildTarget;
             string aotAssembliesSrcDir = SettingsUtil.GetAssembliesPostIl2CppStripDir(target);
             string aotAssembliesDstDir = Application.streamingAssetsPath;
 
@@ -281,10 +288,8 @@ namespace RiseClient.Editor
             }
         }
 
-        public static void CopyHotUpdateAssembliesToStreamingAssets()
+        public static void CopyHotUpdateAssembliesToStreamingAssets(BuildTarget target)
         {
-            var target = EditorUserBuildSettings.activeBuildTarget;
-
             string hotfixDllSrcDir = SettingsUtil.GetHotUpdateDllsOutputDirByTarget(target);
             string hotfixAssembliesDstDir = Application.streamingAssetsPath;
             foreach (var dll in SettingsUtil.HotUpdateAssemblyFilesExcludePreserved)
@@ -293,6 +298,29 @@ namespace RiseClient.Editor
                 string dllBytesPath = $"{hotfixAssembliesDstDir}/{dll}.bytes";
                 File.Copy(dllPath, dllBytesPath, true);
                 Debug.Log($"[CopyHotUpdateAssembliesToStreamingAssets] copy hotfix dll {dllPath} -> {dllBytesPath}");
+            }
+        }
+
+        public static void CopyObfuscatAssembliesToStreamingAssets(BuildTarget target)
+        {
+            string streamingAssetPathDst = Application.streamingAssetsPath;
+            Directory.CreateDirectory(streamingAssetPathDst);
+
+            string obfuscatedHotUpdateDllPath = PrebuildCommandExt.GetObfuscatedHotUpdateAssemblyOutputPath(target);
+            //ObfuscateUtil.ObfuscateHotUpdateAssemblies(target, obfuscatedHotUpdateDllPath);
+
+            string hotUpdateDllPath = $"{SettingsUtil.GetHotUpdateDllsOutputDirByTarget(target)}";
+            List<string> obfuscationRelativeAssemblyNames = ObfuzSettings.Instance.assemblySettings.GetObfuscationRelativeAssemblyNames();
+            foreach (string assName in SettingsUtil.HotUpdateAssemblyNamesIncludePreserved)
+            {
+                string srcDir = obfuscationRelativeAssemblyNames.Contains(assName) ? obfuscatedHotUpdateDllPath : hotUpdateDllPath;
+                string srcFile = $"{srcDir}/{assName}.dll";
+                string dstFile = $"{streamingAssetPathDst}/{assName}.dll.bytes";
+                if (File.Exists(srcFile))
+                {
+                    File.Copy(srcFile, dstFile, true);
+                    Debug.Log($"[CopyObfuscatAssembliesToStreamingAssets] Copy {srcFile} to {dstFile}");
+                }
             }
         }
 

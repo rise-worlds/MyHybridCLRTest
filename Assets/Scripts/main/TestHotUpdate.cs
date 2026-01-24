@@ -1,9 +1,11 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using XLua;
 
 namespace RiseClient
 {
+    [LuaCallCSharp]
     public class TestHotUpdate
     {
         public static string Run()

@@ -1,0 +1,10 @@
+﻿
+
+<linker>
+
+	<assembly fullname="main">
+	    <type fullname="RiseClient.TestHotUpdate" preserve="all"/>
+		
+	</assembly>
+
+</linker>

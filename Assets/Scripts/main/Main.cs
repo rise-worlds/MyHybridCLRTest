@@ -21,5 +21,6 @@ namespace RiseClient
         {
             text.text = TestHotUpdate.Run();
         }
-   }
+
+    }
 }
