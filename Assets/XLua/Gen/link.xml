@@ -3,7 +3,8 @@
 <linker>
 
 	<assembly fullname="main">
-	    <type fullname="RiseClient.TestHotUpdate" preserve="all"/>
+	    <type fullname="RiseClient.LuaManager" preserve="all"/>
+		<type fullname="RiseClient.TestHotUpdate" preserve="all"/>
 		
 	</assembly>
 

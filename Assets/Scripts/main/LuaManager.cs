@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XLua;
 
 namespace RiseClient
 {
     public interface ILuaManager
     {
-        // Define interface methods and properties here
+        void StartLuaEnv();
     }
 
+    [LuaCallCSharp]
     public class LuaManager : MonoBehaviour
     {
         private static LuaManager _instance;
@@ -27,6 +29,7 @@ namespace RiseClient
         }
 
         private ILuaManager _luaMangage;
+        [BlackList]
         public void Init(GameObject luaManager)
         {
             if (_luaMangage == null)
@@ -35,9 +38,26 @@ namespace RiseClient
             }
         }
 
-        private void Awake()
+
+        [BlackList]
+        public void LuaEnvStartAsync()
         {
-            // Initialization code here
+            _luaMangage.StartLuaEnv();
+        }
+
+        [BlackList]
+        public void Destroy()
+        {
+            if (_luaMangage != null)
+            {
+                Destroy(_luaMangage as MonoBehaviour);
+                _luaMangage = null;
+            }
+            if (_instance != null)
+            {
+                Destroy(_instance.gameObject);
+                _instance = null;
+            }
         }
     }
 }

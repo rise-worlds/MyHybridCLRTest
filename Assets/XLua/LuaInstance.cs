@@ -13,10 +13,7 @@ namespace RiseClient
         void Start()
         {
             luaEnv = new LuaEnv();
-            luaEnv.DoString(@"
-                print('Hello from XLua!');
-            ");
-
+            luaEnv.AddLoader(LuaLoader);
         }
 
         // Update is called once per frame
@@ -35,8 +32,19 @@ namespace RiseClient
 
         private void OnDestroy()
         {
-            luaEnv.Dispose();
+            luaEnv?.Dispose();
             luaEnv = null;
+        }
+
+        private byte[] LuaLoader(ref string filepath)
+        {
+            string path = filepath + ".lua.txt";
+            return System.IO.File.ReadAllBytes(path);
+        }
+
+        public void StartLuaEnv()
+        {
+            //luaEnv
         }
     }
 }

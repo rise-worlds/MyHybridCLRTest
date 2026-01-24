@@ -20,6 +20,7 @@ namespace RiseClient
         private void Start()
         {
             text.text = TestHotUpdate.Run();
+            LuaManager.Instance.Init(this.gameObject);
         }
 
     }
