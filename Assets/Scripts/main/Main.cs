@@ -21,6 +21,7 @@ namespace RiseClient
         {
             text.text = TestHotUpdate.Run();
             LuaManager.Instance.Init(this.gameObject);
+            LuaManager.Instance.StartLuaEnv();
         }
 
     }

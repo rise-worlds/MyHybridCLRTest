@@ -40,7 +40,7 @@ namespace RiseClient
 
 
         [BlackList]
-        public void LuaEnvStartAsync()
+        public void StartLuaEnv()
         {
             _luaMangage.StartLuaEnv();
         }

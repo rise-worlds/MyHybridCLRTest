@@ -44,7 +44,13 @@ namespace RiseClient
 
         public void StartLuaEnv()
         {
-            //luaEnv
+            TextAsset res = Resources.Load<TextAsset>("lua/main.lua.txt");
+            if (res == null)
+            {
+                Debug.LogError("Load lua/main.lua.txt failed");
+                return;
+            }
+            luaEnv.DoString(res.text);
         }
     }
 }
