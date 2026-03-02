@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<obfuz>
+    <!--控制流混淆-->
+    <global obfuscationLevel="Basic" />
+</obfuz>

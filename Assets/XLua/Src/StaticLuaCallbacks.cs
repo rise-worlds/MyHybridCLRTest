@@ -15,6 +15,7 @@ using LuaAPI = XLua.LuaDLL.Lua;
 using RealStatePtr = System.IntPtr;
 using LuaCSFunction = XLua.LuaDLL.lua_CSFunction;
 #endif
+using Obfuz;
 
 namespace XLua
 {
@@ -853,7 +854,7 @@ namespace XLua
                 ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
                 string className = LuaAPI.lua_tostring(L, 1);
                 Type type = translator.FindType(className);
-                if (type != null)
+                if (type != null && type.FullName == className)
                 {
                     if (translator.GetTypeId(L, type) >= 0)
                     {
@@ -929,7 +930,7 @@ namespace XLua
                 {
                     return LuaAPI.luaL_error(L, "#2 param[" + LuaAPI.lua_tostring(L, 2) + "]is not valid type indicator");
                 }
-                LuaAPI.luaL_getmetatable(L, type.FullName);
+                LuaAPI.luaL_getmetatable(L, ObfuscationTypeMapper.GetOriginalTypeFullNameOrCurrent(type));
                 if (LuaAPI.lua_isnil(L, -1))
                 {
                     return LuaAPI.luaL_error(L, "no gen code for " + LuaAPI.lua_tostring(L, 2));

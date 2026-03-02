@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<obfuz>
+    <!--函数调用混淆-->
+    <global obfuscationLevel="Basic" />
+    <whitelist>
+        <assembly name="mscorlib" obfuscate="0"/>
+        <assembly name="UnityEngine.*" obfuscate="0"/>
+    </whitelist>
+</obfuz>

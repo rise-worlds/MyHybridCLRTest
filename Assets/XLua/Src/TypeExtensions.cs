@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
+using Obfuz;
 
 namespace XLua
 {
@@ -153,10 +154,10 @@ namespace XLua
             else if (type == typeof(string))
                 return "string";
             else if (type.IsGenericType())
-                return type.FullName.Split('`')[0] + "<" + string.Join(", ", type.GetGenericArguments()
+                return ObfuscationTypeMapper.GetOriginalTypeFullNameOrCurrent(type).Split('`')[0] + "<" + string.Join(", ", type.GetGenericArguments()
                     .Select(x => GetFriendlyName(x)).ToArray()) + ">";
             else
-                return type.FullName;
+                return ObfuscationTypeMapper.GetOriginalTypeFullNameOrCurrent(type);
         }
     }
 }

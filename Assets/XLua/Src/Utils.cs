@@ -11,6 +11,7 @@ using System;
 using System.Reflection;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using Obfuz;
 
 #if USE_UNI_LUA
 using LuaAPI = UniLua.Lua;
@@ -621,7 +622,7 @@ namespace XLua
 
             int oldTop = LuaAPI.lua_gettop(L);
 
-			LuaAPI.luaL_getmetatable(L, type.FullName);
+			LuaAPI.luaL_getmetatable(L, ObfuscationTypeMapper.GetOriginalTypeFullNameOrCurrent(type));
 			if (LuaAPI.lua_isnil(L, -1))
 			{
 				LuaAPI.lua_settop(L, oldTop);
@@ -827,11 +828,13 @@ namespace XLua
             int top_enter = LuaAPI.lua_gettop(L);
 			ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
 			//create obj meta table
-			LuaAPI.luaL_getmetatable(L, type.FullName);
+			string fullName = ObfuscationTypeMapper.GetOriginalTypeFullNameOrCurrent(type);
+
+            LuaAPI.luaL_getmetatable(L, fullName);
 			if (LuaAPI.lua_isnil(L, -1))
 			{
 				LuaAPI.lua_pop(L, 1);
-				LuaAPI.luaL_newmetatable(L, type.FullName);
+				LuaAPI.luaL_newmetatable(L, fullName);
 			}
 			LuaAPI.lua_pushlightuserdata(L, LuaAPI.xlua_tag());
 			LuaAPI.lua_pushnumber(L, 1);
@@ -982,11 +985,12 @@ namespace XLua
 			}
 			else
 			{
-				LuaAPI.luaL_getmetatable(L, type.FullName);
+				string typeFullName = ObfuscationTypeMapper.GetOriginalTypeFullNameOrCurrent(type);
+				LuaAPI.luaL_getmetatable(L, typeFullName);
 				if (LuaAPI.lua_isnil(L, -1))
 				{
 					LuaAPI.lua_pop(L, 1);
-					LuaAPI.luaL_newmetatable(L, type.FullName);
+					LuaAPI.luaL_newmetatable(L, typeFullName);
 				}
 			}
 			LuaAPI.lua_pushlightuserdata(L, LuaAPI.xlua_tag());
@@ -1308,23 +1312,27 @@ namespace XLua
 		static List<string> getPathOfType(Type type)
 		{
 			List<string> path = new List<string>();
-
-			if (type.Namespace != null)
-			{
-				path.AddRange(type.Namespace.Split(new char[] { '.' }));
-			}
-
-			string class_name = type.ToString().Substring(type.Namespace == null ? 0 : type.Namespace.Length + 1);
-
-			if (type.IsNested)
-			{
-				path.AddRange(class_name.Split(new char[] { '+' }));
-			}
-			else
-			{
-				path.Add(class_name);
-			}
+			string fullName = ObfuscationTypeMapper.GetOriginalTypeFullNameOrCurrent(type);
+			fullName = fullName.Replace('+', '.');
+			path.AddRange(fullName.Split('.'));
 			return path;
+
+			// if (type.Namespace != null)
+			// {
+			// 	path.AddRange(type.Namespace.Split(new char[] { '.' }));
+			// }
+
+			// string class_name = type.ToString().Substring(type.Namespace == null ? 0 : type.Namespace.Length + 1);
+
+			// if (type.IsNested)
+			// {
+			// 	path.AddRange(class_name.Split(new char[] { '+' }));
+			// }
+			// else
+			// {
+			// 	path.Add(class_name);
+			// }
+			// return path;
 		}
 
 		public static void LoadCSTable(RealStatePtr L, Type type)

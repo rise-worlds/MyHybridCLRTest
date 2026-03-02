@@ -76,7 +76,7 @@ namespace RiseClient.Editor
         [MenuItem("Build/打代码AB包", false, 1)]
         public static void BuildCodeAssetBundle()
         {
-            PrebuildCommand.GenerateAll();
+            PrebuildCommandExt.GenerateAll();
             Debug.Log("====> 复制热更新资源和代码");
             BuildAndCopyABAOTHotUpdateDlls();
             //BuildTarget target = EditorUserBuildSettings.activeBuildTarget;
@@ -245,7 +245,7 @@ namespace RiseClient.Editor
         {
             BuildTarget target = EditorUserBuildSettings.activeBuildTarget;
             BuildAssetBundleByTarget(target);
-            CompileDllCommand.CompileDll(target);
+            PrebuildCommandExt.CompileAndObfuscateDll();
             // 混淆热更新DLL
             string obfuscatedHotUpdateDllPath = PrebuildCommandExt.GetObfuscatedHotUpdateAssemblyOutputPath(target);
             ObfuscateUtil.ObfuscateHotUpdateAssemblies(target, obfuscatedHotUpdateDllPath);

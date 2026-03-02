@@ -122,6 +122,11 @@ namespace XLua
         }
     }
 
+    public class GenPathAttribute : Attribute
+    {
+
+    }
+
     [AttributeUsage(AttributeTargets.Delegate)]
     internal class HotfixDelegateAttribute : Attribute
     {

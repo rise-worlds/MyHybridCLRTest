@@ -15,7 +15,7 @@ using LuaAPI = XLua.LuaDLL.Lua;
 using RealStatePtr = System.IntPtr;
 using LuaCSFunction = XLua.LuaDLL.lua_CSFunction;
 #endif
-
+using Obfuz;
 
 namespace XLua
 {
@@ -738,7 +738,12 @@ namespace XLua
 		{
             foreach (Assembly assembly in assemblies)
 			{
-                Type klass = assembly.GetType(className);
+                Type klass = ObfuscationTypeMapper.GetTypeByOriginalFullName(assembly, className);
+                if (klass != null)
+                {
+                    return klass;
+                }
+                klass = assembly.GetType(className);
 
                 if (klass!=null)
 				{
@@ -1045,7 +1050,7 @@ namespace XLua
                 is_first = true;
                 Type alias_type = null;
                 aliasCfg.TryGetValue(type, out alias_type);
-                LuaAPI.luaL_getmetatable(L, alias_type == null ? type.FullName : alias_type.FullName);
+                LuaAPI.luaL_getmetatable(L, alias_type == null ? ObfuscationTypeMapper.GetOriginalTypeFullNameOrCurrent(type) : ObfuscationTypeMapper.GetOriginalTypeFullNameOrCurrent(alias_type));
 
                 if (LuaAPI.lua_isnil(L, -1)) //no meta yet, try to use reflection meta
                 {
@@ -1053,7 +1058,7 @@ namespace XLua
 
                     if (TryDelayWrapLoader(L, alias_type == null ? type : alias_type))
                     {
-                        LuaAPI.luaL_getmetatable(L, alias_type == null ? type.FullName : alias_type.FullName);
+                        LuaAPI.luaL_getmetatable(L, alias_type == null ? ObfuscationTypeMapper.GetOriginalTypeFullNameOrCurrent(type) : ObfuscationTypeMapper.GetOriginalTypeFullNameOrCurrent(alias_type));
                     }
                     else
                     {

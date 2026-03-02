@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildPipelineSettings:
-    enable: 1
+    enable: 0
     linkXmlProcessCallbackOrder: 10000
     obfuscationProcessCallbackOrder: 10000
   compatibilitySettings:
@@ -21,12 +21,13 @@ MonoBehaviour:
   assemblySettings:
     assembliesToObfuscate:
     - Assembly-CSharp
+    - XLua.runtime
     - main
     nonObfuscatedButReferencingObfuscatedAssemblies: []
     additionalAssemblySearchPaths: []
     obfuscateObfuzRuntime: 1
   obfuscationPassSettings:
-    enabledPasses: 1056515
+    enabledPasses: 3149571
     ruleFiles: []
   secretSettings:
     defaultStaticSecretKey: Code Philosophy-Static
@@ -64,12 +65,15 @@ MonoBehaviour:
     obfuscationLevel: 1
     maxProxyMethodCountPerDispatchMethod: 100
     obfuscateCallToMethodInMscorlib: 0
-    ruleFiles: []
+    ruleFiles:
+    - Assets/Obfuz/call-config.xml
   exprObfusSettings:
-    ruleFiles: []
+    ruleFiles:
+    - Assets/Obfuz/expr-config.xml
   controlFlowObfusSettings:
     minInstructionCountOfBasicBlockToObfuscate: 3
-    ruleFiles: []
+    ruleFiles:
+    - Assets/Obfuz/control-flow-config.xml
   garbageCodeGenerationSettings:
     codeGenerationSecret: Garbage Code
     defaultTask:
