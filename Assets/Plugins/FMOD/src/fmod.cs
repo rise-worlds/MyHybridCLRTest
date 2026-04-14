@@ -1,6 +1,6 @@
 /* ======================================================================================== */
 /* FMOD Core API - C# wrapper.                                                              */
-/* Copyright (c), Firelight Technologies Pty, Ltd. 2004-2025.                               */
+/* Copyright (c), Firelight Technologies Pty, Ltd. 2004-2026.                               */
 /*                                                                                          */
 /* For more detail visit:                                                                   */
 /* https://fmod.com/docs/2.02/api/core-api.html                                             */
@@ -19,7 +19,7 @@ namespace FMOD
     */
     public partial class VERSION
     {
-        public const int    number = 0x00020229;
+        public const int    number = 0x00020234;
 #if !UNITY_2019_4_OR_NEWER
         public const string dll    = "fmod";
 #endif
@@ -435,7 +435,7 @@ namespace FMOD
 
     public enum OPENSTATE : int
     {
-        READY = 0,
+        READY,
         LOADING,
         ERROR,
         CONNECTING,
@@ -600,7 +600,7 @@ namespace FMOD
 
     public enum TAGTYPE : int
     {
-        UNKNOWN = 0,
+        UNKNOWN,
         ID3V1,
         ID3V2,
         VORBISCOMMENT,
@@ -617,7 +617,7 @@ namespace FMOD
 
     public enum TAGDATATYPE : int
     {
-        BINARY = 0,
+        BINARY,
         INT,
         FLOAT,
         STRING,
