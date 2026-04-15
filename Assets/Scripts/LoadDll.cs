@@ -62,18 +62,7 @@ public class LoadDll : MonoBehaviour
         // 5.开始下载资源文件
         yield return StartCoroutine(BeginDownload());
 
-        //判断是否下载成功
-        var assets = new List<string> { "HotUpdate.dll" }.Concat(AOTMetaAssemblyFiles);
-        foreach (var asset in assets)
-        {
-            var handle = _package.LoadAssetAsync<TextAsset>(asset);
-            yield return handle;
-            var assetObj = handle.AssetObject as TextAsset;
-            s_assetDatas[asset] = assetObj;
-            Debug.Log($"dll:{asset}   {assetObj == null}");
-        }
         YooAssets.SetDefaultPackage(_package);
-
         //6.清理未使用的缓存文件
         ClearFiles();
     }
@@ -92,15 +81,19 @@ public class LoadDll : MonoBehaviour
         {
             var buildResult = EditorSimulateModeHelper.SimulateBuild(packageName);
             var packageRoot = buildResult.PackageRootDirectory;
-            var createParameters = new EditorSimulateModeParameters();
-            createParameters.EditorFileSystemParameters = FileSystemParameters.CreateDefaultEditorFileSystemParameters(packageRoot);
+            var createParameters = new EditorSimulateModeParameters
+            {
+                EditorFileSystemParameters = FileSystemParameters.CreateDefaultEditorFileSystemParameters(packageRoot)
+            };
             initializationOperation = _package.InitializeAsync(createParameters);
         }
         else if (PlayMode == EPlayMode.OfflinePlayMode)
         {
             // 单机运行模式
-            var createParameters = new OfflinePlayModeParameters();
-            createParameters.BuildinFileSystemParameters = FileSystemParameters.CreateDefaultBuildinFileSystemParameters();
+            var createParameters = new OfflinePlayModeParameters
+            {
+                BuildinFileSystemParameters = FileSystemParameters.CreateDefaultBuildinFileSystemParameters()
+            };
             initializationOperation = _package.InitializeAsync(createParameters);
         }
         else if (PlayMode == EPlayMode.HostPlayMode)
@@ -111,15 +104,16 @@ public class LoadDll : MonoBehaviour
             string fallbackHostServer = GetHostServerURL();
             IRemoteServices remoteServices = new RemoteServices(defaultHostServer, fallbackHostServer);
 
-
             // 创建联机模式参数，并设置内置及缓存文件系统参数
+            var cacheFSParam = FileSystemParameters.CreateDefaultCacheFileSystemParameters(remoteServices);
+            cacheFSParam.AddParameter(FileSystemParametersDefine.DISABLE_ONDEMAND_DOWNLOAD, true);
             HostPlayModeParameters createParameters = new HostPlayModeParameters
             {
                 //创建内置文件系统参数
                 //BuildinFileSystemParameters = FileSystemParameters.CreateDefaultBuildinFileSystemParameters(),
                 BuildinFileSystemParameters = null,
                 //创建缓存系统参数
-                CacheFileSystemParameters = FileSystemParameters.CreateDefaultCacheFileSystemParameters(remoteServices)
+                CacheFileSystemParameters = cacheFSParam
             };
             //执行异步初始化
             initializationOperation = _package.InitializeAsync(createParameters);
@@ -136,8 +130,10 @@ public class LoadDll : MonoBehaviour
             createParameters.WebServerFileSystemParameters = WechatFileSystemCreater.CreateFileSystemParameters(packageRoot, remoteServices);
             initializationOperation = _package.InitializeAsync(createParameters);
 #else
-            var createParameters = new WebPlayModeParameters();
-            createParameters.WebServerFileSystemParameters = FileSystemParameters.CreateDefaultWebServerFileSystemParameters();
+            var createParameters = new WebPlayModeParameters
+            {
+                WebServerFileSystemParameters = FileSystemParameters.CreateDefaultWebServerFileSystemParameters()
+            };
             initializationOperation = _package.InitializeAsync(createParameters);
 #endif
         }
@@ -189,8 +185,7 @@ public class LoadDll : MonoBehaviour
             return $"{_fallbackHostServer}/{fileName}";
         }
     }
-
-#endregion
+    #endregion
 
     #region 获取资源版本
     private IEnumerator UpdatePackageVersion()
@@ -356,7 +351,7 @@ public class LoadDll : MonoBehaviour
 
     #region 运行测试
 
-    private static List<string> HotUpdateAssemblyFiles { get; } = new() { "XLua.runtime", "HotUpdate", };
+    private static List<string> HotUpdateAssemblyFiles { get; } = new() { "Assembly-CSharp", "Obfuz.Runtime", "HotUpdate", };
     void StartGame()
     {
         // 加载AOT dll的元数据
@@ -369,6 +364,7 @@ public class LoadDll : MonoBehaviour
 #else
             System.AppDomain.CurrentDomain.GetAssemblies().First(a => a.GetName().Name == hotUpdateDllName);
 #endif
+            Debug.Log($"LoadMetadataForAOTAssembly:{hotUpdateDllName}. ");
         }
         Debug.Log("运行热更代码");
         StartCoroutine(Run_InstantiateComponentByAsset());
