@@ -1,0 +1,11 @@
+<linker>
+    <assembly fullname="YooAsset" preserve="all"/>
+    <assembly fullname="YooAsset.RuntimeExtension" preserve="all"/>
+    <assembly fullname="UniTask" preserve="all" />
+    <assembly fullname="UnityEngine.PostProcessing" preserve="all" />
+    <assembly fullname="Unity.PostProcessing.Runtime" preserve="all" />
+    <assembly fullname="UnityEngine.CoreModule" preserve="all" />
+    <assembly fullname="UnityEngine">
+        <type fullname="UnityEngine.CapsuleCollider" preserve="all" />
+    </assembly>
+</linker>

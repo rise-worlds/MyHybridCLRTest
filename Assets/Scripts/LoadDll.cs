@@ -6,6 +6,8 @@ using System.Reflection;
 using HybridCLR;
 using UnityEngine;
 using YooAsset;
+using Obfuz;
+using Obfuz.EncryptionVM;
 
 /// <summary>
 /// 脚本工作流程：
@@ -32,6 +34,7 @@ public class LoadDll : MonoBehaviour
 
     void Start()
     {
+        Debug.Log($"资源系统运行模式：{PlayMode}");
         Application.targetFrameRate = 60;   //设置帧率
         Application.runInBackground = true; //设置后台运行
         DontDestroyOnLoad(gameObject);      //确保该对象不会在场景切换时销毁
@@ -69,6 +72,7 @@ public class LoadDll : MonoBehaviour
             s_assetDatas[asset] = assetObj;
             Debug.Log($"dll:{asset}   {assetObj == null}");
         }
+        YooAssets.SetDefaultPackage(_package);
 
         //6.清理未使用的缓存文件
         ClearFiles();
@@ -81,7 +85,6 @@ public class LoadDll : MonoBehaviour
         _package = YooAssets.TryGetPackage(packageName);
         if (_package == null)
             _package = YooAssets.CreatePackage(packageName);
-        YooAssets.SetDefaultPackage(_package);
 
         // 编辑器下的模拟模式
         InitializationOperation initializationOperation = null;
@@ -113,7 +116,8 @@ public class LoadDll : MonoBehaviour
             HostPlayModeParameters createParameters = new HostPlayModeParameters
             {
                 //创建内置文件系统参数
-                BuildinFileSystemParameters = FileSystemParameters.CreateDefaultBuildinFileSystemParameters(),
+                //BuildinFileSystemParameters = FileSystemParameters.CreateDefaultBuildinFileSystemParameters(),
+                BuildinFileSystemParameters = null,
                 //创建缓存系统参数
                 CacheFileSystemParameters = FileSystemParameters.CreateDefaultCacheFileSystemParameters(remoteServices)
             };
@@ -305,7 +309,6 @@ public class LoadDll : MonoBehaviour
     private void UpdateDone()
     {
         Debug.Log("热更新结束");
-        LoadMetadataForAOTAssemblies();
 
         //跳转场景
         Debug.Log("跳转场景");
@@ -320,7 +323,6 @@ public class LoadDll : MonoBehaviour
     //通过RuntimeApi.LoadMetadataForAOTAssembly()函数来补充AOT泛型的原始元数据
     private static List<string> AOTMetaAssemblyFiles { get; } = new() { "mscorlib.dll", "System.dll", "System.Core.dll", };
     private static Dictionary<string, TextAsset> s_assetDatas = new Dictionary<string, TextAsset>();
-    private static Assembly _hotUpdateAss;
     
     public static byte[] ReadBytesFromStreamingAssets(string dllName)
     {
@@ -354,16 +356,20 @@ public class LoadDll : MonoBehaviour
 
     #region 运行测试
 
+    private static List<string> HotUpdateAssemblyFiles { get; } = new() { "XLua.runtime", "HotUpdate", };
     void StartGame()
     {
         // 加载AOT dll的元数据
         LoadMetadataForAOTAssemblies();
         // 加载热更dll
+        foreach (var hotUpdateDllName in HotUpdateAssemblyFiles)
+        {
 #if !UNITY_EDITOR
-        _hotUpdateAss = Assembly.Load(ReadBytesFromStreamingAssets("HotUpdate.dll"));
+            Assembly.Load(ReadBytesFromStreamingAssets($"{hotUpdateDllName}.dll"));
 #else
-        _hotUpdateAss = System.AppDomain.CurrentDomain.GetAssemblies().First(a => a.GetName().Name == "HotUpdate");
+            System.AppDomain.CurrentDomain.GetAssemblies().First(a => a.GetName().Name == hotUpdateDllName);
 #endif
+        }
         Debug.Log("运行热更代码");
         StartCoroutine(Run_InstantiateComponentByAsset());
     }
@@ -371,8 +377,7 @@ public class LoadDll : MonoBehaviour
     IEnumerator Run_InstantiateComponentByAsset()
     {
         // 通过实例化assetbundle中的资源，还原资源上的热更新脚本
-        var package = YooAssets.GetPackage("DefaultPackage");
-        var handle = package.LoadAssetAsync<GameObject>("Cube");
+        var handle = _package.LoadAssetAsync<GameObject>("Cube");
         yield return handle;
         handle.Completed += Handle_Completed;
     }
@@ -385,4 +390,12 @@ public class LoadDll : MonoBehaviour
     }
 
     #endregion
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
+    private static void SetUpStaticSecretKey()
+    {
+        Debug.Log("SetUpStaticSecret begin");
+        EncryptionService<DefaultStaticEncryptionScope>.Encryptor = new GeneratedEncryptionVirtualMachine(Resources.Load<TextAsset>("Obfuz/defaultStaticSecretKey").bytes);
+        Debug.Log("SetUpStaticSecret end");
+    }
 }

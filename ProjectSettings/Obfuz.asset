@@ -13,17 +13,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildPipelineSettings:
-    enable: 0
+    enable: 1
     linkXmlProcessCallbackOrder: 10000
     obfuscationProcessCallbackOrder: 10000
   compatibilitySettings:
     targetRuntime: 0
   assemblySettings:
     assembliesToObfuscate:
+    - HotUpdate
+    nonObfuscatedButReferencingObfuscatedAssemblies:
     - Assembly-CSharp
-    - XLua.runtime
-    - main
-    nonObfuscatedButReferencingObfuscatedAssemblies: []
     additionalAssemblySearchPaths: []
     obfuscateObfuzRuntime: 1
   obfuscationPassSettings:
@@ -39,7 +38,7 @@ MonoBehaviour:
   encryptionVMSettings:
     codeGenerationSecretKey: Obfuz
     encryptionOpCodeCount: 256
-    codeOutputPath: Assets/Scripts/main/GeneratedEncryptionVirtualMachine.cs
+    codeOutputPath: Assets/Scripts/GeneratedEncryptionVirtualMachine.cs
   symbolObfusSettings:
     debug: 0
     obfuscatedNamePrefix: $
@@ -49,7 +48,8 @@ MonoBehaviour:
     symbolMappingFile: Assets/Obfuz/SymbolObfus/symbol-mapping.xml
     debugSymbolMappingFile: Assets/Obfuz/SymbolObfus/symbol-mapping-debug.xml
     ruleFiles: []
-    customRenamePolicyTypes: []
+    customRenamePolicyTypes:
+    - ObfuzProtectionPolicy
   constEncryptSettings:
     encryptionLevel: 1
     ruleFiles: []

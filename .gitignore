@@ -130,3 +130,6 @@ Assets/StreamingAssets/
 *.csproj
 *.sln
 .vsconfig
+
+Bundles/
+PackageManifest/

@@ -1,3 +1,0 @@
-
-local str = CS.RiseClient.TestHotUpdate.Run();
-print(str);
