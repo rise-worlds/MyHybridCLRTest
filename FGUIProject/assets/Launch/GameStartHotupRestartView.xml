@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <loader id="n7_xgho" name="n7" xy="456,263" size="1007,554" group="n12_jvua" url="ui://q4as4r8yjvuaf5z" fill="scaleFree"/>
+    <text id="n1_xgho" name="title" xy="960,315" pivot="0.5,0.5" anchor="true" size="184,60" group="n12_jvua" font="ui://mo8blgtefrn946" fontSize="45" color="#4a5366" text="更新提示"/>
+    <richtext id="n2_xgho" name="des" xy="966,523" pivot="0.5,0.5" anchor="true" size="935,300" group="n12_jvua" font="ui://mo8blgtefrn946" fontSize="28" color="#4a5366" align="center" vAlign="middle" autoSize="shrink" text="更新完成，请重启游戏。"/>
+    <component id="n8_jglu" name="_sureBtn" src="jglu0" fileName="LoginLaunchBtn.xml" xy="759,691" group="n11_jglu">
+      <Button title="确定" titleColor="#272524" titleFontSize="28"/>
+    </component>
+    <group id="n11_jglu" name="n11" xy="759,691" size="400,94" group="n12_jvua"/>
+    <group id="n12_jvua" name="n12" xy="456,263" size="1007,554" advanced="true">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+  </displayList>
+</component>

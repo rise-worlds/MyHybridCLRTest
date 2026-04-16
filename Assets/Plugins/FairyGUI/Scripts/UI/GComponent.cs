@@ -44,10 +44,6 @@ namespace FairyGUI
         Controller _applyingController;
 
         EventListener _onDrop;
-        /// <summary>
-        /// 排除不可见的对象
-        /// </summary>
-        private bool _scrollExcludeInvisible = false;
 
         public GComponent()
         {
@@ -55,7 +51,6 @@ namespace FairyGUI
             _controllers = new List<Controller>();
             _transitions = new List<Transition>();
             _margin = new Margin();
-            _scrollExcludeInvisible = false;
             _buildDelegate = BuildNativeDisplayList;
         }
 
@@ -68,7 +63,6 @@ namespace FairyGUI
 
             displayObject = rootContainer;
         }
-
 
         override public void Dispose()
         {
@@ -116,37 +110,6 @@ namespace FairyGUI
         }
 
         /// <summary>
-        /// 清理所有事件（内部）
-        /// </summary>
-        private void ClearAllEventsInter()
-        {
-            ClearEvents();
-            ClearEventBridge();
-            for (int i = 0; i < _children.Count; i++)
-            {
-                if (_children[i] == null)
-                {
-                    continue;
-                }
-                if (_children[i] is GComponent component)
-                {
-                    component.ClearAllEventsInter();
-                    continue;
-                }
-                _children[i].ClearEvents();
-                _children[i].ClearEventBridge();
-            }
-        }
-
-        /// <summary>
-        /// 清理所有事件
-        /// </summary>
-        public void ClearAllEvents()
-        {
-            ClearAllEventsInter();
-        }
-
-        /// <summary>
         /// Dispatched when an object was dragged and dropped to this component.
         /// </summary>
         public EventListener onDrop
@@ -183,12 +146,6 @@ namespace FairyGUI
             get { return rootContainer.opaque; }
             set { rootContainer.opaque = value; }
         }
-
-        public ScrollPane getScrollPane()
-        {
-            return scrollPane;
-        }
-
 
         /// <summary>
         /// 
@@ -451,19 +408,6 @@ namespace FairyGUI
             return null;
         }
 
-        public GObject getUseNameChild(string name)
-        {
-            int cnt = _children.Count;
-            for (int i = 0; i < cnt; ++i)
-            {
-                if (_children[i].user_name == name)
-                    return _children[i];
-            }
-
-            return null;
-        }
-
-
         public GObject GetChildByPath(string path)
         {
             string[] arr = path.Split('.');
@@ -528,7 +472,7 @@ namespace FairyGUI
             return null;
         }
 
-        public GObject GetChildById(string id)
+        internal GObject GetChildById(string id)
         {
             int cnt = _children.Count;
             for (int i = 0; i < cnt; ++i)
@@ -835,6 +779,15 @@ namespace FairyGUI
             return null;
         }
 
+        /// <summary>
+        /// Returns transition list.
+        /// </summary>
+        /// <returns>Transition list</returns>
+        public List<Transition> Transitions
+        {
+            get { return _transitions; }
+        }
+
         internal void ChildStateChanged(GObject child)
         {
             if (_buildingDisplayList)
@@ -1056,11 +1009,6 @@ namespace FairyGUI
             set { container.reversedMask = value; }
         }
 
-        public object getBaseData()
-        {
-            return baseUserData;
-        }
-
         /// <summary>
         /// 
         /// </summary>
@@ -1218,17 +1166,16 @@ namespace FairyGUI
                 for (int i = 0; i < cnt; ++i)
                 {
                     GObject child = _children[i];
-                    if (_scrollExcludeInvisible && !child.visible) { continue; }
                     tmp = child.x;
                     if (tmp < ax)
                         ax = tmp;
                     tmp = child.y;
                     if (tmp < ay)
                         ay = tmp;
-                    tmp = child.x + child.actualWidth;
+                    tmp = child.x + (child.pivotAsAnchor ? child.actualWidth * (1 - child.pivot.x) : child.actualWidth);//Add anchor offset
                     if (tmp > ar)
                         ar = tmp;
-                    tmp = child.y + child.actualHeight;
+                    tmp = child.y + (child.pivotAsAnchor ? child.actualHeight * (1 - child.pivot.y) : child.actualHeight);//Add anchor offset
                     if (tmp > ab)
                         ab = tmp;
                 }
@@ -1252,25 +1199,6 @@ namespace FairyGUI
             if (scrollPane != null)
                 scrollPane.SetContentSize(Mathf.RoundToInt(ax + aw), Mathf.RoundToInt(ay + ah));
         }
-        /// <summary>
-        /// 是否排除不可见的对象参与滚动大小结算
-        /// </summary>
-        /// <param name="value"></param>
-        public void SetScrollExcludeInvisible(bool value)
-        {
-            if (scrollPane != null)
-                _scrollExcludeInvisible = value;
-        }
-        /// <summary>
-        /// 设置滑动区域大小
-        /// </summary>
-        /// <param name="width"></param>
-        /// <param name="height"></param>
-        // public void SetScrollContentSize(float width, float height)
-        // {
-        //     if (scrollPane != null)
-        //         scrollPane.SetContentSize(Mathf.RoundToInt(width), Mathf.RoundToInt(height));
-        // }
 
         /// <summary>
         /// Viwe port width of the container.
@@ -1316,7 +1244,22 @@ namespace FairyGUI
             }
         }
 
-        virtual protected internal void GetSnappingPosition(ref float xValue, ref float yValue)
+        public void GetSnappingPosition(ref float xValue, ref float yValue)
+        {
+            GetSnappingPositionWithDir(ref xValue, ref yValue, 0, 0);
+        }
+
+        protected bool ShouldSnapToNext(float dir, float delta, float size)
+        {
+            return dir < 0 && delta > UIConfig.defaultScrollSnappingThreshold * size
+                || dir > 0 && delta > (1 - UIConfig.defaultScrollSnappingThreshold) * size
+                || dir == 0 && delta > size / 2;
+        }
+
+        /**
+        * dir正数表示右移或者下移，负数表示左移或者上移
+        */
+        virtual public void GetSnappingPositionWithDir(ref float xValue, ref float yValue, float xDir, float yDir)
         {
             int cnt = _children.Count;
             if (cnt == 0)
@@ -1342,10 +1285,10 @@ namespace FairyGUI
                         else
                         {
                             GObject prev = _children[i - 1];
-                            if (yValue < prev.y + prev.height / 2) //top half part
-                                yValue = prev.y;
-                            else //bottom half part
+                            if (ShouldSnapToNext(yDir, yValue - prev.y, prev.height))
                                 yValue = obj.y;
+                            else
+                                yValue = prev.y;
                             break;
                         }
                     }
@@ -1372,10 +1315,10 @@ namespace FairyGUI
                         else
                         {
                             GObject prev = _children[i - 1];
-                            if (xValue < prev.x + prev.width / 2) // top half part
-                                xValue = prev.x;
-                            else//bottom half part
+                            if (ShouldSnapToNext(xDir, xValue - prev.x, prev.width))
                                 xValue = obj.x;
+                            else
+                                xValue = prev.x;
                             break;
                         }
                     }
@@ -1494,7 +1437,7 @@ namespace FairyGUI
             int controllerCount = buffer.ReadShort();
             for (int i = 0; i < controllerCount; i++)
             {
-                int nextPos = buffer.ReadShort();
+                int nextPos = buffer.ReadUshort();
                 nextPos += buffer.position;
 
                 Controller controller = new Controller();
@@ -1561,7 +1504,7 @@ namespace FairyGUI
 
             for (int i = 0; i < childCount; i++)
             {
-                int nextPos = buffer.ReadShort();
+                int nextPos = buffer.ReadUshort();
                 nextPos += buffer.position;
 
                 buffer.Seek(buffer.position, 3);
@@ -1575,7 +1518,7 @@ namespace FairyGUI
 
             for (int i = 0; i < childCount; i++)
             {
-                int nextPos = buffer.ReadShort();
+                int nextPos = buffer.ReadUshort();
                 nextPos += buffer.position;
 
                 child = _children[i];
@@ -1631,7 +1574,7 @@ namespace FairyGUI
             int transitionCount = buffer.ReadShort();
             for (int i = 0; i < transitionCount; i++)
             {
-                int nextPos = buffer.ReadShort();
+                int nextPos = buffer.ReadUshort();
                 nextPos += buffer.position;
 
                 Transition trans = new Transition(this);

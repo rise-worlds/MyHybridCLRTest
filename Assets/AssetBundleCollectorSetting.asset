@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AssetBundleCollectorSetting
   m_EditorClassIdentifier: 
   ShowPackageView: 0
-  ShowEditorAlias: 0
+  ShowEditorAlias: 1
   UniqueBundleName: 0
   Packages:
   - PackageName: DefaultPackage
@@ -48,6 +48,19 @@ MonoBehaviour:
         CollectorType: 0
         AddressRuleName: AddressByFileName
         PackRuleName: PackSeparately
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+    - GroupName: ui
+      GroupDesc: 
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/MyAsset/UI
+        CollectorGUID: 379365d942dbdc64aa95a028d2ca4d41
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackTopDirectory
         FilterRuleName: CollectAll
         AssetTags: 
         UserData: 

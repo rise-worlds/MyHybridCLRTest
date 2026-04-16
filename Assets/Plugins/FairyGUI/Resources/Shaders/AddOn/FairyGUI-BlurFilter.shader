@@ -28,9 +28,7 @@ SubShader {
         };
 
         sampler2D _MainTex;
-        CBUFFER_START(UnityPerMaterial)
         half4 _MainTex_TexelSize;
-        CBUFFER_END
         half4 _BlurOffsets;
         
         v2f vert (appdata_t v)

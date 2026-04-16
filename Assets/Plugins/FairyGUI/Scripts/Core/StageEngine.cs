@@ -5,7 +5,6 @@ namespace FairyGUI
     /// <summary>
     /// 
     /// </summary>
-    [RequireComponent(typeof(FguiOptimize))]
     public class StageEngine : MonoBehaviour
     {
         public int ObjectsOnStage;
@@ -31,20 +30,22 @@ namespace FairyGUI
             Stage.inst.HandleGUIEvents(Event.current);
         }
 
-#if !UNITY_5_4_OR_NEWER
-        void OnLevelWasLoaded()
-        {
-            StageCamera.CheckMainCamera();
-        }
-#endif
-
         void OnApplicationQuit()
         {
             if (Application.isEditor)
             {
                 beingQuit = true;
                 UIPackage.RemoveAllPackages();
+                Stage.inst.Dispose();
             }
         }
+
+#if UNITY_2019_3_OR_NEWER
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        static void InitializeOnLoad()
+        {
+            beingQuit = false;
+        }
+#endif
     }
 }

@@ -45,6 +45,15 @@ namespace FairyGUI
             }
         }
 
+
+#if UNITY_2019_3_OR_NEWER
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        static void InitializeOnLoad()
+        {
+            _inst = null;
+        }
+#endif
+
         public GRoot()
         {
             this.name = this.rootContainer.name = this.rootContainer.gameObject.name = "GRoot";
@@ -111,7 +120,7 @@ namespace FairyGUI
         /// </summary>
         public void ApplyContentScaleFactor()
         {
-            this.SetSize(Mathf.CeilToInt(Stage.inst.width / UIContentScaler.scaleFactor * Stage.inst.safeArea.x), Mathf.CeilToInt(Stage.inst.height / UIContentScaler.scaleFactor * Stage.inst.safeArea.y));
+            this.SetSize(Mathf.CeilToInt(Stage.inst.width / UIContentScaler.scaleFactor), Mathf.CeilToInt(Stage.inst.height / UIContentScaler.scaleFactor));
             this.SetScale(UIContentScaler.scaleFactor, UIContentScaler.scaleFactor);
         }
 

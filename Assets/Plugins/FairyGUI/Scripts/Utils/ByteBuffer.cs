@@ -325,7 +325,7 @@ namespace FairyGUI.Utils
             else if (index == 65533)
                 return string.Empty;
             else
-                return index < stringTable.Length ? stringTable[index] : null;
+                return stringTable[index];
         }
 
         /// <summary>

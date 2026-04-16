@@ -4,12 +4,6 @@ using FairyGUI.Utils;
 
 namespace FairyGUI
 {
-    public class Size 
-    {
-        public float width;
-        public float height;
-
-    }
     public class GObject : EventDispatcher
     {
         /// <summary>
@@ -17,11 +11,7 @@ namespace FairyGUI
         /// id is for internal use only.
         /// </summary>
         public string id { get; private set; }
-        /// <summary>
-        /// 原本得id 在Setup_BeforeAdd构建时会修改掉，并不算是唯一，所以这里用userid来代替唯一
-        /// id is for internal use only.
-        /// </summary>
-        public string use_id { get; private set; }
+
         /// <summary>
         /// Name of the object.
         /// </summary>
@@ -87,8 +77,6 @@ namespace FairyGUI
         /// </summary>
         public GComponent parent { get; private set; }
 
-        public string  user_name;  // 移植准备
-
         /// <summary>
         /// Lowlevel display object.
         /// </summary>
@@ -98,14 +86,11 @@ namespace FairyGUI
         /// 当前全局正在被拖动的对象
         /// </summary>
         public static GObject draggingObject { get; private set; }
- 
 
         /// <summary>
         /// 
         /// </summary>
         public PackageItem packageItem;
-
-        public object _customData;
 
         float _x;
         float _y;
@@ -174,7 +159,6 @@ namespace FairyGUI
             _scaleY = 1;
             _internalVisible = true;
             id = "_n" + _gInstanceCounter++;
-            use_id = id;
             name = string.Empty;
 
             CreateDisplayObject();
@@ -183,25 +167,6 @@ namespace FairyGUI
             _gears = new GearBase[10];
         }
 
-        public void setUseName(string name)
-        {   
-            user_name = name;
-        } 
-
-        public void setCustomData(object value)
-        {
-            _customData = value;
-        }
-
-        public object getCustomData()
-        {
-            return _customData;
-        }
-        public GComponent getParent()
-        {
-            return parent;
-        }
- 
         /// <summary>
         /// Dispatched when the object or its child was clicked.
         /// </summary>
@@ -354,26 +319,6 @@ namespace FairyGUI
             get { return _onFocusOut ?? (_onFocusOut = new EventListener(this, "onFocusOut")); }
         }
 
-
-        public void SetX(float value)
-        {
-            x = value;
-        }
-
-        public float GetX()
-        {
-            return x;
-        }
-        public void SetY(float value)
-        {
-            y = value;
-        }
-
-        public float GetY()
-        {
-            return y;
-        }
-
         /// <summary>
         /// The x coordinate of the object relative to the local coordinates of the parent.
         /// </summary>
@@ -410,7 +355,6 @@ namespace FairyGUI
             }
         }
 
-
         /// <summary>
         /// The x and y coordinates of the object relative to the local coordinates of the parent.
         /// </summary>
@@ -418,13 +362,6 @@ namespace FairyGUI
         {
             get { return new Vector2(_x, _y); }
             set { SetPosition(value.x, value.y, _z); }
-        }
-
-
-
-        public Vector2 GetPosition()
-        {
-            return xy;
         }
 
         /// <summary>
@@ -454,11 +391,6 @@ namespace FairyGUI
         /// <param name="topLeft"></param>
         public void SetXY(float xv, float yv, bool topLeftValue)
         {
-            if (topLeftValue)
-            {
-                xv += Stage.inst.width / UIContentScaler.scaleFactor * (1-Stage.inst.safeArea.x);
-                yv += Stage.inst.height / UIContentScaler.scaleFactor * (1-Stage.inst.safeArea.y);
-            }
             if (_pivotAsAnchor)
                 SetPosition(xv + _pivotX * _width, yv + _pivotY * _height, _z);
             else
@@ -520,7 +452,7 @@ namespace FairyGUI
         /// Set the object in middle of the parent or GRoot if the parent is not set.
         /// </summary>
         /// <param name="restraint">Add relations to maintain the center state.</param>
-        public void Center(bool restraint)
+        public virtual void Center(bool restraint)
         {
             GComponent r;
             if (parent != null)
@@ -542,66 +474,6 @@ namespace FairyGUI
         public void MakeFullScreen()
         {
             this.SetSize(GRoot.inst.width, GRoot.inst.height);
-        }
-
-        public void setWidth(float width)
-        {
-            this.width = width;
-        }
-
-        public float getWidth()
-        {
-            return width;
-        }
-
-        public void setHeight(float height)
-        {
-            this.height = height;
-        }
-
-        public float getHeight()
-        {
-            return height;
-        }
-
-        public void setMinWidth(int minWidth)
-        {
-            this.minWidth = minWidth;
-        }
-
-        public int getMinWidth()
-        {
-            return this.minWidth;
-        }
-        
-        public void setMinHeight(int minHeight)
-        {
-            this.minHeight = minHeight;
-        }
-
-        public int getMinHeight()
-        {
-            return this.minHeight;
-        }
-
-        public void setMaxWidth(int maxWidth)
-        {
-            this.maxWidth = maxWidth;
-        }
-
-        public int getMaxWidth()
-        {
-            return this.maxWidth;
-        }
-        
-        public void setMaxHeight(int maxHeight)
-        {
-            this.maxHeight = maxHeight;
-        }
-
-        public int getMaxHeight()
-        {
-            return this.maxHeight;
         }
 
         /// <summary>
@@ -633,12 +505,7 @@ namespace FairyGUI
                 SetSize(_rawWidth, value);
             }
         }
-    
 
-        public Size getSize()
-        {
-            return new Size(){ width = this.width, height = this.height }; 
-        }
         /// <summary>
         /// The size of the object in pixels.
         /// </summary>
@@ -779,21 +646,6 @@ namespace FairyGUI
             }
         }
 
-    
-        public Vector2 getScale()
-        {
-            return scale;
-        }
-        public float getScaleX()
-        {
-            return scaleX;
-       
-        }
-        public float getScaleY()
-        {
-            return scaleY; 
-        }
-
         /// <summary>
         /// The horizontal scale factor. '1' means no scale, cannt be negative.
         /// </summary>
@@ -817,7 +669,6 @@ namespace FairyGUI
                 SetScale(_scaleX, value);
             }
         }
-
 
         /// <summary>
         /// The scale factor.
@@ -936,15 +787,6 @@ namespace FairyGUI
             }
         }
 
-        public void setTouchable(bool value)
-        {
-            touchable = value;
-        }
-
-        public bool isTouchable()
-        {
-            return touchable;
-        }
         /// <summary>
         /// If the object can touch or click. GImage/GTextField is not touchable even it is true.
         /// </summary>
@@ -967,17 +809,6 @@ namespace FairyGUI
             }
         }
 
-        public bool isGrayed(bool value)
-        {
-            return grayed;
-        }
-
-
-        public void SetGrayed(bool value)
-        {
-            grayed = value;
-        }
-
         /// <summary>
         /// If true, apply a grayed effect on this object.
         /// </summary>
@@ -998,11 +829,6 @@ namespace FairyGUI
             }
         }
 
-        public void setEnabled(bool value)
-        {
-            enabled = value;
-        }
-
         /// <summary>
         /// Enabled is shortcut for grayed and !touchable combination.
         /// </summary>
@@ -1017,14 +843,6 @@ namespace FairyGUI
                 this.grayed = !value;
                 this.touchable = value;
             }
-        }
-        public void setRotation(float value)
-        {
-            rotation = value;
-        }
-        public float getRotation()
-        {
-            return rotation;
         }
 
         /// <summary>
@@ -1078,15 +896,6 @@ namespace FairyGUI
                     displayObject.rotationY = _rotationY;
             }
         }
-        public void setAlpha(float value)
-        {
-           alpha = value;
-        }
-
-        public void setOpacity(float value)
-        {
-            alpha = value;
-        }
 
         /// <summary>
         /// The opacity of the object. 0 = transparent, 1 = opaque.
@@ -1107,15 +916,6 @@ namespace FairyGUI
             }
         }
 
-        public bool isVisible()
-        {
-            return visible;
-        }
-
-        public void SetVisible( bool temp_visible )
-        {
-            visible = temp_visible;  // 方便老api移植
-        }
         /// <summary>
         /// The visibility of the object. An invisible object will be untouchable.
         /// </summary>
@@ -1162,11 +962,6 @@ namespace FairyGUI
             {
                 return _visible && _internalVisible;
             }
-        }
-
-        public void SetSortingOrder(int value)
-        {
-            sortingOrder = value;
         }
 
         /// <summary>
@@ -1256,10 +1051,7 @@ namespace FairyGUI
                 }
             }
         }
-        public DisplayObject getDisplayObject()
-        {
-            return  displayObject; 
-        }
+
 
         /// <summary>
         /// 
@@ -1292,11 +1084,6 @@ namespace FairyGUI
         {
             get { return displayObject != null ? displayObject.filter : null; }
             set { if (displayObject != null) displayObject.filter = value; }
-        }
-
-        public void setBlendFunc(BlendMode _blendMode)
-        {
-            blendMode = _blendMode;
         }
 
         /// <summary>
@@ -1359,8 +1146,6 @@ namespace FairyGUI
                 return displayObject != null && displayObject.stage != null;
             }
         }
-
-
 
         /// <summary>
         /// Resource url of this object.
@@ -1629,25 +1414,6 @@ namespace FairyGUI
                 return GRoot.inst;
             }
         }
- 
-        public void SetText(string _text)
-        {
-            text = _text; // set 是方便 老api 调用
-        }
- 
-        public string GetText()
-        {
-            return text;
-        }
-        public void SetIcon(string vlaue)
-        {
-            icon = vlaue;
-        }
-
-        public string GetIcon()
-        {
-            return icon;
-        }
 
         /// <summary>
         /// 
@@ -1658,7 +1424,6 @@ namespace FairyGUI
             set { /*override in child*/}
         }
 
-
         /// <summary>
         /// 
         /// </summary>
@@ -1667,12 +1432,6 @@ namespace FairyGUI
             get { return null; }
             set { /*override in child*/}
         }
-
-        public void setDraggable(bool vlaue)
-        {
-            draggable = vlaue;
-        }
-
 
         /// <summary>
         /// 
@@ -1724,6 +1483,14 @@ namespace FairyGUI
         public bool dragging
         {
             get { return draggingObject == this; }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Vector2 dragStartPos
+        {
+            get { return _dragTouchStartPos; }
         }
 
         /// <summary>
@@ -1920,34 +1687,6 @@ namespace FairyGUI
                 displayObject.Dispose();
             }
             data = null;
-            _customData = null;
-        }
-
-        /// <summary>
-        /// 清理所有事件
-        /// </summary>
-        virtual public void ClearEvents()
-        {
-            _onClick?.Clear();
-            _onRightClick?.Clear();
-            _onTouchBegin?.Clear();
-            _onTouchMove?.Clear();
-            _onTouchEnd?.Clear();
-            _onRollOver?.Clear();
-            _onRollOut?.Clear();
-            _onAddedToStage?.Clear();
-            _onRemovedFromStage?.Clear();
-            _onKeyDown?.Clear();
-            _onClickLink?.Clear();
-            _onPositionChanged?.Clear();
-            _onSizeChanged?.Clear();
-            _onDragStart?.Clear();
-            _onDragMove?.Clear();
-            _onDragEnd?.Clear();
-            _onGearStop?.Clear();
-            _onFocusIn?.Clear();
-            _onFocusOut?.Clear();
-            GTween.Kill(this);
         }
 
         /// <summary>
@@ -2158,7 +1897,6 @@ namespace FairyGUI
             buffer.Skip(5);
 
             id = buffer.ReadS();
-            use_id = use_id + "_" + id;
             name = buffer.ReadS();
             float f1 = buffer.ReadInt();
             float f2 = buffer.ReadInt();
@@ -2230,10 +1968,7 @@ namespace FairyGUI
 
             string str = buffer.ReadS();
             if (str != null)
-            {
                 this.data = str;
-                this._customData = str;  // lua支持添加，cocos原本是没有读取 原本字段以防有用。 
-            } 
         }
 
         virtual public void Setup_AfterAdd(ByteBuffer buffer, int beginPos)
@@ -2253,7 +1988,7 @@ namespace FairyGUI
             int cnt = buffer.ReadShort();
             for (int i = 0; i < cnt; i++)
             {
-                int nextPos = buffer.ReadShort();
+                int nextPos = buffer.ReadUshort();
                 nextPos += buffer.position;
 
                 GearBase gear = GetGear(buffer.ReadByte());

@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
 
+#if FAIRYGUI_INPUT_SYSTEM
+using UnityEngine.InputSystem;
+#endif
+
 namespace FairyGUI
 {
     /// <summary>
@@ -74,11 +78,6 @@ namespace FairyGUI
         /// <summary>
         /// 
         /// </summary>
-        public Vector2 GetPosition()
-        {
-            return new Vector2(x/ UIContentScaler.scaleFactor, y/ UIContentScaler.scaleFactor); 
-        }
-
         public Vector2 position
         {
             get { return new Vector2(x, y); }
@@ -110,7 +109,12 @@ namespace FairyGUI
         {
             get
             {
+#if FAIRYGUI_INPUT_SYSTEM
+                Keyboard keyboard = Keyboard.current;
+                return keyboard != null && (keyboard.leftCtrlKey.isPressed || keyboard.rightCtrlKey.isPressed);
+#else
                 return Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl);
+#endif
             }
         }
 
@@ -121,7 +125,12 @@ namespace FairyGUI
         {
             get
             {
+#if FAIRYGUI_INPUT_SYSTEM
+                Keyboard keyboard = Keyboard.current;
+                return keyboard != null && (keyboard.leftShiftKey.isPressed || keyboard.rightShiftKey.isPressed);
+#else
                 return Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
+#endif
             }
         }
 
@@ -132,7 +141,12 @@ namespace FairyGUI
         {
             get
             {
+#if FAIRYGUI_INPUT_SYSTEM
+                Keyboard keyboard = Keyboard.current;
+                return keyboard != null && (keyboard.leftAltKey.isPressed || keyboard.rightAltKey.isPressed);
+#else
                 return Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt);
+#endif
             }
         }
 
@@ -143,9 +157,16 @@ namespace FairyGUI
         {
             get
             {
-                //In win, as long as the win key and other keys are pressed at the same time, the getKey will continue to return true. So it can only be shielded.
+                // In win, as long as the win key and other keys are pressed at the same time, the getKey will continue to return true. So it can only be shielded.
                 if (Application.platform == RuntimePlatform.OSXPlayer || Application.platform == RuntimePlatform.OSXEditor)
+                {
+#if FAIRYGUI_INPUT_SYSTEM
+                    Keyboard keyboard = Keyboard.current;
+                    return keyboard != null && (keyboard.leftCommandKey.isPressed || keyboard.rightCommandKey.isPressed);
+#else
                     return Input.GetKey(KeyCode.LeftCommand) || Input.GetKey(KeyCode.RightCommand);
+#endif
+                }
                 else
                     return false;
             }

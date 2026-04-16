@@ -52,23 +52,6 @@ namespace FairyGUI
             }
         }
 
-        public void setMin(double _num)
-        {
-            min = _num;
-        }
-        public void setMax(double _num)
-        {
-            max = _num;
-        }
-        public double getMin()
-        {
-            return _min;
-        }
-        public double getMax()
-        {
-            return _max;
-        }
-
         /// <summary>
         /// 
         /// </summary>
@@ -105,16 +88,6 @@ namespace FairyGUI
                     Update(_value);
                 }
             }
-        }
-        public void SetValue(double _num)
-        {
-            value = _num;
-        }
-
-
-        public double getValue()
-        {
-            return value;
         }
 
         /// <summary>

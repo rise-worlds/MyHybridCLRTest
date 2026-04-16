@@ -17,8 +17,6 @@ Shader "FairyGUI/Image"
 
         _BlendSrcFactor ("Blend SrcFactor", Float) = 5
         _BlendDstFactor ("Blend DstFactor", Float) = 10
-        _ClipBox ("ClipBox", Vector) = (0,0,0,0)
-        [Toggle(_ENCRYPTTEX_ON)] _EncryptTex("Encrypt Texture", Float) = 0
     }
     
     SubShader
@@ -51,10 +49,9 @@ Shader "FairyGUI/Image"
         Pass
         {
             CGPROGRAM
-                #pragma multi_compile NOT_COMBINED COMBINED
-                #pragma multi_compile NOT_GRAYED GRAYED COLOR_FILTER
-                #pragma multi_compile NOT_CLIPPED CLIPPED SOFT_CLIPPED ALPHA_MASK
-                #pragma multi_compile_local _ _ENCRYPTTEX_ON
+                #pragma multi_compile _ COMBINED
+                #pragma multi_compile _ GRAYED COLOR_FILTER
+                #pragma multi_compile _ CLIPPED SOFT_CLIPPED ALPHA_MASK
                 #pragma vertex vert
                 #pragma fragment frag
                 
@@ -130,15 +127,7 @@ Shader "FairyGUI/Image"
                 
                 fixed4 frag (v2f i) : SV_Target
                 {
-                    #ifdef _ENCRYPTTEX_ON
-                        fixed4 col = tex2D(_MainTex, i.texcoord.xy / i.texcoord.w);
-                        fixed r = col.r + col.g - col.b;
-                        fixed g = col.r + col.b - col.g;
-                        fixed b = col.g + col.b - col.r;
-                        col = fixed4(r, g, b, col.a) * i.color; 
-                    #else
-                        fixed4 col = tex2D(_MainTex, i.texcoord.xy / i.texcoord.w) * i.color;
-                    #endif
+                    fixed4 col = tex2D(_MainTex, i.texcoord.xy / i.texcoord.w) * i.color;
 
                     #ifdef COMBINED
                     col.a *= tex2D(_AlphaTex, i.texcoord.xy / i.texcoord.w).g;
@@ -150,15 +139,10 @@ Shader "FairyGUI/Image"
                     #endif
 
                     #ifdef SOFT_CLIPPED
-                    float2 factor = float2(0,0);
-                    if(i.clipPos.x<0)
-                        factor.x = (1.0-abs(i.clipPos.x)) * _ClipSoftness.x;
-                    else
-                        factor.x = (1.0-i.clipPos.x) * _ClipSoftness.z;
-                    if(i.clipPos.y<0)
-                        factor.y = (1.0-abs(i.clipPos.y)) * _ClipSoftness.w;
-                    else
-                        factor.y = (1.0-i.clipPos.y) * _ClipSoftness.y;
+		            float2 factor;
+		            float2 condition = step(i.clipPos.xy, 0);
+		            float4 clip_softness = _ClipSoftness * float4(condition, 1 - condition);
+		            factor.xy = (1.0 - abs(i.clipPos.xy)) * (clip_softness.xw + clip_softness.zy);
                     col.a *= clamp(min(factor.x, factor.y), 0.0, 1.0);
                     #endif
 

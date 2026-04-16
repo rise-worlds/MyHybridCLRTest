@@ -95,17 +95,6 @@ namespace FairyGUI
             }
         }
 
-        public void SetTitle(string vlaue)
-        {
-            title = vlaue;
-        }
-
-        public string GetTitle()
-        {
-            return title;
-        }
-
-
         /// <summary>
         /// Title of the button
         /// </summary>
@@ -192,10 +181,6 @@ namespace FairyGUI
             }
         }
 
-        public void SetColor(Color value)
-        {
-            color = value; 
-        }
         /// <summary>
         /// 
         /// </summary>
@@ -228,16 +213,6 @@ namespace FairyGUI
                     tf.textFormat = format;
                 }
             }
-        }
-
-        public void setSelected(bool value)
-        {
-            selected = value;
-        }
-
-        public bool IsSelected()
-        {
-            return selected;
         }
 
         /// <summary>

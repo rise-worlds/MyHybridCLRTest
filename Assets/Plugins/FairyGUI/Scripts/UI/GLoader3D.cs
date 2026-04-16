@@ -237,6 +237,7 @@ namespace FairyGUI
             {
                 _animationName = value;
                 OnChange("animationName");
+                UpdateGear(5);
             }
         }
 
@@ -251,6 +252,7 @@ namespace FairyGUI
             {
                 _skinName = value;
                 OnChange("skinName");
+                UpdateGear(5);
             }
         }
 
@@ -271,10 +273,7 @@ namespace FairyGUI
             get { return _content.shader; }
             set { _content.shader = value; }
         }
-        public virtual void SetColor(Color value)
-        {
-            color = value; 
-        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -344,6 +343,7 @@ namespace FairyGUI
 
             if (_contentItem != null)
             {
+                _contentItem.skeletonLoaders.Add(this);
                 _contentItem = _contentItem.getBranch();
                 _contentItem = _contentItem.getHighResolution();
                 _contentItem.Load();
@@ -396,6 +396,9 @@ namespace FairyGUI
 
         protected void UpdateLayout()
         {
+            if (sourceWidth == 0 || sourceHeight == 0)
+                return;
+
             float contentWidth = sourceWidth;
             float contentHeight = sourceHeight;
 

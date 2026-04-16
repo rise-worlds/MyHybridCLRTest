@@ -115,10 +115,7 @@ namespace FairyGUI
                 parent.ChildStateChanged(this);
             HandlePositionChanged();
         }
-        public void SetColor(Color value)
-        {
-            color = value; 
-        }
+
         /// <summary>
         /// 
         /// </summary>

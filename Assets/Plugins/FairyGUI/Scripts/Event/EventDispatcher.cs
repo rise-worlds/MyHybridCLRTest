@@ -18,22 +18,6 @@ namespace FairyGUI
         }
 
         /// <summary>
-        /// 清理所有事件
-        /// </summary>
-        public void ClearEventBridge()
-        {
-            if (_dic == null)
-            {
-                return;
-            }
-            foreach (var kv in _dic)
-            {
-                kv.Value.Clear();
-            }
-            _dic.Clear();
-        }
-
-        /// <summary>
         /// 
         /// </summary>
         /// <param name="strType"></param>

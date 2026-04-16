@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace FairyGUI
 {
@@ -30,27 +31,11 @@ namespace FairyGUI
         /// <summary>
         /// 
         /// </summary>
-        public object data; 
+        public object data;
 
         internal bool _defaultPrevented;
         internal bool _stopsPropagation;
         internal bool _touchCapture;
-
-        public EventDispatcher getSender()
-        {
-            return sender;
-        }
-
-        public InputEvent getInput()
-        {
-            return inputEvent;
-        }
-
-        public object getData()
-        {
-            return data;
-        }
-        
 
         internal List<EventBridge> callChain = new List<EventBridge>();
 
@@ -105,6 +90,16 @@ namespace FairyGUI
         {
             pool.Push(value);
         }
+
+
+
+#if UNITY_2019_3_OR_NEWER
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        static void InitializeOnLoad()
+        {
+            pool.Clear();
+        }
+#endif
     }
 
 }

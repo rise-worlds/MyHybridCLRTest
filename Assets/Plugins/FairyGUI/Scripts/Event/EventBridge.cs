@@ -55,11 +55,6 @@ namespace FairyGUI
             _callback0 -= callback;
         }
 
-        public EventCallback0 GetEvent()
-        {
-            return _callback0;
-        }
-
 #if FAIRYGUI_TOLUA
         public void Add(LuaFunction func, LuaTable self)
         {

@@ -477,15 +477,6 @@ namespace FairyGUI
             SetPosY(_overlapSize.y * Mathf.Clamp01(value), ani);
         }
 
-        public float GetPosX()
-        {
-            return posX;
-        }
-        public float GetPosY()
-        {
-            return posY;
-        }
-
         /// <summary>
         /// 当前X轴滚动位置，值范围是viewWidth与contentWidth之差。
         /// </summary>
@@ -691,11 +682,6 @@ namespace FairyGUI
                 return _contentSize.y;
             }
         }
- 
-        public Size getViewSize()
-        {
-            return new Size(){ width = viewWidth , height = viewHeight };
-        }
 
         /// <summary>
         /// 显示区域宽度。
@@ -899,19 +885,22 @@ namespace FairyGUI
                 float bottom = _yPos + _viewSize.y;
                 if (setFirst || rect.y <= _yPos || rect.height >= _viewSize.y)
                 {
+                    if (!setFirst && rect.yMax >= bottom) //if an item size is large than viewSize, dont scroll
+                        return;
+
                     if (_pageMode)
                         this.SetPosY(Mathf.Floor(rect.y / _pageSize.y) * _pageSize.y, ani);
                     else
                         SetPosY(rect.y, ani);
                 }
-                else if (rect.y + rect.height > bottom)
+                else if (rect.yMax > bottom)
                 {
                     if (_pageMode)
                         this.SetPosY(Mathf.Floor(rect.y / _pageSize.y) * _pageSize.y, ani);
                     else if (rect.height <= _viewSize.y / 2)
                         SetPosY(rect.y + rect.height * 2 - _viewSize.y, ani);
                     else
-                        SetPosY(rect.y + rect.height - _viewSize.y, ani);
+                        SetPosY(rect.y + Mathf.Min(rect.height - _viewSize.y, 0), ani);
                 }
             }
             if (_overlapSize.x > 0)
@@ -919,18 +908,21 @@ namespace FairyGUI
                 float right = _xPos + _viewSize.x;
                 if (setFirst || rect.x <= _xPos || rect.width >= _viewSize.x)
                 {
+                    if (!setFirst && rect.xMax >= right) //if an item size is large than viewSize, dont scroll
+                        return;
+
                     if (_pageMode)
                         this.SetPosX(Mathf.Floor(rect.x / _pageSize.x) * _pageSize.x, ani);
                     SetPosX(rect.x, ani);
                 }
-                else if (rect.x + rect.width > right)
+                else if (rect.xMax > right)
                 {
                     if (_pageMode)
                         this.SetPosX(Mathf.Floor(rect.x / _pageSize.x) * _pageSize.x, ani);
                     else if (rect.width <= _viewSize.x / 2)
                         SetPosX(rect.x + rect.width * 2 - _viewSize.x, ani);
                     else
-                        SetPosX(rect.x + rect.width - _viewSize.x, ani);
+                        SetPosX(rect.x + Mathf.Min(rect.width - _viewSize.x, 0), ani);
                 }
             }
 
@@ -942,20 +934,19 @@ namespace FairyGUI
         /// 
         /// </summary>
         /// <param name="obj">obj must be the direct child of this container</param>
-        /// <param name="showRatio">整个组件显示比例</param>
         /// <returns></returns>
-        public bool IsChildInView(GObject obj, float showRatio = 0)
+        public bool IsChildInView(GObject obj)
         {
             if (_overlapSize.y > 0)
             {
                 float dist = obj.y + _container.y;
-                if (dist <= -obj.height*(1-showRatio) || dist >= _viewSize.y - obj.height*showRatio)
+                if (dist <= -obj.height || dist >= _viewSize.y)
                     return false;
             }
             if (_overlapSize.x > 0)
             {
                 float dist = obj.x + _container.x;
-                if (dist <= -obj.width*(1-showRatio) || dist >= _viewSize.x - obj.width*showRatio)
+                if (dist <= -obj.width || dist >= _viewSize.x)
                     return false;
             }
 
@@ -1071,7 +1062,7 @@ namespace FairyGUI
             _maskContainer.SetXY(mx, my);
         }
 
-        public void SetSize(float aWidth, float aHeight)
+        void SetSize(float aWidth, float aHeight)
         {
             AdjustMaskContainer();
 
@@ -1120,7 +1111,7 @@ namespace FairyGUI
             HandleSizeChanged();
         }
 
-        public void SetContentSize(float aWidth, float aHeight)
+        internal void SetContentSize(float aWidth, float aHeight)
         {
             if (Mathf.Approximately(_contentSize.x, aWidth) && Mathf.Approximately(_contentSize.y, aHeight))
                 return;
@@ -1212,12 +1203,25 @@ namespace FairyGUI
                 UpdatePageController();
         }
 
-        public void HandleSizeChanged()
+        void HandleSizeChanged()
         {
             if (_displayInDemand)
             {
                 _vScrollNone = _contentSize.y <= _viewSize.y;
                 _hScrollNone = _contentSize.x <= _viewSize.x;
+
+                if (_vtScrollBar != null && _hzScrollBar != null)
+                {
+                    if (!_hScrollNone)
+                        _vtScrollBar.height = _owner.height - _hzScrollBar.height - _scrollBarMargin.top - _scrollBarMargin.bottom;
+                    else
+                        _vtScrollBar.height = _owner.height - _scrollBarMargin.top - _scrollBarMargin.bottom;
+
+                    if (!_vScrollNone)
+                        _hzScrollBar.width = _owner.width - _vtScrollBar.width - _scrollBarMargin.left - _scrollBarMargin.right;
+                    else
+                        _hzScrollBar.width = _owner.width - _scrollBarMargin.left - _scrollBarMargin.right;
+                }
             }
 
             if (_vtScrollBar != null)
@@ -1948,7 +1952,14 @@ namespace FairyGUI
             {
                 float tmpX = -pos.x;
                 float tmpY = -pos.y;
-                _owner.GetSnappingPosition(ref tmpX, ref tmpY);
+                float xDir = 0;
+                float yDir = 0;
+                if (inertialScrolling)
+                {
+                    xDir = pos.x - _containerPos.x;
+                    yDir = pos.y - _containerPos.y;
+                }
+                _owner.GetSnappingPositionWithDir(ref tmpX, ref tmpY, xDir, yDir);
                 if (pos.x < 0 && pos.x > -_overlapSize.x)
                     pos.x = -tmpX;
                 if (pos.y < 0 && pos.y > -_overlapSize.y)
@@ -1986,7 +1997,7 @@ namespace FairyGUI
                 }
                 else //否则只需要页面的1/3，当然，需要考虑到左移和右移的情况
                 {
-                    if (delta > testPageSize * (change < 0 ? 0.3f : 0.7f))
+                    if (delta > testPageSize * (change < 0 ? UIConfig.defaultScrollPagingThreshold : (1 - UIConfig.defaultScrollPagingThreshold)))
                         page++;
                 }
 
@@ -2286,12 +2297,12 @@ namespace FairyGUI
                     if (newValue > threshold1)
                     {
                         newValue = threshold1;
-                        // _tweenChange[axis] = 0;
+                        _tweenChange[axis] = 0;
                     }
                     else if (newValue < threshold2)
                     {
                         newValue = threshold2;
-                        // _tweenChange[axis] = 0;
+                        _tweenChange[axis] = 0;
                     }
                 }
             }

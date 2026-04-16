@@ -59,10 +59,6 @@ namespace FairyGUI
             }
         }
 
-        public void SetColor(Color value)
-        {
-            color = value; 
-        }
         /// <summary>
         /// 
         /// </summary>

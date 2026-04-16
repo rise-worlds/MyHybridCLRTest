@@ -10,6 +10,7 @@ namespace FairyGUI
     {
         Dictionary<string, int> _storage;
         int _default;
+        GTextField _textField;
 
         public GearFontSize(GObject owner)
             : base(owner)
@@ -18,23 +19,14 @@ namespace FairyGUI
 
         protected override void Init()
         {
-            _default = 20;
-            if (_owner is GTextField obj)
-            { 
-                _default = obj.textFormat.size;
-            }
-            else if (_owner is GButton obj1)
-            {
-                _default = obj1.GetTextField().textFormat.size;
-            }
-            else if (_owner is GLabel obj3)
-            {
-                _default = obj3.GetTextField().textFormat.size;
-            }  
-            else if (_owner is GComboBox obj2)
-            {
-                _default = obj2.GetTextField().textFormat.size;
-            }   
+            if (_owner is GLabel)
+                _textField = ((GLabel)_owner).GetTextField();
+            else if (_owner is GButton)
+                _textField = ((GButton)_owner).GetTextField();
+            else
+                _textField = (GTextField)_owner;
+
+            _default = _textField.textFormat.size;
             _storage = new Dictionary<string, int>();
         }
 
@@ -48,57 +40,26 @@ namespace FairyGUI
 
         override public void Apply()
         {
+            if (_textField == null)
+                return;
+
             _owner._gearLocked = true;
 
             int cv;
             if (!_storage.TryGetValue(_controller.selectedPageId, out cv))
                 cv = _default;
 
- 
-
-           if (_owner is GTextField)
-            { 
-                TextFormat tf = ((GTextField)_owner).textFormat;
-                tf.size = cv;
-                ((GTextField)_owner).textFormat = tf;
-            }
-            else if (_owner is GButton )
-            { 
-                ((GButton)_owner).titleFontSize = cv;
-            }
-            else if (_owner is GLabel )
-            { 
-                ((GLabel)_owner).titleFontSize = cv;
-            }  
-            else if (_owner is GComboBox )
-            { 
-                ((GComboBox)_owner).titleFontSize = cv;            
-            } 
-
+            TextFormat tf = _textField.textFormat;
+            tf.size = cv;
+            _textField.textFormat = tf;
 
             _owner._gearLocked = false;
         }
 
         override public void UpdateState()
         {
-            int curSize = 0;
-            if (_owner is GTextField obj)
-            { 
-                curSize = obj.textFormat.size;
-            }
-            else if (_owner is GButton obj1)
-            {
-                curSize = obj1.GetTextField().textFormat.size;
-            }
-            else if (_owner is GLabel obj3)
-            {
-                curSize = obj3.GetTextField().textFormat.size;
-            }  
-            else if (_owner is GComboBox obj2)
-            {
-                curSize = obj2.GetTextField().textFormat.size;
-            }   
-            _storage[_controller.selectedPageId] = curSize;
+            if (_textField != null)
+                _storage[_controller.selectedPageId] = _textField.textFormat.size;
         }
     }
 }

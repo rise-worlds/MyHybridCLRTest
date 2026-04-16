@@ -192,15 +192,6 @@ namespace FairyGUI
             }
         }
 
-        public Size getTextSize()
-        {
-            return new Size(){ height = _textField.textHeight, width = _textField.textWidth };
-        }
-
-        public void SetColor(Color value)
-        {
-            color = value; 
-        }
         /// <summary>
         /// 
         /// </summary>

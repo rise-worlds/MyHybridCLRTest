@@ -111,14 +111,6 @@ namespace FairyGUI
                 _bridge.Add(callback);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public EventCallback0 GetEvent()
-        {
-            return _bridge.GetEvent();
-        }
-
 #if FAIRYGUI_TOLUA
         /// <summary>
         /// 

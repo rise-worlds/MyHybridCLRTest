@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="qtqxgmks">
+  <resources>
+    <font id="uk1h0" name="fzcysjt.ttf" path="/Font/" exported="true" renderMode="sdfaa" samplePointSize="60" italicStyle="15"/>
+    <font id="uk1h1" name="hkyt.ttf" path="/Font/" exported="true" renderMode="sdfaa" samplePointSize="60" italicStyle="15"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>

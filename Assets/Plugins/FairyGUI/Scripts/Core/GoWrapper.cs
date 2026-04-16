@@ -14,6 +14,8 @@ namespace FairyGUI
         public bool supportStencil;
 
         public event Action<UpdateContext> onUpdate;
+        public Action<Dictionary<Material, Material>> customCloneMaterials;
+        public Action customRecoverMaterials;
 
         protected GameObject _wrapTarget;
         protected List<RendererInfo> _renderers;
@@ -36,8 +38,6 @@ namespace FairyGUI
         /// </summary>
         public GoWrapper()
         {
-            // _flags |= Flags.SkipBatching;
-
             _renderers = new List<RendererInfo>();
             _materialsBackup = new Dictionary<Material, Material>();
 
@@ -76,9 +76,6 @@ namespace FairyGUI
         /// <param name="cloneMaterial">如果true，则复制材质，否则直接使用sharedMaterial。</param>
         public void SetWrapTarget(GameObject target, bool cloneMaterial)
         {
-            // set Flags.SkipBatching only target not null
-            if (target == null) _flags &= ~Flags.SkipBatching;
-            else _flags |= Flags.SkipBatching;
             InvalidateBatchingState();
 
             RecoverMaterials();
@@ -117,6 +114,19 @@ namespace FairyGUI
             }
         }
 
+        override internal void _SetLayerDirect(int value)
+        {
+            gameObject.layer = value;
+            if (_wrapTarget != null)//这个if是为了在GoWrapper里使用模糊效果
+            {
+                _wrapTarget.layer = value;
+                foreach (Transform tf in _wrapTarget.GetComponentsInChildren<Transform>(true))
+                {
+                    tf.gameObject.layer = value;
+                }
+            }
+        }
+
         /// <summary>
         /// GoWrapper will cache all renderers of your gameobject on constructor. 
         /// If your gameobject change laterly, call this function to update the cache.
@@ -146,13 +156,25 @@ namespace FairyGUI
                     sortingOrder = r.sortingOrder
                 };
                 _renderers.Add(ri);
+
+                if (!_cloneMaterial && mats != null
+                    && ((r is SkinnedMeshRenderer) || (r is MeshRenderer)))
+                {
+                    int mcnt = mats.Length;
+                    for (int j = 0; j < mcnt; j++)
+                    {
+                        Material mat = mats[j];
+                        if (mat != null && mat.renderQueue != 3000) //Set the object rendering in Transparent Queue as UI objects
+                            mat.renderQueue = 3000;
+                    }
+                }
             }
             _renderers.Sort((RendererInfo c1, RendererInfo c2) =>
             {
                 return c1.sortingOrder - c2.sortingOrder;
             });
 
-            _shouldCloneMaterial = true;
+            _shouldCloneMaterial = _cloneMaterial;
         }
 
         void CloneMaterials()
@@ -176,9 +198,6 @@ namespace FairyGUI
                     if (mat == null)
                         continue;
 
-                    if (shouldSetRQ && mat.renderQueue != 3000) //Set the object rendering in Transparent Queue as UI objects
-                        mat.renderQueue = 3000;
-
                     //确保相同的材质不会复制两次
                     Material newMat;
                     if (!_materialsBackup.TryGetValue(mat, out newMat))
@@ -187,9 +206,14 @@ namespace FairyGUI
                         _materialsBackup[mat] = newMat;
                     }
                     mats[j] = newMat;
+
+                    if (shouldSetRQ && mat.renderQueue != 3000) //Set the object rendering in Transparent Queue as UI objects
+                        newMat.renderQueue = 3000;
                 }
 
-                if (ri.renderer != null)
+                if (customCloneMaterials != null)
+                    customCloneMaterials.Invoke(_materialsBackup);
+                else if (ri.renderer != null)
                     ri.renderer.sharedMaterials = mats;
             }
         }
@@ -221,7 +245,11 @@ namespace FairyGUI
                             mats[j] = kv.Key;
                     }
                 }
-                ri.renderer.sharedMaterials = mats;
+
+                if (customRecoverMaterials != null)
+                    customRecoverMaterials.Invoke();
+                else
+                    ri.renderer.sharedMaterials = mats;
             }
 
             foreach (KeyValuePair<Material, Material> kv in _materialsBackup)
@@ -230,33 +258,40 @@ namespace FairyGUI
             _materialsBackup.Clear();
         }
 
-        public override int renderingOrder
+        public override void SetRenderingOrder(UpdateContext context, bool inBatch)
         {
-            get
-            {
-                return base.renderingOrder;
-            }
-            set
-            {
-                base.renderingOrder = value;
+            base.SetRenderingOrder(context, inBatch);
 
-                if (_canvas != null)
-                    _canvas.sortingOrder = value;
-                else
+            int value = base.renderingOrder;
+
+            if (_canvas != null)
+                _canvas.sortingOrder = value;
+            else
+            {
+                int cnt = _renderers.Count;
+                for (int i = 0; i < cnt; i++)
                 {
-                    int cnt = _renderers.Count;
-                    for (int i = 0; i < cnt; i++)
+                    RendererInfo ri = _renderers[i];
+                    if (ri.renderer != null)
                     {
-                        RendererInfo ri = _renderers[i];
-                        if (ri.renderer != null)
-                        {
-                            if (i != 0 && _renderers[i].sortingOrder != _renderers[i - 1].sortingOrder)
-                                value = UpdateContext.current.renderingOrder++;
-                            ri.renderer.sortingOrder = value;
-                        }
+                        if (i != 0 && _renderers[i].sortingOrder != _renderers[i - 1].sortingOrder)
+                            value = context.renderingOrder++;
+                        ri.renderer.sortingOrder = value;
                     }
                 }
             }
+        }
+
+        public override BatchElement AddToBatch(List<BatchElement> batchElements, bool force)
+        {
+            if (this._wrapTarget != null)
+            {
+                BatchElement batchElement = base.AddToBatch(batchElements, true);
+                batchElement.breakBatch = true;
+                return batchElement;
+            }
+            else
+                return null;
         }
 
         override protected bool SetLayer(int value, bool fromParent)
@@ -306,7 +341,10 @@ namespace FairyGUI
                 if (renderer == null)
                     continue;
 
-                renderer.GetSharedMaterials(helperMaterials);
+                if (customCloneMaterials != null)
+                    helperMaterials.AddRange(_materialsBackup.Values);
+                else
+                    renderer.GetSharedMaterials(helperMaterials);
 
                 int cnt2 = helperMaterials.Count;
                 for (int j = 0; j < cnt2; j++)
@@ -357,6 +395,8 @@ namespace FairyGUI
             _renderers = null;
             _materialsBackup = null;
             _canvas = null;
+            customCloneMaterials = null;
+            customRecoverMaterials = null;
 
             base.Dispose();
         }

@@ -21,10 +21,6 @@ namespace FairyGUI
             rects = new List<Rect>();
         }
 
-        public void SetColor(Color value)
-        {
-            color = value; 
-        }
         /// <summary>
         /// 
         /// </summary>

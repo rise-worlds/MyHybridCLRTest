@@ -84,11 +84,7 @@ namespace FairyGUI
         {
             _Play(1, 0, 0, -1, onComplete, false);
         }
-        public TransitionItem[] GetItems()
-        {
-            return _items;
-        }
-    
+
         /// <summary>
         /// 
         /// </summary>
@@ -397,10 +393,6 @@ namespace FairyGUI
             _onComplete = null;
         }
 
-        public bool isPlaying()
-        {
-            return playing;
-        }
         /// <summary>
         /// 
         /// </summary>
@@ -409,6 +401,14 @@ namespace FairyGUI
             get { return _playing; }
         }
 
+        /// <summary>
+        /// transition's total duration, maybe zero when the transition only has one frame
+        /// </summary>
+        public float totalDuration
+        {
+            get { return _totalDuration; }
+        }
+        
         /// <summary>
         /// 
         /// </summary>
@@ -472,6 +472,10 @@ namespace FairyGUI
                             tvalue.frame = Convert.ToInt32(aParams[0]);
                             if (aParams.Length > 1)
                                 tvalue.playing = Convert.ToBoolean(aParams[1]);
+                            if (aParams.Length > 2)
+                                tvalue.animationName = (string)aParams[2];
+                            if (aParams.Length > 3)
+                                tvalue.skinName = (string)aParams[3];
                         }
                         break;
 
@@ -531,7 +535,7 @@ namespace FairyGUI
         /// </summary>
         /// <param name="label"></param>
         /// <param name="callback"></param>
-        public void SetHook(string label, TransitionHook callback, bool isAll = false)
+        public void SetHook(string label, TransitionHook callback)
         {
             int cnt = _items.Length;
             bool found = false;
@@ -542,43 +546,17 @@ namespace FairyGUI
                 {
                     item.hook = callback;
                     found = true;
-
-                    if (!isAll)
-                        break;
+                    break;
                 }
                 else if (item.tweenConfig != null && item.tweenConfig.endLabel == label)
                 {
                     item.tweenConfig.endHook = callback;
                     found = true;
-
-                    if (!isAll)
-                        break;
+                    break;
                 }
             }
-
             if (!found)
                 throw new Exception("label not exists");
-        }
-
-        /// <summary>
-        /// 检测是否有对应的钩子函数
-        /// </summary>
-        public bool CheckHook(string label)
-        {
-            int cnt = _items.Length;
-            for (int i = 0; i < cnt; i++)
-            {
-                TransitionItem item = _items[i];
-                if (item.label == label)
-                {
-                    return true;
-                }
-                else if (item.tweenConfig != null && item.tweenConfig.endLabel == label)
-                {
-                    return true;
-                }
-            }
-            return false;
         }
 
         /// <summary>
@@ -1348,6 +1326,10 @@ namespace FairyGUI
                         ((IAnimationGear)item.target).playing = value.playing;
                         ((IAnimationGear)item.target).timeScale = _timeScale;
                         ((IAnimationGear)item.target).ignoreEngineTimeScale = _ignoreEngineTimeScale;
+                        if (value.animationName != null)
+                            ((GLoader3D)item.target).animationName = value.animationName;
+                        if (value.skinName != null)
+                            ((GLoader3D)item.target).skinName = value.skinName;
                     }
                     break;
 
@@ -1451,7 +1433,6 @@ namespace FairyGUI
                 buffer.Seek(curPos, 0);
 
                 TransitionItem item = new TransitionItem((TransitionActionType)buffer.ReadByte());
-
                 _items[i] = item;
 
                 item.time = buffer.ReadFloat();
@@ -1474,11 +1455,7 @@ namespace FairyGUI
                     item.tweenConfig.repeat = buffer.ReadInt();
                     item.tweenConfig.yoyo = buffer.ReadBool();
                     item.tweenConfig.endLabel = buffer.ReadS();
-                    if ( item.tweenConfig.endLabel == null && item.label != "" && item.label != null )
-                    { 
-                        item.tweenConfig.endLabel = item.label + "End";  // 打个补丁
-                    }
- 
+
                     buffer.Seek(curPos, 2);
 
                     DecodeValue(item, buffer, item.tweenConfig.startValue);
@@ -1558,6 +1535,11 @@ namespace FairyGUI
                 case TransitionActionType.Animation:
                     ((TValue_Animation)value).playing = buffer.ReadBool();
                     ((TValue_Animation)value).frame = buffer.ReadInt();
+                    if (buffer.version >= 6)
+                    {
+                        ((TValue_Animation)value).animationName = buffer.ReadS();
+                        ((TValue_Animation)value).skinName = buffer.ReadS();
+                    }
                     break;
 
                 case TransitionActionType.Visible:
@@ -1598,7 +1580,7 @@ namespace FairyGUI
         }
     }
 
-    public class TransitionItem
+    class TransitionItem
     {
         public float time;
         public string targetId;
@@ -1659,7 +1641,7 @@ namespace FairyGUI
         }
     }
 
-    public class TweenConfig
+    class TweenConfig
     {
         public float duration;
         public EaseType easeType;
@@ -1693,6 +1675,8 @@ namespace FairyGUI
         public int frame;
         public bool playing;
         public bool flag;
+        public string animationName;
+        public string skinName;
     }
 
     class TValue_Sound
@@ -1724,7 +1708,7 @@ namespace FairyGUI
         public string text;
     }
 
-    public class TValue
+    class TValue
     {
         public float f1;
         public float f2;

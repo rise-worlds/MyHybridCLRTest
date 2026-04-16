@@ -20,10 +20,6 @@ namespace FairyGUI
             _content.gOwner = this;
             displayObject = _content;
         }
-        public void SetColor(Color value)
-        {
-            color = value; 
-        }
 
         /// <summary>
         /// Color of the image. 

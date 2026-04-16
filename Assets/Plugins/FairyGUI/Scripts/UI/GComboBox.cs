@@ -68,7 +68,6 @@ namespace FairyGUI
             get { return _onChanged ?? (_onChanged = new EventListener(this, "onChanged")); }
         }
 
-
         /// <summary>
         /// Icon of the combobox.
         /// </summary>
@@ -89,18 +88,6 @@ namespace FairyGUI
                 UpdateGear(7);
             }
         }
-
-        
-        public void SetTitle(string vlaue)
-        {
-            title = vlaue;
-        }
-
-        public string GetTitle()
-        {
-            return title;
-        }
-
 
         /// <summary>
         /// Title of the combobox.
@@ -481,7 +468,7 @@ namespace FairyGUI
             int itemCount = buffer.ReadShort();
             for (int i = 0; i < itemCount; i++)
             {
-                int nextPos = buffer.ReadShort();
+                int nextPos = buffer.ReadUshort();
                 nextPos += buffer.position;
 
                 _items.Add(buffer.ReadS());

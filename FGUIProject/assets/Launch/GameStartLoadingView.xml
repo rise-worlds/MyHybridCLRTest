@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <loader id="n9_e14h" name="img_bg" xy="-240,0" pivot="0.5,0.5" size="2400,1080" url="ui://q4as4r8yfrn91" autoSize="true">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </loader>
+    <component id="n3_xgho" name="_progress" src="xghof5x" fileName="GameStartProgressBar.xml" xy="960,1030" pivot="0.5,0.5" anchor="true" size="1380,20" group="n10_s2mz">
+      <ProgressBar max="100"/>
+    </component>
+    <text id="n5_xgho" name="_progressText" xy="960,980" pivot="0.5,0.5" anchor="true" size="446,39" group="n10_s2mz" fontSize="28" color="#ffffff" align="center" vAlign="middle" ubb="true" vars="true" shadowColor="#000000" shadowOffset="1,1" autoClearText="true" text="正在加载游戏，请耐心等待......{val1=99}%"/>
+    <group id="n10_s2mz" name="group_up" xy="270,961" size="1380,79" advanced="true">
+      <relation target="" sidePair="center-center,bottom-bottom"/>
+    </group>
+    <text id="n8_tf17" name="_versionText" xy="75,77" size="78,44" fontSize="32" color="#ffffff" shadowColor="#000000" shadowOffset="2,2" text="1.0.0">
+      <relation target="" sidePair="left-left,top-top"/>
+    </text>
+    <component id="n13_fe13" name="_btn_service" src="fe13f61" fileName="BtnTextCell.xml" xy="1749,87">
+      <relation target="" sidePair="right-right,top-top"/>
+      <Button title="客服" icon="ui://q4as4r8yfe13f62"/>
+    </component>
+  </displayList>
+</component>

@@ -189,7 +189,7 @@ namespace FairyGUI
             }
         }
 
-        public void UpdateBounds()
+        void UpdateBounds()
         {
             int cnt = parent.numChildren;
             int i;

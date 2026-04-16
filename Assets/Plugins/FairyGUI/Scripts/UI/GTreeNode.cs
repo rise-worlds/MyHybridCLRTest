@@ -38,21 +38,6 @@ namespace FairyGUI
 
         }
 
-        public void setData(object value)
-        {
-            data = value;
-        }
-        
-        public object getData()
-        {
-           return data;
-        }
-
-        public static GTreeNode Create(bool hasChild, string resURL)
-        {
-            return new GTreeNode(hasChild, resURL);
-        }
-
         /// <summary>
         /// 
         /// </summary>
@@ -149,16 +134,6 @@ namespace FairyGUI
                 if (_cell != null)
                     _cell.text = value;
             }
-        }
-
-        public void SetIcon(string vlaue)
-        {
-            icon = vlaue;
-        }
-
-        public string GetIcon()
-        {
-            return icon;
         }
 
         /// <summary>

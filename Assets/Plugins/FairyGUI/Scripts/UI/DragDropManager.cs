@@ -26,6 +26,13 @@ namespace FairyGUI
             }
         }
 
+#if UNITY_2019_3_OR_NEWER
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        static void InitializeOnLoad()
+        {
+            _inst = null;
+        }
+#endif
         public DragDropManager()
         {
             _agent = (GLoader)UIObjectFactory.NewObject(ObjectType.Loader);
@@ -119,134 +126,4 @@ namespace FairyGUI
             }
         }
     }
-
-
-    public class DragDropManagerCustom
-    {
-        /// <summary>
-        /// 替代拖动对象
-        /// </summary>
-        private GComponent _agent;
-        /// <summary>
-        /// 自定义数据
-        /// </summary>
-        private object _sourceData;
-        /// <summary>
-        /// 拖动源
-        /// </summary>
-        private GObject _source;
-
-        /// <summary>
-        /// 单例
-        /// </summary>
-        private static DragDropManagerCustom _inst;
-        public static DragDropManagerCustom inst
-        {
-            get
-            {
-                if (_inst == null)
-                    _inst = new DragDropManagerCustom();
-                return _inst;
-            }
-        }
-
-        public DragDropManagerCustom()
-        {
-
-        }
-
-        /// <summary>
-        /// 用于实际拖动的Component对象。可以根据实际情况设置component的大小，对齐等。
-        /// </summary>
-        /// <value></value>
-        public GComponent dragAgent
-        {
-            get { return this._agent; }
-        }
-
-        /// <summary>
-        /// Is dragging?
-        /// 返回当前是否正在拖动。
-        /// </summary>
-        public bool dragging
-        {
-            get { return this._agent != null && this._agent.parent != null; }
-        }
-
-        /// <summary>
-        /// 开始拖动
-        /// </summary>
-        /// <param name="source"></param>
-        /// <param name="url"></param>
-        /// <param name="sourceData"></param>
-        /// <param name="touchPointID"></param>
-        public void StartDrag(GObject source, string url, object sourceData, int touchPointID = -1)
-        {
-            if (this._agent != null && this._agent.parent != null)
-                return;
-
-            _sourceData = sourceData;
-            _source = source;
-            if (this._agent == null || !this._agent.data.Equals(url))
-            {
-                this._agent = UIPackage.CreateObjectFromURL(url) as GComponent;
-                this._agent.data = url;
-            }
-            if (this._agent != null)
-            {
-                this._agent.gameObjectName = "DragDropAgent";
-                this._agent.touchable = false;//important
-                this._agent.draggable = true;
-                this._agent.SetPivot(0.5f, 0.5f, true);
-                this._agent.sortingOrder = int.MaxValue;
-                if (!this._agent.hasEventListeners("onDragEnd"))
-                {
-                    this._agent.onDragEnd.Add(this.__dragEnd);
-                }
-
-                if (this._agent.parent == null)
-                    GRoot.inst.AddChild(this._agent);
-                this._agent.xy = GRoot.inst.GlobalToLocal(Stage.inst.GetTouchPosition(touchPointID));
-                this._agent.StartDrag(touchPointID);
-            }
-        }
-
-        /// <summary>
-        /// 取消拖动
-        /// </summary>
-        public void Cancel()
-        {
-            if (this._agent != null && this._agent.parent != null)
-            {
-                this._agent.StopDrag();
-                GRoot.inst.RemoveChild(this._agent);
-                this._sourceData = null;
-            }
-        }
-
-        private void __dragEnd(EventContext evt)
-        {
-            if (this._agent == null || this._agent.parent == null)
-                return;
-            GRoot.inst.RemoveChild(this._agent);
-
-            object sourceData = this._sourceData;
-            GObject source = this._source;
-            sourceData = null;
-            source = null;
-
-            GObject obj = GRoot.inst.touchTarget;
-            while (obj != null)
-            {
-                if (obj.hasEventListeners("onDrop"))
-                {
-                    obj.RequestFocus();
-                    obj.DispatchEvent("onDrop", sourceData, source);
-                    return;
-                }
-                obj = obj.parent;
-            }
-        }
-    }
-
 }

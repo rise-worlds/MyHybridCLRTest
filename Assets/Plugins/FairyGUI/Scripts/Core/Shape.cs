@@ -19,10 +19,6 @@ namespace FairyGUI
             graphics.meshFactory = null;
         }
 
-        public void SetColor(Color value)
-        {
-            color = value; 
-        }
         /// <summary>
         /// 
         /// </summary>

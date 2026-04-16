@@ -36,18 +36,6 @@ namespace FairyGUI
             }
         }
 
-
-        public void SetTitle(string vlaue)
-        {
-            title = vlaue;
-        }
-
-        public string GetTitle()
-        {
-            return title;
-        }
-
-
         /// <summary>
         /// Title of the label.
         /// </summary>
@@ -144,12 +132,6 @@ namespace FairyGUI
                     tf.textFormat = format;
                 }
             }
-        }
-
-
-        public void SetColor(Color value)
-        {
-            color = value; 
         }
 
         /// <summary>

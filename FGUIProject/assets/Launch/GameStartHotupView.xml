@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080" designImage="ui://5fri5ihelwvv180" designImageLayer="1">
+  <displayList>
+    <loader id="n7_xgho" name="n7" xy="415,205" size="1090,670" group="n12_jvua" url="ui://q4as4r8yjvuaf5z" autoSize="true"/>
+    <text id="n1_xgho" name="title" xy="466,255" pivot="0,0.5" anchor="true" size="140,46" group="n12_jvua" font="ui://mo8blgtefrn946" fontSize="34" color="#4a5366" shadowColor="#ffffff" shadowOffset="0,0.5" text="更新提示"/>
+    <richtext id="n2_xgho" name="des" xy="959,471" pivot="0.5,0.5" anchor="true" size="1011,312" group="n12_jvua" font="ui://mo8blgtefrn946" fontSize="30" color="#4a5366" align="center" vAlign="middle" autoSize="shrink" text="检测到当前有内容更新，是否更新？"/>
+    <component id="n8_jglu" name="_sureBtn" src="jglu0" fileName="LoginLaunchBtn.xml" xy="999,709" size="400,94" group="n11_jglu">
+      <Button title="确定" titleColor="#272524"/>
+    </component>
+    <component id="n9_jglu" name="_cancelBtn" src="jglu0" fileName="LoginLaunchBtn.xml" xy="520,709" size="400,94" group="n11_jglu">
+      <Button title="取消" titleColor="#e4f3ff" icon="ui://q4as4r8ylwvvf64"/>
+    </component>
+    <group id="n11_jglu" name="n11" xy="520,709" size="879,94" group="n12_jvua"/>
+    <group id="n12_jvua" name="n12" xy="415,205" size="1090,670" advanced="true">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+  </displayList>
+</component>

@@ -56,10 +56,7 @@ namespace FairyGUI
                 UpdateGear(5);
             }
         }
-        public void SetColor(Color value)
-        {
-            color = value; 
-        }
+
         /// <summary>
         /// 
         /// </summary>

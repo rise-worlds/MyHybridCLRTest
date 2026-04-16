@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="q4as4r8y">
+  <resources>
+    <component id="xghof5w" name="GameStartHotupView.xml" path="/" exported="true"/>
+    <component id="xghof5v" name="GameStartLoadingView.xml" path="/" exported="true"/>
+    <image id="frn91" name="ui_bg.png" path="/" exported="true" atlas="alone_npot"/>
+    <component id="xghof5x" name="GameStartProgressBar.xml" path="/" exported="true"/>
+    <component id="jglu0" name="LoginLaunchBtn.xml" path="/" exported="true"/>
+    <image id="jvuaf5y" name="btn_update.png" path="/" exported="true" scale="9grid" scale9grid="46,15,92,30"/>
+    <image id="jvuaf5z" name="img_tips_bg.png" path="/" exported="true" scale="9grid" scale9grid="272,167,544,334"/>
+    <component id="jvuaf60" name="GameStartHotupRestartView.xml" path="/" exported="true"/>
+    <component id="fe13f61" name="BtnTextCell.xml" path="/" exported="true"/>
+    <image id="fe13f62" name="btn_zhanghao_02.png" path="/" exported="true"/>
+    <image id="fe13f63" name="login_ts_bg.png" path="/" exported="true" atlas="alone_npot"/>
+    <image id="lwvvf64" name="btn_update1.png" path="/" exported="true"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>

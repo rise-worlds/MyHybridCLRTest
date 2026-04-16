@@ -11,6 +11,8 @@ namespace FairyGUI
     {
         public static Dictionary<string, BaseFont> sFontFactory = new Dictionary<string, BaseFont>();
 
+        static bool _checkTextMeshPro;
+
         /// <summary>
         /// 
         /// </summary>
@@ -40,81 +42,79 @@ namespace FairyGUI
                 sFontFactory.Remove(key);
         }
 
-        static public BaseFont GetCurFont(string name)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        static public BaseFont GetFont(string name)
         {
             BaseFont font;
+            if (name.StartsWith(UIPackage.URL_PREFIX))
+            {
+                font = UIPackage.GetItemAssetByURL(name) as BaseFont;
+                if (font != null)
+                    return font;
+            }
+
             if (sFontFactory.TryGetValue(name, out font))
                 return font;
-            return null;
-        }
 
-        /// <summary>
-            /// 
-            /// </summary>
-            /// <param name="name"></param>
-            /// <returns></returns>
-            static public BaseFont GetFont(string name)
+            object asset = Resources.Load(name);
+            if (asset == null)
+                asset = Resources.Load("Fonts/" + name);
+
+            //Try to use new API in Uinty5 to load
+            if (asset == null)
             {
-                BaseFont font;
-                if (name.StartsWith(UIPackage.URL_PREFIX))
+                if (name.IndexOf(",") != -1)
                 {
-                    font = UIPackage.GetItemAssetByURL(name) as BaseFont;
-                    if (font != null)
-                        return font;
+                    string[] arr = name.Split(',');
+                    int cnt = arr.Length;
+                    for (int i = 0; i < cnt; i++)
+                        arr[i] = arr[i].Trim();
+                    asset = Font.CreateDynamicFontFromOSFont(arr, 16);
                 }
-
-                if (sFontFactory.TryGetValue(name, out font))
-                    return font;
-
-                object asset = Resources.Load(name);
-                if (asset == null)
-                    asset = Resources.Load("Fonts/" + name);
-
-                //Try to use new API in Uinty5 to load
-                if (asset == null)
-                {
-                    if (name.IndexOf(",") != -1)
-                    {
-                        string[] arr = name.Split(',');
-                        int cnt = arr.Length;
-                        for (int i = 0; i < cnt; i++)
-                            arr[i] = arr[i].Trim();
-                        asset = Font.CreateDynamicFontFromOSFont(arr, 16);
-                    }
-                    else
-                        asset = Font.CreateDynamicFontFromOSFont(name, 16);
-                }
-
-                if (asset == null)
-                    return Fallback(name);
-
-                if (asset is Font)
-                {
-                    font = new DynamicFont();
-                    font.name = name;
-                    sFontFactory.Add(name, font);
-
-                    ((DynamicFont)font).nativeFont = (Font)asset;
-                }
-#if FAIRYGUI_TMPRO
-                else if (asset is TMPro.TMP_FontAsset)
-                {
-                    font = new TMPFont();
-                    font.name = name;
-                    sFontFactory.Add(name, font);
-                    ((TMPFont)font).fontAsset = (TMPro.TMP_FontAsset)asset;
-                }
-#endif
                 else
-                {
-                    if (asset.GetType().Name.Contains("TMP_FontAsset"))
-                        Debug.LogWarning("To enable TextMeshPro support, add script define symbol: FAIRYGUI_TMPRO");
+                    asset = Font.CreateDynamicFontFromOSFont(name, 16);
+            }
 
-                    return Fallback(name);
+            if (asset == null)
+                return Fallback(name);
+
+            if (asset is Font)
+            {
+                font = new DynamicFont();
+                font.name = name;
+                sFontFactory.Add(name, font);
+
+                ((DynamicFont)font).nativeFont = (Font)asset;
+            }
+#if FAIRYGUI_TMPRO
+            else if (asset is TMPro.TMP_FontAsset)
+            {
+                font = new TMPFont();
+                font.name = name;
+                sFontFactory.Add(name, font);
+                ((TMPFont)font).fontAsset = (TMPro.TMP_FontAsset)asset;
+            }
+#endif
+            else
+            {
+                if (asset.GetType().Name.Contains("TMP_FontAsset"))
+                {
+                    if (!_checkTextMeshPro)
+                    {
+                        _checkTextMeshPro = true;
+                        Debug.LogWarning("To enable TextMeshPro support, add script define symbol: FAIRYGUI_TMPRO");
+                    }
                 }
 
-                return font;
+                return Fallback(name);
             }
+
+            return font;
+        }
 
         static BaseFont Fallback(string name)
         {
@@ -151,5 +151,13 @@ namespace FairyGUI
             sFontFactory.Clear();
         }
 
+#if UNITY_2019_3_OR_NEWER
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        static void InitializeOnLoad()
+        {
+            Clear();
+            _checkTextMeshPro = false;
+        }
+#endif
     }
 }

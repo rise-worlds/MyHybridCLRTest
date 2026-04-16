@@ -42,7 +42,6 @@ namespace FairyGUI
         public void Dispose()
         {
             RemoveEventListeners();
-            _onChanged?.Clear();
         }
 
 
@@ -54,7 +53,6 @@ namespace FairyGUI
         {
             get { return _onChanged ?? (_onChanged = new EventListener(this, "onChanged")); }
         }
-
 
         /// <summary>
         /// Current page index.
@@ -86,18 +84,12 @@ namespace FairyGUI
             }
         }
 
-
-        public int GetSelectedIndex()
-        {
-            return selectedIndex;
-        }
-
         /// <summary>
         /// Set current page index, no onChanged event.
         /// 通过索引设置当前活动页面，和selectedIndex的区别在于，这个方法不会触发onChanged事件。
         /// </summary>
         /// <param name="value">Page index</param>
-        public void SetSelectedIndex(int value, bool triggerEvent = true)  // lua这边默认接口是需要触发事件
+        public void SetSelectedIndex(int value)
         {
             if (_selectedIndex != value)
             {
@@ -108,11 +100,6 @@ namespace FairyGUI
                 _previousIndex = _selectedIndex;
                 _selectedIndex = value;
                 parent.ApplyController(this);
-
-                if (triggerEvent)
-                {
-                    DispatchEvent("onChanged", null);           
-                } 
                 changing = false;
             }
         }
@@ -152,11 +139,17 @@ namespace FairyGUI
             }
         }
 
+        [Obsolete("Use previousIndex")]
+        public int previsousIndex
+        {
+            get { return _previousIndex; }
+        }
+
         /// <summary>
         /// Previouse page index.
         /// 获得上次活动页面索引
         /// </summary>
-        public int previsousIndex
+        public int previousIndex
         {
             get { return _previousIndex; }
         }
@@ -427,7 +420,7 @@ namespace FairyGUI
 
                 for (int i = 0; i < cnt; i++)
                 {
-                    int nextPos = buffer.ReadShort();
+                    int nextPos = buffer.ReadUshort();
                     nextPos += buffer.position;
 
                     ControllerAction action = ControllerAction.CreateAction((ControllerAction.ActionType)buffer.ReadByte());
