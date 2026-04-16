@@ -51,5 +51,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "MyHybridCLRTest.sln"
+    "dotnet.defaultSolution": "MyHybridCLRTest.sln",
+    "dotnet.preferCSharpExtension": true
 }

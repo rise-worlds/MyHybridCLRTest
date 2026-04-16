@@ -8,6 +8,9 @@ using UnityEngine;
 using YooAsset;
 using Obfuz;
 using Obfuz.EncryptionVM;
+using Cysharp.Threading.Tasks;
+using UniFramework.Event;
+using System.Threading.Tasks;
 
 /// <summary>
 /// 脚本工作流程：
@@ -32,35 +35,41 @@ public class LoadDll : MonoBehaviour
     private ResourceDownloaderOperation _downloader;//下载器
     private UpdatePackageManifestOperation _operationManifest;//更新清单
 
-    void Start()
+    void Awake()
     {
-        Debug.Log($"资源系统运行模式：{PlayMode}");
         Application.targetFrameRate = 60;   //设置帧率
         Application.runInBackground = true; //设置后台运行
         DontDestroyOnLoad(gameObject);      //确保该对象不会在场景切换时销毁
-
-        StartCoroutine(InitYooAssets());
     }
 
-    IEnumerator InitYooAssets()
+    async UniTask Start()
+    {
+        Debug.Log($"资源系统运行模式：{PlayMode}");
+        // 初始化事件系统
+        UniEvent.Initalize();
+        await InitYooAssets();
+    }
+
+    async UniTask InitYooAssets()
     {
         // 1.初始化资源系统
         YooAssets.Initialize();
 
         // 2.初始化资源包
-        yield return StartCoroutine(InitPackage());
+        await InitPackage();
         
         // 3.获取资源版本
-        yield return StartCoroutine(UpdatePackageVersion());
+        await UpdatePackageVersion();
 
         // 4.获取文件清单
-        yield return StartCoroutine(UpdateManifest());
+        await UpdateManifest();
 
         // 5.创建资源下载器
-        CreateDownloader();
-
-        // 5.开始下载资源文件
-        yield return StartCoroutine(BeginDownload());
+        if (CreateDownloader())
+        {
+            // 5.开始下载资源文件
+            await BeginDownload();
+        }
 
         YooAssets.SetDefaultPackage(_package);
         //6.清理未使用的缓存文件
@@ -68,7 +77,7 @@ public class LoadDll : MonoBehaviour
     }
 
     #region 初始化资源包
-    private IEnumerator InitPackage()
+    private async UniTask InitPackage()
     {
         // 获取或创建资源包对象
         _package = YooAssets.TryGetPackage(packageName);
@@ -138,7 +147,7 @@ public class LoadDll : MonoBehaviour
 #endif
         }
 
-        yield return initializationOperation;
+        await initializationOperation;
 
         // 如果初始化失败弹出提示界面
         if (initializationOperation.Status != EOperationStatus.Succeed)
@@ -188,11 +197,11 @@ public class LoadDll : MonoBehaviour
     #endregion
 
     #region 获取资源版本
-    private IEnumerator UpdatePackageVersion()
+    private async UniTask UpdatePackageVersion()
     {
         // 发起异步版本请求
         RequestPackageVersionOperation operation = _package.RequestPackageVersionAsync();
-        yield return operation;
+        await operation;
 
         // 处理版本请求结果
         if (operation.Status != EOperationStatus.Succeed)
@@ -208,16 +217,15 @@ public class LoadDll : MonoBehaviour
     #endregion
 
     #region 获取文件清单
-    private IEnumerator UpdateManifest()
+    private async UniTask UpdateManifest()
     {
         _operationManifest = _package.UpdatePackageManifestAsync(appVersion);
-        yield return _operationManifest;
+        await _operationManifest;
 
         // 处理文件清单结果
         if (_operationManifest.Status != EOperationStatus.Succeed)
         {
             Debug.LogWarning(_operationManifest.Error);
-            yield break;
         }
         else
         {
@@ -227,13 +235,13 @@ public class LoadDll : MonoBehaviour
     #endregion
 
     #region 创建资源下载器
-    void CreateDownloader()
+    bool CreateDownloader()
     {
         _downloader = _package.CreateResourceDownloader(downloadingMaxNum, filedTryAgain);
         if (_downloader.TotalDownloadCount == 0)
         {
             Debug.Log("没有需要更新的文件");
-            UpdateDone();
+            return false;
         }
         else
         {
@@ -243,22 +251,22 @@ public class LoadDll : MonoBehaviour
             long bytes = _downloader.TotalDownloadBytes;
             Debug.Log($"需要更新{count}个文件, 大小是{bytes / 1024 / 1024}MB");
         }
+        return true;
     }
     #endregion
 
     #region 开始下载资源文件
-    private IEnumerator BeginDownload()
+    private async UniTask BeginDownload()
     {
         _downloader.DownloadErrorCallback = DownloadErrorCallback;// 单个文件下载失败
         _downloader.DownloadUpdateCallback = DownloadUpdateCallback;// 下载进度更新
         _downloader.BeginDownload();//开始下载
-        yield return _downloader;
+        await _downloader;
 
         // 检测下载结果
         if (_downloader.Status != EOperationStatus.Succeed)
         {
             Debug.LogWarning(_operationManifest.Error);
-            yield break;
         }
         else
         {
@@ -352,8 +360,9 @@ public class LoadDll : MonoBehaviour
     #region 运行测试
 
     private static List<string> HotUpdateAssemblyFiles { get; } = new() { "Assembly-CSharp", "Obfuz.Runtime", "HotUpdate", };
-    void StartGame()
+    async Task StartGame()
     {
+#if !UNITY_EDITOR
         // 加载AOT dll的元数据
         LoadMetadataForAOTAssemblies();
         // 加载热更dll
@@ -367,14 +376,15 @@ public class LoadDll : MonoBehaviour
             Debug.Log($"LoadMetadataForAOTAssembly:{hotUpdateDllName}. ");
         }
         Debug.Log("运行热更代码");
-        StartCoroutine(Run_InstantiateComponentByAsset());
+#endif
+        await Run_InstantiateComponentByAsset();
     }
 
-    IEnumerator Run_InstantiateComponentByAsset()
+    async UniTask Run_InstantiateComponentByAsset()
     {
         // 通过实例化assetbundle中的资源，还原资源上的热更新脚本
         var handle = _package.LoadAssetAsync<GameObject>("Cube");
-        yield return handle;
+        await handle;
         handle.Completed += Handle_Completed;
     }
 

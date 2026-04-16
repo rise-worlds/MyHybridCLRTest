@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae7560d7afa32cf49a51a203b5a81bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayMode: 2
+  PlayMode: 0
   packageName: DefaultPackage
   downloadingMaxNum: 10
   filedTryAgain: 3
