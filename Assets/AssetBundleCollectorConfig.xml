@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root Version="v2025.8.28">
+  <Common ShowPackageView="False" ShowEditorAlias="True" UniqueBundleName="False" />
+  <Package PackageName="DefaultPackage" PackageDesc="" AutoAddressable="True" SupportExtensionless="True" LocationToLower="False" IncludeAssetGUID="False" IgnoreRuleName="NormalIgnoreRule">
+    <Group GroupActiveRule="EnableGroup" GroupName="code" GroupDesc="" AssetTags="">
+      <Collector CollectPath="Assets/MyAsset/Codes" CollectGUID="5f9a5a68efd234a47bbda8a39bde58d5" CollectType="MainAssetCollector" AddressRule="AddressByFileName" PackRule="PackDirectory" FilterRule="CollectAll" UserData="" AssetTags="" />
+    </Group>
+    <Group GroupActiveRule="EnableGroup" GroupName="prefab" GroupDesc="" AssetTags="">
+      <Collector CollectPath="Assets/MyAsset/Prefabs" CollectGUID="b88c9d0c93bb87945bdf010432462560" CollectType="MainAssetCollector" AddressRule="AddressByFileName" PackRule="PackSeparately" FilterRule="CollectAll" UserData="" AssetTags="" />
+    </Group>
+    <Group GroupActiveRule="EnableGroup" GroupName="ui" GroupDesc="" AssetTags="">
+      <Collector CollectPath="Assets/MyAsset/UI" CollectGUID="379365d942dbdc64aa95a028d2ca4d41" CollectType="MainAssetCollector" AddressRule="AddressByFileName" PackRule="PackTopDirectory" FilterRule="CollectAll" UserData="" AssetTags="" />
+    </Group>
+  </Package>
+</root>

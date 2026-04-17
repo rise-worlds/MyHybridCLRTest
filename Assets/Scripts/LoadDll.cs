@@ -11,6 +11,7 @@ using Obfuz.EncryptionVM;
 using Cysharp.Threading.Tasks;
 using UniFramework.Event;
 using System.Threading.Tasks;
+using FairyGUI;
 
 /// <summary>
 /// 脚本工作流程：
@@ -35,44 +36,69 @@ public class LoadDll : MonoBehaviour
     private ResourceDownloaderOperation _downloader;//下载器
     private UpdatePackageManifestOperation _operationManifest;//更新清单
 
+    // FairyGUI相关
+    private GComponent _loadingView;               //加载界面
+    private GProgressBar _progressBar;             //进度条
+    private GTextField _statusText;                //状态文本
+    private GComponent _hotupView;                 //更新提示界面
+    private GComponent _restartView;               //重启提示界面
+
     void Awake()
     {
         Application.targetFrameRate = 60;   //设置帧率
         Application.runInBackground = true; //设置后台运行
         DontDestroyOnLoad(gameObject);      //确保该对象不会在场景切换时销毁
+
+        // 初始化FairyGUI
+        FairyGUI.Stage.inst.DisableSound();
     }
 
-    async UniTask Start()
+    public async UniTask Start()
     {
         Debug.Log($"资源系统运行模式：{PlayMode}");
         // 初始化事件系统
         UniEvent.Initalize();
+        
+        // 再初始化YooAssets
         await InitYooAssets();
     }
 
     async UniTask InitYooAssets()
     {
         // 1.初始化资源系统
+        UpdateUI("初始化资源系统...", 0.1f);
         YooAssets.Initialize();
 
         // 2.初始化资源包
+        UpdateUI("初始化资源包...", 0.2f);
         await InitPackage();
         
+        // 先加载FairyGUI界面
+        LoadFairyGUI();
+        
         // 3.获取资源版本
+        UpdateUI("获取资源版本...", 0.3f);
         await UpdatePackageVersion();
 
         // 4.获取文件清单
+        UpdateUI("获取文件清单...", 0.4f);
         await UpdateManifest();
 
         // 5.创建资源下载器
+        UpdateUI("检查更新...", 0.5f);
         if (CreateDownloader())
         {
             // 5.开始下载资源文件
             await BeginDownload();
         }
+        else
+        {
+            UpdateUI("无需更新", 1);
+        }
 
         YooAssets.SetDefaultPackage(_package);
         //6.清理未使用的缓存文件
+        UpdateUI("清理缓存...", 0.9f);
         ClearFiles();
     }
 
@@ -96,15 +122,6 @@ public class LoadDll : MonoBehaviour
             };
             initializationOperation = _package.InitializeAsync(createParameters);
         }
-        else if (PlayMode == EPlayMode.OfflinePlayMode)
-        {
-            // 单机运行模式
-            var createParameters = new OfflinePlayModeParameters
-            {
-                BuildinFileSystemParameters = FileSystemParameters.CreateDefaultBuildinFileSystemParameters()
-            };
-            initializationOperation = _package.InitializeAsync(createParameters);
-        }
         else if (PlayMode == EPlayMode.HostPlayMode)
         {
             // 联机运行模式
@@ -119,32 +136,13 @@ public class LoadDll : MonoBehaviour
             HostPlayModeParameters createParameters = new HostPlayModeParameters
             {
                 //创建内置文件系统参数
-                //BuildinFileSystemParameters = FileSystemParameters.CreateDefaultBuildinFileSystemParameters(),
-                BuildinFileSystemParameters = null,
+                BuildinFileSystemParameters = FileSystemParameters.CreateDefaultBuildinFileSystemParameters(),
+                // BuildinFileSystemParameters = null,
                 //创建缓存系统参数
                 CacheFileSystemParameters = cacheFSParam
             };
             //执行异步初始化
             initializationOperation = _package.InitializeAsync(createParameters);
-        }
-        else if (PlayMode == EPlayMode.WebPlayMode)
-        {
-            // WebGL运行模式
-#if UNITY_WEBGL && WEIXINMINIGAME && !UNITY_EDITOR
-            var createParameters = new WebPlayModeParameters();
-			string defaultHostServer = GetHostServerURL();
-            string fallbackHostServer = GetHostServerURL();
-            string packageRoot = $"{WeChatWASM.WX.env.USER_DATA_PATH}/__GAME_FILE_CACHE"; //注意：如果有子目录，请修改此处！
-            IRemoteServices remoteServices = new RemoteServices(defaultHostServer, fallbackHostServer);
-            createParameters.WebServerFileSystemParameters = WechatFileSystemCreater.CreateFileSystemParameters(packageRoot, remoteServices);
-            initializationOperation = _package.InitializeAsync(createParameters);
-#else
-            var createParameters = new WebPlayModeParameters
-            {
-                WebServerFileSystemParameters = FileSystemParameters.CreateDefaultWebServerFileSystemParameters()
-            };
-            initializationOperation = _package.InitializeAsync(createParameters);
-#endif
         }
 
         await initializationOperation;
@@ -245,13 +243,87 @@ public class LoadDll : MonoBehaviour
         }
         else
         {
-            // 发现新更新文件后，挂起流程系统
-            // 注意：开发者需要在下载前检测磁盘空间不足
+            // 发现新更新文件后，显示更新提示
             int count = _downloader.TotalDownloadCount;
             long bytes = _downloader.TotalDownloadBytes;
             Debug.Log($"需要更新{count}个文件, 大小是{bytes / 1024 / 1024}MB");
+            
+            // 显示更新提示界面
+            ShowHotupView(count, bytes);
         }
         return true;
+    }
+    #endregion
+
+    #region 显示更新提示界面
+    private void ShowHotupView(int count, long bytes)
+    {
+        // 创建更新提示界面
+        _hotupView = UIPackage.CreateObject("Launch", "GameStartHotupView").asCom;
+        GRoot.inst.AddChild(_hotupView);
+        
+        // 设置更新信息
+        GTextField updateInfo = _hotupView.GetChild("updateInfo").asTextField;
+        if (updateInfo != null)
+        {
+            updateInfo.text = $"发现{count}个更新文件，大小{bytes / 1024 / 1024}MB，是否更新？";
+        }
+        
+        // 添加确认按钮点击事件
+        GButton confirmBtn = _hotupView.GetChild("confirmBtn").asButton;
+        if (confirmBtn != null)
+        {
+            confirmBtn.onClick.Add(() => {
+                // 隐藏更新提示界面
+                _hotupView.visible = false;
+                // 继续下载
+            });
+        }
+        
+        // 添加取消按钮点击事件
+        GButton cancelBtn = _hotupView.GetChild("cancelBtn").asButton;
+        if (cancelBtn != null)
+        {
+            cancelBtn.onClick.Add(() => {
+                // 隐藏更新提示界面
+                _hotupView.visible = false;
+                // 取消更新
+                _downloader = null;
+            });
+        }
+    }
+    #endregion
+
+    #region 加载FairyGUI界面
+    private void LoadFairyGUI()
+    {
+        // 加载UI包
+        UIPackage.AddPackage("MyAsset/UI/Launch");
+        
+        // 创建加载界面
+        _loadingView = UIPackage.CreateObject("Launch", "GameStartLoadingView").asCom;
+        GRoot.inst.AddChild(_loadingView);
+        
+        // 获取进度条和状态文本
+        _progressBar = _loadingView.GetChild("progressBar").asProgress;
+        _statusText = _loadingView.GetChild("statusText").asTextField;
+        
+        // 初始状态
+        UpdateUI("初始化资源系统...", 0);
+    }
+    #endregion
+
+    #region 更新UI显示
+    private void UpdateUI(string status, float progress)
+    {
+        if (_statusText != null)
+        {
+            _statusText.text = status;
+        }
+        if (_progressBar != null)
+        {
+            _progressBar.value = progress;
+        }
     }
     #endregion
 
@@ -267,10 +339,12 @@ public class LoadDll : MonoBehaviour
         if (_downloader.Status != EOperationStatus.Succeed)
         {
             Debug.LogWarning(_operationManifest.Error);
+            UpdateUI("下载失败: " + _operationManifest.Error, 0);
         }
         else
         {
             Debug.Log("下载成功-------------------");
+            UpdateUI("下载成功", 1);
         }
     }
 
@@ -283,14 +357,18 @@ public class LoadDll : MonoBehaviour
     }
 
     // 下载进度更新
-    public static void DownloadUpdateCallback(DownloadUpdateData updateData)
+    public void DownloadUpdateCallback(DownloadUpdateData updateData)
     {
         int totalDownloadCount = updateData.TotalDownloadCount;
         int currentDownloadCount = updateData.CurrentDownloadCount;
         long totalDownloadSizeBytes = updateData.TotalDownloadBytes;
         long currentDownloadSizeBytes = updateData.CurrentDownloadBytes;
+        float progress = (float)currentDownloadCount / totalDownloadCount;
+        
         Debug.Log($"下载进度: {currentDownloadCount}/{totalDownloadCount}, " +
                   $"{currentDownloadSizeBytes / 1024}KB/{totalDownloadSizeBytes / 1024}KB");
+        
+        UpdateUI($"下载中... {currentDownloadCount}/{totalDownloadCount}", progress);
     }
     #endregion
 
@@ -304,19 +382,49 @@ public class LoadDll : MonoBehaviour
     //文件清理完成
     private void Operation_Completed(AsyncOperationBase obj)
     {
-        UpdateDone();
+        using var _ = UpdateDone();
     }
     #endregion
 
     #region 热更新结束回调
-    private void UpdateDone()
+    private async Task UpdateDone()
     {
         Debug.Log("热更新结束");
+        UpdateUI("热更新完成", 1);
 
-        //跳转场景
-        Debug.Log("跳转场景");
+        // 延迟一下，让用户看到完成信息
+        await UniTask.Delay(1000);
 
-        StartGame();
+        // 隐藏加载界面
+        if (_loadingView != null)
+        {
+            _loadingView.visible = false;
+        }
+
+        // 显示重启提示界面
+        ShowRestartView();
+    }
+    #endregion
+
+    #region 显示重启提示界面
+    private void ShowRestartView()
+    {
+        // 创建重启提示界面
+        _restartView = UIPackage.CreateObject("Launch", "GameStartHotupRestartView").asCom;
+        GRoot.inst.AddChild(_restartView);
+        
+        // 添加重启按钮点击事件
+        GButton restartBtn = _restartView.GetChild("restartBtn").asButton;
+        if (restartBtn != null)
+        {
+            restartBtn.onClick.Add(async () => {
+                // 隐藏重启提示界面
+                _restartView.visible = false;
+                // 跳转场景
+                Debug.Log("跳转场景");
+                await StartGame();
+            });
+        }
     }
     #endregion
 
