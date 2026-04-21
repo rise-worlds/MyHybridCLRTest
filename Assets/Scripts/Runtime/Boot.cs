@@ -74,7 +74,6 @@ public class Boot : MonoBehaviour
         start.Run();
     }
 
-
     /// <summary>
     /// 为aot assembly加载原始metadata， 这个代码放aot或者热更新都行。
     /// 一旦加载后，如果AOT泛型函数对应native实现不存在，则自动替换为解释模式执行
@@ -88,11 +87,9 @@ public class Boot : MonoBehaviour
             "System.Core.dll",
             "UniFramework.Event.dll",
             "UnityEngine.CoreModule.dll",
+            "Obfuz.Runtime.dll",
             // "YooAsset.dll",
-            // "GameCore.dll",
-            // "System.Core.dll",
             // "UniTask.dll",
-            // "UnityEngine.CoreModule.dll",
             "GameCore.dll",
             "HotUpdate.dll"
         };
@@ -114,7 +111,7 @@ public class Boot : MonoBehaviour
         }
 
 #if !UNITY_EDITOR
-         _hotUpdateAss = Assembly.Load(ReadBytesFromStreamingAssets("HotUpdate.dll"));
+        _hotUpdateAss = Assembly.Load(ReadBytesFromStreamingAssets("HotUpdate.dll"));
 #else
         // Editor下无需加载，直接查找获得HotUpdate程序集
         _hotUpdateAss = System.AppDomain.CurrentDomain.GetAssemblies().First(a => a.GetName().Name == "HotUpdate");

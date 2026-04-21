@@ -21,8 +21,9 @@ MonoBehaviour:
   assemblySettings:
     assembliesToObfuscate:
     - HotUpdate
-    nonObfuscatedButReferencingObfuscatedAssemblies:
+    - GameCore
     - Assembly-CSharp
+    nonObfuscatedButReferencingObfuscatedAssemblies: []
     additionalAssemblySearchPaths: []
     obfuscateObfuzRuntime: 1
   obfuscationPassSettings:
