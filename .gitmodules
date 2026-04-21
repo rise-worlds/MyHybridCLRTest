@@ -1,9 +1,12 @@
-[submodule "Packages/com.code-philosophy.hybridclr"]
-	path = Packages/com.code-philosophy.hybridclr
-	url = https://gitee.com/focus-creative-games/hybridclr_unity.git
 [submodule "Packages/com.code-philosophy.obfuz"]
 	path = Packages/com.code-philosophy.obfuz
 	url = https://gitee.com/focus-creative-games/obfuz.git
 [submodule "Packages/com.code-philosophy.obfuz4hybridclr"]
 	path = Packages/com.code-philosophy.obfuz4hybridclr
 	url = https://gitee.com/focus-creative-games/obfuz4hybridclr.git
+[submodule "Packages/com.yanglingyun.hyu"]
+	path = Packages/com.yanglingyun.hyu
+	url = https://github.com/rise-worlds/HybridCLR_YooAsset_UniTask.git
+[submodule "Packages/com.cysharp.unitask"]
+	path = Packages/com.cysharp.unitask
+	url = https://github.com/rise-worlds/UniTask.git
